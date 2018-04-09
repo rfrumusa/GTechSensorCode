@@ -1,0 +1,169 @@
+[Jet]
+JetConnSerialNo=80334
+JetConnFoundProbes=
+DisableInterrupts=0
+MultiCoreRunAll=0
+OnlineReset=Software
+PrevWtdReset=Hardware
+[PlDriver]
+FirstRun=0
+MemConfigValue=C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.0\arm\CONFIG\debugger\Freescale\MKW21DN512xxx5.ddf
+[DebugChecksum]
+Checksum=1146803803
+[Exceptions]
+StopOnUncaught=_ 0
+StopOnThrow=_ 0
+[CodeCoverage]
+Enabled=_ 0
+[Stack]
+FillEnabled=0
+OverflowWarningsEnabled=1
+WarningThreshold=90
+SpWarningsEnabled=1
+WarnLogOnly=1
+UseTrigger=1
+TriggerName=main
+LimitSize=0
+ByteLimit=50
+[CallStack]
+ShowArgs=0
+[Disassembly]
+MixedMode=1
+[SWOManager]
+SamplingDivider=8192
+OverrideClock=0
+CpuClock=1635017060
+SwoClock=1768843615
+DataLogMode=0
+ItmPortsEnabled=63
+ItmTermIOPorts=1
+ItmLogPorts=0
+ItmLogFile=$PROJ_DIR$\ITM.log
+PowerForcePC=1
+PowerConnectPC=1
+[ArmDriver]
+EnableCache=0
+[PlDdfRanges]
+ConfigRanges0=Memory Periph_Bitband 1107296256 33554432 2
+ConfigRanges1=Memory Flash 0 524288 1
+ConfigRanges2=Memory Periph 1073741824 1048576 2
+ConfigRanges3=Memory RAM_Bitband 570425344 33554432 2
+ConfigRanges4=Memory RAM 536838144 65536 0
+ConfigRanges5=Memory SystemSFR 3758096384 1048576 2
+[ETMTraceWindow]
+PortWidth=4
+PortMode=0
+CaptureDataValues=1
+CaptureDataAddresses=1
+CaptureDataRange=0
+DataFirst=0
+DataLast=-1
+StopWhen=0
+StallCPU=0
+NoPCCapture=0
+[CallStackStripe]
+ShowTiming=1
+[FlashMemory]
+FlashEraseSelection=0 1       
+[struct_types]
+Fmt0=rxPacket_t-u8DataLength	3	0
+Fmt1=rxPacket_t-u8MaxDataLength	3	0
+Fmt2=tOptions-u16SampleSize	3	0
+Fmt3=tOptions-u16TimeoutsToKill	3	0
+Fmt4=tOptions-u32PngTimeout	3	0
+Fmt5=tOptions-u32SndTimeout	3	0
+Fmt6=tOptions-u8OutputPower	3	0
+Fmt7=txPacket_t-u8DataLength	3	0
+[watch_formats]
+Fmt0={W}1:channel	3	0
+Fmt1={W}1:destination	4	0
+Fmt2={W}1:endAddress	4	0
+Fmt3={W}1:flashCount	3	0
+Fmt4={W}1:gFlashDeadBeef	4	0
+Fmt5={W}1:gSnd.channel	3	0
+Fmt6={W}1:g_DEAD_BEEF	4	0
+Fmt7={W}1:in	3	0
+Fmt8={W}1:iter	3	0
+Fmt9={W}1:linkQdBm	3	0
+Fmt10={W}1:maxLinkQdBm	3	0
+Fmt11={W}1:pCommandArray[0]	4	0
+Fmt12={W}1:pCommandArray[1]	4	0
+Fmt13={W}1:partFlash1	4	0
+Fmt14={W}1:quality	3	0
+Fmt15={W}1:sDeadBeef	4	0
+Fmt16={W}1:size	4	0
+Fmt17={W}1:source	4	0
+[SWOTraceWindow]
+ForcedPcSampling=0
+ForcedInterruptLogs=0
+ForcedItmLogs=0
+EventCPI=0
+EventEXC=0
+EventFOLD=0
+EventLSU=0
+EventSLEEP=0
+[PowerLog]
+LogEnabled=0
+GraphEnabled=0
+ShowTimeLog=1
+ShowTimeSum=0
+Title_0=ITrgPwr
+Symbol_0=0 4 1
+LiveEnabled=0
+LiveFile=PowerLogLive.log
+[DataLog]
+LogEnabled=0
+SumEnabled=0
+GraphEnabled=0
+ShowTimeLog=1
+ShowTimeSum=1
+[EventLog]
+LogEnabled=0
+SumEnabled=0
+GraphEnabled=0
+ShowTimeLog=1
+ShowTimeSum=1
+Title_0=Ch3
+Symbol_0=0 4 1
+Title_1=Ch2
+Symbol_1=0 4 1
+Title_2=Ch1
+Symbol_2=0 4 1
+Title_3=Ch0
+Symbol_3=0 4 1
+SumSortOrder=0
+[InterruptLog]
+LogEnabled=0
+SumEnabled=0
+GraphEnabled=0
+ShowTimeLog=1
+ShowTimeSum=1
+SumSortOrder=0
+[CallStackLog]
+Enabled=0
+[DriverProfiling]
+Enabled=0
+Mode=3
+Graph=0
+Symbiont=0
+Exclusions=
+[PowerProbe]
+Frequency=10000
+Probe0=ITrgPwr
+ProbeSetup0=2 1 1 2 0 0
+[Log file]
+LoggingEnabled=_ 0
+LogFile=_ ""
+Category=_ 0
+[TermIOLog]
+LoggingEnabled=_ 0
+LogFile=_ "C:\Users\lsw0lga\Desktop\temp\TermIO.log"
+[Disassemble mode]
+mode=0
+[Breakpoints2]
+Bp0=_ 1 "EMUL_CODE" "{$PROJ_DIR$\Application\Source\main.c}.465.7" 0 0 1 "" 0 "" 0
+Count=1
+[Aliases]
+A0=_ "C:\Users\Robert\SkyDrive\2018 Spring Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity Test\Application\Source\main.c" ""
+Count=1
+SuppressDialog=0

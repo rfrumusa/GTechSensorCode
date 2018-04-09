@@ -1,0 +1,432 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.20.5.7591/W32 for ARM        20/Mar/2018  09:41:55
+# Copyright 1999-2014 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity
+#        Test\PLM\Source\USB\Common\UsbMsgQueue.c
+#    Command line =  
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity
+#        Test\PLM\Source\USB\Common\UsbMsgQueue.c" -D IAR --preprocess
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\Debug\List\" -lC
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\Debug\List\" -lB
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\Debug\List\"
+#        --diag_suppress Pe014,Pe001,Pe991,Pa039,Pe520,Pe550,Pe177,Pa082 -o
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\Debug\Obj\" --no_cse
+#        --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering
+#        --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=None
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        7.0\arm\INC\c\DLib_Config_Normal.h" -I "C:\Users\rfrum\OneDrive\2018
+#        Spring Semester\Senior Design\Sensor Code\Shanit Origional
+#        Code\Connectivity Test\PLM\Configure\" -I
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\PLM\Environment\" -I
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\PLM\Interface\" -I
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\Generic
+#        Services\Interface\" -I "C:\Users\rfrum\OneDrive\2018 Spring
+#        Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity
+#        Test\PLM\Source\Uart\" -I "C:\Users\rfrum\OneDrive\2018 Spring
+#        Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity
+#        Test\PLM\Source\USB\" -I "C:\Users\rfrum\OneDrive\2018 Spring
+#        Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity
+#        Test\PLM\Source\USB\APP\" -I "C:\Users\rfrum\OneDrive\2018 Spring
+#        Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity
+#        Test\PLM\Source\USB\APP\CDC\" -I "C:\Users\rfrum\OneDrive\2018 Spring
+#        Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity
+#        Test\PLM\Source\USB\APP\Descriptor\" -I "C:\Users\rfrum\OneDrive\2018
+#        Spring Semester\Senior Design\Sensor Code\Shanit Origional
+#        Code\Connectivity Test\PLM\Source\USB\Class\" -I
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\PLM\Source\USB\Common\"
+#        -I "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\PLM\Source\USB\Driver\"
+#        -I "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\PLM\Source\TMR\" -I
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity
+#        Test\PLM\Source\Radio\MC1324x\PHY\" -I "C:\Users\rfrum\OneDrive\2018
+#        Spring Semester\Senior Design\Sensor Code\Shanit Origional
+#        Code\Connectivity Test\PLM\Source\Radio\MC1324x\DRV\" -I
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\PLM\Source\Sys Common\"
+#        -I "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\SMAC\Source\" -I
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\SMAC\Interface\" -I
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\SMAC\Configure\" -I
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\Application\Source\" -I
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\Application\Configure\"
+#        -I "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\PLM\Source\NVM\" -I
+#        "C:\Users\Robert\SkyDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\PLM\Source\NVM\" -I
+#        "C:\Users\Robert\SkyDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\PLM\Source\ADC\" -I
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\PLM\Source\ADC\" -On
+#    List file    =  
+#        C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity
+#        Test\Debug\List\UsbMsgQueue.lst
+#    Object file  =  
+#        C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\Debug\Obj\UsbMsgQueue.o
+#
+###############################################################################
+
+C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity Test\PLM\Source\USB\Common\UsbMsgQueue.c
+      1          /************************************************************************************
+      2          * Source file of the application specific memory system
+      3          *
+      4          * (c) Copyright 2010, Freescale, Inc. All rights reserved.
+      5          *
+      6          *
+      7          * No part of this document must be reproduced in any form - including copied,
+      8          * transcribed, printed or by any electronic means - without specific written
+      9          * permission from Freescale Semiconductor.
+     10          *
+     11          *****************************************************************************/
+     12          
+     13          #include "EmbeddedTypes.h"
+     14          #include "Interrupt.h"
+     15          #include "UsbMsgQueue.h" 
+     16          #include "USB.h" 
+     17          #include "USB_Configuration.h" 
+     18          
+     19          #if gUsbIncluded_d
+     20          
+     21          /******************************************************************************
+     22          *******************************************************************************
+     23          * Private macros
+     24          *******************************************************************************
+     25          ******************************************************************************/
+     26          /* The USB module uses one single pool of messages containing messages used 
+     27          from the Interrupt handler to signal events to the USB task */
+     28          
+     29          #define mUsbMsgQueueSize (6*gNumUsbControllers_d + gNumUsbEp_d )
+     30          /******************************************************************************
+     31          *******************************************************************************
+     32          * Private prototypes
+     33          *******************************************************************************
+     34          ******************************************************************************/
+     35          
+     36          /******************************************************************************
+     37          *******************************************************************************
+     38          * Private type definitions
+     39          *******************************************************************************
+     40          ******************************************************************************/
+     41          
+     42          /******************************************************************************
+     43          *******************************************************************************
+     44          * Private memory declarations
+     45          *******************************************************************************
+     46          ******************************************************************************/
+
+   \                                 In section .bss, align 1
+     47          static uint8_t usbMsgQueue_head;
+   \                     usbMsgQueue_head:
+   \   00000000                      DS8 1
+
+   \                                 In section .bss, align 1
+     48          static uint8_t usbMsgQueue_tail;
+   \                     usbMsgQueue_tail:
+   \   00000000                      DS8 1
+
+   \                                 In section .bss, align 1
+     49          static uint8_t usbMsgQueue_msgNo;
+   \                     usbMsgQueue_msgNo:
+   \   00000000                      DS8 1
+
+   \                                 In section .bss, align 4
+     50          static usbMsg_t maUsbMsgQueue[mUsbMsgQueueSize];
+   \                     maUsbMsgQueue:
+   \   00000000                      DS8 176
+     51          
+     52          /******************************************************************************
+     53          *******************************************************************************
+     54          * Public memory declarations
+     55          *******************************************************************************
+     56          ******************************************************************************/
+     57          
+     58          /******************************************************************************
+     59          *******************************************************************************
+     60          * Public functions
+     61          *******************************************************************************
+     62          ******************************************************************************/
+     63          
+     64          /******************************************************************************
+     65          * UsbMsgQueueInit
+     66          This function suppose to be used in the app init when interrupts are disabled
+     67          ******************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+     68          void UsbMsgQueue_Init(void)
+     69          {
+     70          usbMsgQueue_head = usbMsgQueue_tail = usbMsgQueue_msgNo = 0;
+   \                     UsbMsgQueue_Init: (+1)
+   \   00000000   0x2000             MOVS     R0,#+0
+   \   00000002   0x....             LDR.N    R1,??DataTable5
+   \   00000004   0x7008             STRB     R0,[R1, #+0]
+   \   00000006   0x....             LDR.N    R1,??DataTable5_1
+   \   00000008   0x7008             STRB     R0,[R1, #+0]
+   \   0000000A   0x....             LDR.N    R1,??DataTable5_2
+   \   0000000C   0x7008             STRB     R0,[R1, #+0]
+     71          } 
+   \   0000000E   0x4770             BX       LR               ;; return
+     72          
+     73          /******************************************************************************
+     74          * UsbMsgQueue_Push
+     75          To be used only from the USB interrupt.
+     76          ******************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+     77          usbMsgQueueErr_t UsbMsgQueue_Push(usbMsg_t* pUsbMsg)
+     78          {
+   \                     UsbMsgQueue_Push: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+     79            if(usbMsgQueue_msgNo == mUsbMsgQueueSize)
+   \   00000004   0x....             LDR.N    R0,??DataTable5
+   \   00000006   0x7800             LDRB     R0,[R0, #+0]
+   \   00000008   0x280B             CMP      R0,#+11
+   \   0000000A   0xD101             BNE.N    ??UsbMsgQueue_Push_0
+     80              {
+     81                return usbMsgQueueErr_QueueFull;
+   \   0000000C   0x2001             MOVS     R0,#+1
+   \   0000000E   0xE01A             B.N      ??UsbMsgQueue_Push_1
+     82              }
+     83            maUsbMsgQueue[usbMsgQueue_head] = *pUsbMsg;
+   \                     ??UsbMsgQueue_Push_0: (+1)
+   \   00000010   0x....             LDR.N    R0,??DataTable5_3
+   \   00000012   0x....             LDR.N    R1,??DataTable5_2
+   \   00000014   0x7809             LDRB     R1,[R1, #+0]
+   \   00000016   0xEB10 0x1001      ADDS     R0,R0,R1, LSL #+4
+   \   0000001A   0x0021             MOVS     R1,R4
+   \   0000001C   0x2210             MOVS     R2,#+16
+   \   0000001E   0x.... 0x....      BL       __aeabi_memcpy4
+     84            if(++usbMsgQueue_head == mUsbMsgQueueSize)
+   \   00000022   0x....             LDR.N    R0,??DataTable5_2
+   \   00000024   0x7800             LDRB     R0,[R0, #+0]
+   \   00000026   0x1C40             ADDS     R0,R0,#+1
+   \   00000028   0x....             LDR.N    R1,??DataTable5_2
+   \   0000002A   0x7008             STRB     R0,[R1, #+0]
+   \   0000002C   0x....             LDR.N    R0,??DataTable5_2
+   \   0000002E   0x7800             LDRB     R0,[R0, #+0]
+   \   00000030   0x280B             CMP      R0,#+11
+   \   00000032   0xD102             BNE.N    ??UsbMsgQueue_Push_2
+     85              {
+     86                usbMsgQueue_head = 0;
+   \   00000034   0x2000             MOVS     R0,#+0
+   \   00000036   0x....             LDR.N    R1,??DataTable5_2
+   \   00000038   0x7008             STRB     R0,[R1, #+0]
+     87              }
+     88            usbMsgQueue_msgNo++;
+   \                     ??UsbMsgQueue_Push_2: (+1)
+   \   0000003A   0x....             LDR.N    R0,??DataTable5
+   \   0000003C   0x7800             LDRB     R0,[R0, #+0]
+   \   0000003E   0x1C40             ADDS     R0,R0,#+1
+   \   00000040   0x....             LDR.N    R1,??DataTable5
+   \   00000042   0x7008             STRB     R0,[R1, #+0]
+     89            return usbMsgQueueErr_NoError; 
+   \   00000044   0x2000             MOVS     R0,#+0
+   \                     ??UsbMsgQueue_Push_1: (+1)
+   \   00000046   0xBD10             POP      {R4,PC}          ;; return
+     90          }
+     91          
+     92          
+     93          /******************************************************************************
+     94          * UsbMsgQueue_Pop
+     95          To be used only from USB task.
+     96          ******************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+     97          usbMsgQueueErr_t UsbMsgQueue_Pop(void)
+     98          {
+   \                     UsbMsgQueue_Pop: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+     99            usbMsgQueueErr_t usbMsgQueueErr = usbMsgQueueErr_NoError; 
+   \   00000002   0x2400             MOVS     R4,#+0
+    100            USB_Lock();
+   \   00000004   0x.... 0x....      BL       USB_Lock
+    101            if(usbMsgQueue_msgNo == 0)
+   \   00000008   0x....             LDR.N    R0,??DataTable5
+   \   0000000A   0x7800             LDRB     R0,[R0, #+0]
+   \   0000000C   0x2800             CMP      R0,#+0
+   \   0000000E   0xD102             BNE.N    ??UsbMsgQueue_Pop_0
+    102            {
+    103              usbMsgQueueErr = usbMsgQueueErr_QueueEmpty;
+   \   00000010   0x2002             MOVS     R0,#+2
+   \   00000012   0x0004             MOVS     R4,R0
+   \   00000014   0xE010             B.N      ??UsbMsgQueue_Pop_1
+    104            }
+    105            
+    106            else
+    107            {
+    108              if(++usbMsgQueue_tail == mUsbMsgQueueSize)
+   \                     ??UsbMsgQueue_Pop_0: (+1)
+   \   00000016   0x....             LDR.N    R0,??DataTable5_1
+   \   00000018   0x7800             LDRB     R0,[R0, #+0]
+   \   0000001A   0x1C40             ADDS     R0,R0,#+1
+   \   0000001C   0x....             LDR.N    R1,??DataTable5_1
+   \   0000001E   0x7008             STRB     R0,[R1, #+0]
+   \   00000020   0x....             LDR.N    R0,??DataTable5_1
+   \   00000022   0x7800             LDRB     R0,[R0, #+0]
+   \   00000024   0x280B             CMP      R0,#+11
+   \   00000026   0xD102             BNE.N    ??UsbMsgQueue_Pop_2
+    109              {
+    110                usbMsgQueue_tail = 0; 
+   \   00000028   0x2000             MOVS     R0,#+0
+   \   0000002A   0x....             LDR.N    R1,??DataTable5_1
+   \   0000002C   0x7008             STRB     R0,[R1, #+0]
+    111              }
+    112              usbMsgQueue_msgNo--;   
+   \                     ??UsbMsgQueue_Pop_2: (+1)
+   \   0000002E   0x....             LDR.N    R0,??DataTable5
+   \   00000030   0x7800             LDRB     R0,[R0, #+0]
+   \   00000032   0x1E40             SUBS     R0,R0,#+1
+   \   00000034   0x....             LDR.N    R1,??DataTable5
+   \   00000036   0x7008             STRB     R0,[R1, #+0]
+    113            }
+    114            USB_UnLock();
+   \                     ??UsbMsgQueue_Pop_1: (+1)
+   \   00000038   0x.... 0x....      BL       USB_UnLock
+    115            return usbMsgQueueErr;
+   \   0000003C   0x0020             MOVS     R0,R4
+   \   0000003E   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000040   0xBD10             POP      {R4,PC}          ;; return
+    116          }
+    117          
+    118          /******************************************************************************
+    119          * UsbMsgQueue_GetFirstMsg
+    120          ******************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    121          usbMsg_t* UsbMsgQueue_GetFirstMsg(void)
+    122          {
+    123            return (maUsbMsgQueue + usbMsgQueue_tail);  
+   \                     UsbMsgQueue_GetFirstMsg: (+1)
+   \   00000000   0x....             LDR.N    R0,??DataTable5_3
+   \   00000002   0x....             LDR.N    R1,??DataTable5_1
+   \   00000004   0x7809             LDRB     R1,[R1, #+0]
+   \   00000006   0xEB10 0x1001      ADDS     R0,R0,R1, LSL #+4
+   \   0000000A   0x4770             BX       LR               ;; return
+    124          }
+    125          
+    126          
+    127          /******************************************************************************
+    128          * UsbMsgQueue_MsgNo
+    129          ******************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    130          uint8_t UsbMsgQueue_MsgNo()
+    131          {
+    132            return usbMsgQueue_msgNo;
+   \                     UsbMsgQueue_MsgNo: (+1)
+   \   00000000   0x....             LDR.N    R0,??DataTable5
+   \   00000002   0x7800             LDRB     R0,[R0, #+0]
+   \   00000004   0x4770             BX       LR               ;; return
+    133          }
+    134          
+    135          /******************************************************************************
+    136          * UsbMsgQueue_MsgPending
+    137          ******************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    138          bool_t UsbMsgQueue_MsgPending()
+    139          {
+    140            return (usbMsgQueue_msgNo != 0);
+   \                     UsbMsgQueue_MsgPending: (+1)
+   \   00000000   0x....             LDR.N    R0,??DataTable5
+   \   00000002   0x7800             LDRB     R0,[R0, #+0]
+   \   00000004   0x2800             CMP      R0,#+0
+   \   00000006   0xD001             BEQ.N    ??UsbMsgQueue_MsgPending_0
+   \   00000008   0x2001             MOVS     R0,#+1
+   \   0000000A   0xE000             B.N      ??UsbMsgQueue_MsgPending_1
+   \                     ??UsbMsgQueue_MsgPending_0: (+1)
+   \   0000000C   0x2000             MOVS     R0,#+0
+   \                     ??UsbMsgQueue_MsgPending_1: (+1)
+   \   0000000E   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000010   0x4770             BX       LR               ;; return
+    141          }
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable5:
+   \   00000000   0x........         DC32     usbMsgQueue_msgNo
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable5_1:
+   \   00000000   0x........         DC32     usbMsgQueue_tail
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable5_2:
+   \   00000000   0x........         DC32     usbMsgQueue_head
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable5_3:
+   \   00000000   0x........         DC32     maUsbMsgQueue
+    142          
+    143          /******************************************************************************
+    144          *******************************************************************************
+    145          * Private functions
+    146          *******************************************************************************
+    147          *******************************************************************************/
+    148          
+    149          #endif// gUsbIncluded_d
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   UsbMsgQueue_GetFirstMsg
+       0   UsbMsgQueue_Init
+       0   UsbMsgQueue_MsgNo
+       0   UsbMsgQueue_MsgPending
+       8   UsbMsgQueue_Pop
+         8   -> USB_Lock
+         8   -> USB_UnLock
+       8   UsbMsgQueue_Push
+         8   -> __aeabi_memcpy4
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable5
+       4  ??DataTable5_1
+       4  ??DataTable5_2
+       4  ??DataTable5_3
+      12  UsbMsgQueue_GetFirstMsg
+      16  UsbMsgQueue_Init
+       6  UsbMsgQueue_MsgNo
+      18  UsbMsgQueue_MsgPending
+      66  UsbMsgQueue_Pop
+      72  UsbMsgQueue_Push
+     176  maUsbMsgQueue
+       1  usbMsgQueue_head
+       1  usbMsgQueue_msgNo
+       1  usbMsgQueue_tail
+
+ 
+ 179 bytes in section .bss
+ 206 bytes in section .text
+ 
+ 206 bytes of CODE memory
+ 179 bytes of DATA memory
+
+Errors: none
+Warnings: none

@@ -1,0 +1,1363 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.20.5.7591/W32 for ARM        20/Mar/2018  09:41:49
+# Copyright 1999-2014 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\Generic
+#        Services\Source\MsgSystem.c
+#    Command line =  
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\Generic
+#        Services\Source\MsgSystem.c" -D IAR --preprocess
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\Debug\List\" -lC
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\Debug\List\" -lB
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\Debug\List\"
+#        --diag_suppress Pe014,Pe001,Pe991,Pa039,Pe520,Pe550,Pe177,Pa082 -o
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\Debug\Obj\" --no_cse
+#        --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering
+#        --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=None
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        7.0\arm\INC\c\DLib_Config_Normal.h" -I "C:\Users\rfrum\OneDrive\2018
+#        Spring Semester\Senior Design\Sensor Code\Shanit Origional
+#        Code\Connectivity Test\PLM\Configure\" -I
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\PLM\Environment\" -I
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\PLM\Interface\" -I
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\Generic
+#        Services\Interface\" -I "C:\Users\rfrum\OneDrive\2018 Spring
+#        Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity
+#        Test\PLM\Source\Uart\" -I "C:\Users\rfrum\OneDrive\2018 Spring
+#        Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity
+#        Test\PLM\Source\USB\" -I "C:\Users\rfrum\OneDrive\2018 Spring
+#        Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity
+#        Test\PLM\Source\USB\APP\" -I "C:\Users\rfrum\OneDrive\2018 Spring
+#        Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity
+#        Test\PLM\Source\USB\APP\CDC\" -I "C:\Users\rfrum\OneDrive\2018 Spring
+#        Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity
+#        Test\PLM\Source\USB\APP\Descriptor\" -I "C:\Users\rfrum\OneDrive\2018
+#        Spring Semester\Senior Design\Sensor Code\Shanit Origional
+#        Code\Connectivity Test\PLM\Source\USB\Class\" -I
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\PLM\Source\USB\Common\"
+#        -I "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\PLM\Source\USB\Driver\"
+#        -I "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\PLM\Source\TMR\" -I
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity
+#        Test\PLM\Source\Radio\MC1324x\PHY\" -I "C:\Users\rfrum\OneDrive\2018
+#        Spring Semester\Senior Design\Sensor Code\Shanit Origional
+#        Code\Connectivity Test\PLM\Source\Radio\MC1324x\DRV\" -I
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\PLM\Source\Sys Common\"
+#        -I "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\SMAC\Source\" -I
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\SMAC\Interface\" -I
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\SMAC\Configure\" -I
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\Application\Source\" -I
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\Application\Configure\"
+#        -I "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\PLM\Source\NVM\" -I
+#        "C:\Users\Robert\SkyDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\PLM\Source\NVM\" -I
+#        "C:\Users\Robert\SkyDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\PLM\Source\ADC\" -I
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\PLM\Source\ADC\" -On
+#    List file    =  
+#        C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\Debug\List\MsgSystem.lst
+#    Object file  =  
+#        C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\Debug\Obj\MsgSystem.o
+#
+###############################################################################
+
+C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity Test\Generic Services\Source\MsgSystem.c
+      1          /************************************************************************************
+      2          * This module implements the memory allocation, list, and message modules. The memory
+      3          * allocation is build around N (1-3) pools with various memory allocation unit (block)
+      4          * sizes. Each pool consists of an anchor with head and tail pointers. The memory blocks
+      5          * are all linked to the anchor using a single chained list. Thus each block has a next
+      6          * pointer. The user of the functions in this module never has to be concerned with the
+      7          * list overhead since this is handled transparently. The block pointer which the user
+      8          * receives when allocating memory is pointing to the address after the next-pointer.
+      9          *
+     10          * FIFO Queues are implemented using the same list functions as used by the memory
+     11          * (de)allocation functions. The queue data object is simply an anchor (anchor_t).
+     12          * List_AddTail is used for putting allocated blocks on the queue, and List_RemoveHead
+     13          * will detach the block from the queue. Before using a queue anchor it must have been
+     14          * initialized with List_ClearAnchor. No extra header is required in order to put a
+     15          * block in a queue. However, messages should contain type information beside the
+     16          * message data so that the message handler at the receiver can reckognize the message.
+     17          *
+     18          * Messages are sent by allocating a block using MM_Alloc, and using the MSG_Send macro
+     19          * to call the Service Access Point (SAP) of the receiver. If the SAP handles specific
+     20          * messages synchronously (returns with result immideately) then the block may be
+     21          * allocated on the stack of the calling function. The message types which allows this
+     22          * are specified in the design documents.
+     23          *
+     24          * (c) Copyright 2012, Freescale, Inc.  All rights reserved.
+     25          *
+     26          * No part of this document may be reproduced in any form - including copied,
+     27          * transcribed, printed or by any electronic means - without specific written
+     28          * permission from Freescale Semiconductor.
+     29          *
+     30          ************************************************************************************/
+     31          
+     32          #include "MsgSystem.h"
+     33          #include "Interrupt.h"
+     34          
+     35          #if MsgTracking_d
+     36          #include "FunctionLib.h"
+     37          #endif
+     38          
+     39          /************************************************************************************
+     40          *************************************************************************************
+     41          * Private macros
+     42          *************************************************************************************
+     43          ************************************************************************************/
+     44            #define MmAssert(condition)
+     45            #define MmDebug_InitPool(pool)
+     46            #define MmDebug_InitBlock(block)
+     47            #define MM_DEBUG_LOG(fName)
+     48          
+     49          /************************************************************************************
+     50          *************************************************************************************
+     51          * Private type definitions
+     52          *************************************************************************************
+     53          ************************************************************************************/
+     54          
+     55          /************************************************************************************
+     56          *************************************************************************************
+     57          * Public memory declarations
+     58          *************************************************************************************
+     59          ************************************************************************************/
+     60          // The heap for MAC, NWK and application memory blocks.
+
+   \                                 In section .bss, align 4
+     61          uint8_t maMacHeap[mMmTotalPoolSize_c];
+   \                     maMacHeap:
+   \   00000000                      DS8 2940
+     62          
+     63          // Memory pool info and anchors.
+
+   \                                 In section .bss, align 4
+     64          pools_t maMmPools[gMmNumPools_c];
+   \                     maMmPools:
+   \   00000000                      DS8 36
+     65          
+     66          // Const array used during initialization. Describes the memory layout.
+     67          // Pools must occur in the table in ascending order according to their size.
+
+   \                                 In section .rodata, align 4
+     68          const poolInfo_t poolInfo[gMmNumPools_c] = {
+   \                     poolInfo:
+   \   00000000   0x05 0x30          DC8 5, 48, 180, 0, 10, 180, 252, 0, 3, 252, 0, 0
+   \              0xB4 0x00    
+   \              0x0A 0xB4    
+   \              0xFC 0x00    
+   \              0x03 0xFC    
+   \              0x00 0x00    
+     69            {gMmPoolSize0_c, mMmBlockSize0_c, mMmBlockSize1_c, 0},
+     70          #if gMmNumPools_c > 1
+     71            {gMmPoolSize1_c, mMmBlockSize1_c, mMmBlockSize2_c, 0},
+     72          #if gMmNumPools_c > 2
+     73            {gMmPoolSize2_c, mMmBlockSize2_c, 0, 0}
+     74          #endif // gMmNumPools_c > 2
+     75          #endif // gMmNumPools_c > 1
+     76          };
+     77          
+     78          
+     79          /************************************************************************************
+     80          *************************************************************************************
+     81          * Private memory declarations
+     82          *************************************************************************************
+     83          ************************************************************************************/
+     84          
+
+   \                                 In section .bss, align 4
+     85          const pools_t *pMacPool = NULL;
+   \                     pMacPool:
+   \   00000000                      DS8 4
+
+   \                                 In section .bss, align 1
+     86          uint8_t gFreeMessagesCount;
+   \                     gFreeMessagesCount:
+   \   00000000                      DS8 1
+     87          
+     88          #if MsgTracking_d
+     89          uint8_t NoOfWrongAddrs = 0;
+     90          uint32_t mLinkRegister; /* Used by Message Tracking feature*/
+     91          const uint8_t TotalNoOfMsgs_c = (gTotalBigMsgs_d + gTotalSmallMsgs_d + gTotalExtendedBigMsgs_d);
+     92          MsgTracking_t MsgTrackingArray [(gTotalBigMsgs_d + gTotalSmallMsgs_d + gTotalExtendedBigMsgs_d)] = {0};
+     93          #endif
+     94          
+     95          /************************************************************************************
+     96          *************************************************************************************
+     97          * Private prototypes
+     98          *************************************************************************************
+     99          ************************************************************************************/
+    100            #define MmDebug_Alloc(pPool, numBytes)
+    101            #define MmDebug_AllocFail(pPool, numBytes)
+    102            #define MmDebug_Free(pPool)
+    103          
+    104          int8_t MM_GetMsgIndex(const uint32_t BufferAddr);
+    105          bool_t MM_UpdateMsgTracking(const void *pBlock, const bool_t Alloc);
+    106          void   MM_InitMsgTracking(void);
+    107          void   MM_AddMsgToTrackingArray(uint8_t Index, uint32_t Addr);
+    108          
+    109          
+    110          /************************************************************************************
+    111          *************************************************************************************
+    112          * Public functions
+    113          *************************************************************************************
+    114          ************************************************************************************/
+    115          
+    116          /************************************************************************************
+    117          * This function initializes the message module private variables. Must be
+    118          * called at boot time, or if device is reset. Currently the module supports
+    119          * up to 3 memory pools.
+    120          *
+    121          * The gMmPoolSize*_c constants determine the number of blocks in a pool, and
+    122          * gMmBlockSize*_c is the number of bytes in each block for the corresponding pool.
+    123          * The number of bytes is rounded up to a value so that each block is aligned to
+    124          * a machine dependant boundary in order to avoid bus errors during pool access.
+    125          *
+    126          * The total amount of heap required is given by the constant mMmTotalPoolSize_c.
+    127          *
+    128          ************************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    129          void MM_Init
+    130            (
+    131            uint8_t *pHeap,               // IN: Memory heap. Caller must be sure to make this big enough
+    132            const poolInfo_t *pPoolInfo,  // IN: Memory layout information
+    133            pools_t *pPools               // OUT: Will be initialized with requested memory pools.
+    134            )
+    135          {
+   \                     MM_Init: (+1)
+   \   00000000   0xE92D 0x41F0      PUSH     {R4-R8,LR}
+   \   00000004   0x0004             MOVS     R4,R0
+   \   00000006   0x000D             MOVS     R5,R1
+   \   00000008   0x0016             MOVS     R6,R2
+    136            uintn8_t poolN;
+    137            uint8_t nBuffer = 0;
+   \   0000000A   0xF05F 0x0800      MOVS     R8,#+0
+    138            gFreeMessagesCount = 0;
+   \   0000000E   0x2000             MOVS     R0,#+0
+   \   00000010   0x....             LDR.N    R1,??DataTable5
+   \   00000012   0x7008             STRB     R0,[R1, #+0]
+    139          
+    140            MM_DEBUG_LOG(MM_Init);
+    141            MM_InitMsgTracking();
+   \   00000014   0x.... 0x....      BL       MM_InitMsgTracking
+    142          
+    143            pMacPool = &maMmPools[mMmBigMsgPoolIdx_c];
+   \   00000018   0x....             LDR.N    R0,??DataTable5_1
+   \   0000001A   0x....             LDR.N    R1,??DataTable5_2
+   \   0000001C   0x6008             STR      R0,[R1, #+0]
+    144          
+    145          
+    146            for(;;) {
+    147              poolN = pPoolInfo->poolSize;
+   \                     ??MM_Init_0: (+1)
+   \   0000001E   0x7828             LDRB     R0,[R5, #+0]
+   \   00000020   0x0007             MOVS     R7,R0
+    148          
+    149              List_ClearAnchor(&pPools->anchor);
+   \   00000022   0x0030             MOVS     R0,R6
+   \   00000024   0x.... 0x....      BL       List_ClearAnchor
+    150          
+    151              MmDebug_InitPool(pPools);
+    152          
+    153              while(poolN) {
+   \                     ??MM_Init_1: (+1)
+   \   00000028   0xB2FF             UXTB     R7,R7            ;; ZeroExt  R7,R7,#+24,#+24
+   \   0000002A   0x2F00             CMP      R7,#+0
+   \   0000002C   0xD017             BEQ.N    ??MM_Init_2
+    154                MmDebug_InitBlock(pHeap);
+    155                  // Add block to list of free memory.
+    156                ((listHeader_t *)pHeap)->pParentPool = pPools;
+   \   0000002E   0x6066             STR      R6,[R4, #+4]
+    157                MM_AddToPool(pPools, pHeap);
+   \   00000030   0x0021             MOVS     R1,R4
+   \   00000032   0x0030             MOVS     R0,R6
+   \   00000034   0x.... 0x....      BL       MM_AddToPool
+    158          
+    159                gFreeMessagesCount++;
+   \   00000038   0x....             LDR.N    R0,??DataTable5
+   \   0000003A   0x7800             LDRB     R0,[R0, #+0]
+   \   0000003C   0x1C40             ADDS     R0,R0,#+1
+   \   0000003E   0x....             LDR.N    R1,??DataTable5
+   \   00000040   0x7008             STRB     R0,[R1, #+0]
+    160          
+    161                MM_AddMsgToTrackingArray(nBuffer, (uint32_t) pHeap  + 8);
+   \   00000042   0xF114 0x0108      ADDS     R1,R4,#+8
+   \   00000046   0x4640             MOV      R0,R8
+   \   00000048   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   0000004A   0x.... 0x....      BL       MM_AddMsgToTrackingArray
+    162                nBuffer++;
+   \   0000004E   0xF118 0x0801      ADDS     R8,R8,#+1
+    163          
+    164                  // Add block size (without list header)
+    165                pHeap += pPoolInfo->blockSize + sizeof(listHeader_t);
+   \   00000052   0x7868             LDRB     R0,[R5, #+1]
+   \   00000054   0x1900             ADDS     R0,R0,R4
+   \   00000056   0xF110 0x0408      ADDS     R4,R0,#+8
+    166                poolN--;
+   \   0000005A   0x1E7F             SUBS     R7,R7,#+1
+   \   0000005C   0xE7E4             B.N      ??MM_Init_1
+    167              }
+    168          
+    169              pPools->blockSize = pPoolInfo->blockSize;
+   \                     ??MM_Init_2: (+1)
+   \   0000005E   0x7868             LDRB     R0,[R5, #+1]
+   \   00000060   0x7270             STRB     R0,[R6, #+9]
+    170          
+    171              pPools->nextBlockSize = pPoolInfo->nextBlockSize;
+   \   00000062   0x78A8             LDRB     R0,[R5, #+2]
+   \   00000064   0x7230             STRB     R0,[R6, #+8]
+    172              if(pPools->nextBlockSize == 0)
+   \   00000066   0x7A30             LDRB     R0,[R6, #+8]
+   \   00000068   0x2800             CMP      R0,#+0
+   \   0000006A   0xD002             BEQ.N    ??MM_Init_3
+    173                break;
+    174          
+    175              pPools++;
+    176              pPoolInfo++;
+    177            }
+    178          }
+   \                     ??MM_Init_4: (+1)
+   \   0000006C   0x360C             ADDS     R6,R6,#+12
+   \   0000006E   0x1D2D             ADDS     R5,R5,#+4
+   \   00000070   0xE7D5             B.N      ??MM_Init_0
+   \                     ??MM_Init_3: (+1)
+   \   00000072   0xE8BD 0x81F0      POP      {R4-R8,PC}       ;; return
+    179          
+    180          
+    181          /************************************************************************************
+    182          * Initialize a list anchor with a NULL list header. Used for preparing an anchor for
+    183          * first time use
+    184          *
+    185          ************************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    186          void List_ClearAnchor
+    187            (
+    188            anchor_t *pAnchor // IN: Anchor of list to reset
+    189            )
+    190          {
+    191            pAnchor->pHead = NULL;
+   \                     List_ClearAnchor: (+1)
+   \   00000000   0x2100             MOVS     R1,#+0
+   \   00000002   0x6001             STR      R1,[R0, #+0]
+    192          }
+   \   00000004   0x4770             BX       LR               ;; return
+    193          
+    194          /************************************************************************************
+    195          * Links a list element to the tail of the list given by the anchor argument.
+    196          * This function is amongst other useful for FIFO queues if combined with
+    197          * List_RemoveHead.
+    198          *
+    199          ************************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    200          void List_AddTail
+    201            (
+    202            anchor_t *pAnchor, //IN: Anchor of list to add element to
+    203            void *pBlock       //IN: Element to add to tail of list
+    204            )
+    205          {
+   \                     List_AddTail: (+1)
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+    206            uint32_t saveInt;
+    207          
+    208            MmAssert(pAnchor && pBlock);
+    209          
+    210            MM_DEBUG_LOG(List_AddTail);
+    211            if ((NULL == pBlock) || (NULL == pAnchor))
+   \   00000006   0x2D00             CMP      R5,#+0
+   \   00000008   0xD001             BEQ.N    ??List_AddTail_0
+   \   0000000A   0x2C00             CMP      R4,#+0
+   \   0000000C   0xD100             BNE.N    ??List_AddTail_1
+    212              return;
+   \                     ??List_AddTail_0: (+1)
+   \   0000000E   0xE010             B.N      ??List_AddTail_2
+    213          
+    214              // Get pointer to header portion of the list element
+    215            pBlock = ((listHeader_t *)pBlock)-1;
+   \                     ??List_AddTail_1: (+1)
+   \   00000010   0x3D08             SUBS     R5,R5,#+8
+    216              // The new element must terminate the list.
+    217            ((listHeader_t *)pBlock)->pNext = NULL;
+   \   00000012   0x2000             MOVS     R0,#+0
+   \   00000014   0x6028             STR      R0,[R5, #+0]
+    218          
+    219            saveInt = IntDisableAll();
+   \   00000016   0x.... 0x....      BL       IntDisableAll
+   \   0000001A   0x0006             MOVS     R6,R0
+    220          
+    221              // Update current tail element with pointer to new element
+    222            if(pAnchor->pHead) {
+   \   0000001C   0x6820             LDR      R0,[R4, #+0]
+   \   0000001E   0x2800             CMP      R0,#+0
+   \   00000020   0xD002             BEQ.N    ??List_AddTail_3
+    223                // Make old tail point to new element.
+    224              pAnchor->pTail->pNext = pBlock;
+   \   00000022   0x6860             LDR      R0,[R4, #+4]
+   \   00000024   0x6005             STR      R5,[R0, #+0]
+   \   00000026   0xE000             B.N      ??List_AddTail_4
+    225            }
+    226            else {
+    227                // Nothing in list yet, so initialize head pointer.
+    228              pAnchor->pHead = pBlock;
+   \                     ??List_AddTail_3: (+1)
+   \   00000028   0x6025             STR      R5,[R4, #+0]
+    229            }
+    230              // Let new element be the tail.
+    231            pAnchor->pTail = pBlock;
+   \                     ??List_AddTail_4: (+1)
+   \   0000002A   0x6065             STR      R5,[R4, #+4]
+    232          
+    233            IntRestoreAll(saveInt);
+   \   0000002C   0x0030             MOVS     R0,R6
+   \   0000002E   0x.... 0x....      BL       IntRestoreAll
+    234          }
+   \                     ??List_AddTail_2: (+1)
+   \   00000032   0xBD70             POP      {R4-R6,PC}       ;; return
+    235          
+    236          
+    237          /************************************************************************************
+    238          *
+    239          * Links a list element to the head of the list given by the anchor argument.
+    240          * Useful for FILO buffers (push/pop stacks).
+    241          *
+    242          ************************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    243          void List_AddHead
+    244            (
+    245            anchor_t *pAnchor, //IN: Anchor of list to add element to
+    246            void *pBlock       //IN: Element to add to head of list
+    247            )
+    248          {
+   \                     List_AddHead: (+1)
+   \   00000000   0xB5F8             PUSH     {R3-R7,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+    249            listHeader_t *pNewBlock;
+    250            uint32_t saveInt;
+    251          
+    252            MmAssert(pAnchor && pBlock);
+    253            MM_DEBUG_LOG(List_AddHead);
+    254          
+    255            if (NULL == pBlock || NULL == pAnchor)
+   \   00000006   0x2D00             CMP      R5,#+0
+   \   00000008   0xD001             BEQ.N    ??List_AddHead_0
+   \   0000000A   0x2C00             CMP      R4,#+0
+   \   0000000C   0xD100             BNE.N    ??List_AddHead_1
+    256          	return;
+   \                     ??List_AddHead_0: (+1)
+   \   0000000E   0xE00F             B.N      ??List_AddHead_2
+    257          
+    258              // Get pointer to header portion of the list element
+    259            pNewBlock = ((listHeader_t *)pBlock)-1;
+   \                     ??List_AddHead_1: (+1)
+   \   00000010   0xF1B5 0x0008      SUBS     R0,R5,#+8
+   \   00000014   0x0006             MOVS     R6,R0
+    260          
+    261            saveInt = IntDisableAll();
+   \   00000016   0x.... 0x....      BL       IntDisableAll
+   \   0000001A   0x0007             MOVS     R7,R0
+    262          
+    263             // If list is empty, then the element will also be the tail of the list.
+    264            if(pAnchor->pHead == NULL) {
+   \   0000001C   0x6820             LDR      R0,[R4, #+0]
+   \   0000001E   0x2800             CMP      R0,#+0
+   \   00000020   0xD100             BNE.N    ??List_AddHead_3
+    265              pAnchor->pTail = pNewBlock;
+   \   00000022   0x6066             STR      R6,[R4, #+4]
+    266            }
+    267              // Let the new element point to the old head element (NULL if list is empty).
+    268            pNewBlock->pNext = pAnchor->pHead;
+   \                     ??List_AddHead_3: (+1)
+   \   00000024   0x6820             LDR      R0,[R4, #+0]
+   \   00000026   0x6030             STR      R0,[R6, #+0]
+    269              // The new element becomes the new list header.
+    270            pAnchor->pHead = pNewBlock;
+   \   00000028   0x6026             STR      R6,[R4, #+0]
+    271          
+    272            IntRestoreAll(saveInt);
+   \   0000002A   0x0038             MOVS     R0,R7
+   \   0000002C   0x.... 0x....      BL       IntRestoreAll
+    273          }
+   \                     ??List_AddHead_2: (+1)
+   \   00000030   0xBDF1             POP      {R0,R4-R7,PC}    ;; return
+    274          
+    275          
+    276          /************************************************************************************
+    277          * Unlinks a list element from the head of the list given by the anchor argument.
+    278          *
+    279          ************************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    280          void *List_RemoveHead
+    281            (
+    282            anchor_t *pAnchor  //IN: Anchor of list to remove head from
+    283            )
+    284          {
+   \                     List_RemoveHead: (+1)
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+    285            listHeader_t *pBlock;
+    286            uint32_t saveInt;
+    287          
+    288            MmAssert(pAnchor);
+    289            MM_DEBUG_LOG(List_RemoveHead);
+    290            if (NULL == pAnchor)
+   \   00000004   0x2C00             CMP      R4,#+0
+   \   00000006   0xD101             BNE.N    ??List_RemoveHead_0
+    291          	return NULL;
+   \   00000008   0x2000             MOVS     R0,#+0
+   \   0000000A   0xE010             B.N      ??List_RemoveHead_1
+    292          
+    293            saveInt = IntDisableAll();
+   \                     ??List_RemoveHead_0: (+1)
+   \   0000000C   0x.... 0x....      BL       IntDisableAll
+   \   00000010   0x0006             MOVS     R6,R0
+    294          
+    295              // If any head element, then remove it by setting
+    296              // the head to the next element in the list.
+    297              // If we just removed the last element, then the
+    298              // tail ponter must be set to 0.
+    299            pBlock = pAnchor->pHead;
+   \   00000012   0x6820             LDR      R0,[R4, #+0]
+   \   00000014   0x0005             MOVS     R5,R0
+    300            if(pBlock) {
+   \   00000016   0x2D00             CMP      R5,#+0
+   \   00000018   0xD001             BEQ.N    ??List_RemoveHead_2
+    301              pAnchor->pHead = pBlock->pNext;
+   \   0000001A   0x6828             LDR      R0,[R5, #+0]
+   \   0000001C   0x6020             STR      R0,[R4, #+0]
+    302            }
+    303          
+    304            IntRestoreAll(saveInt);
+   \                     ??List_RemoveHead_2: (+1)
+   \   0000001E   0x0030             MOVS     R0,R6
+   \   00000020   0x.... 0x....      BL       IntRestoreAll
+    305          
+    306              // Skip header, and return pointer to data area if pointer is not NULL.
+    307            return pBlock ? pBlock+1 : pBlock;
+   \   00000024   0x2D00             CMP      R5,#+0
+   \   00000026   0xD001             BEQ.N    ??List_RemoveHead_3
+   \   00000028   0x3508             ADDS     R5,R5,#+8
+   \   0000002A   0xE7FF             B.N      ??List_RemoveHead_4
+   \                     ??List_RemoveHead_3: (+1)
+   \                     ??List_RemoveHead_4: (+1)
+   \   0000002C   0x0028             MOVS     R0,R5
+   \                     ??List_RemoveHead_1: (+1)
+   \   0000002E   0xBD70             POP      {R4-R6,PC}       ;; return
+    308          }
+    309          
+    310          
+    311          /************************************************************************************
+    312          * Removes a list element from anywhere in the list.
+    313          *
+    314          * This function should be used somewhat like in the following example since it
+    315          * requires a pointer to the previous block relative to the current block:
+    316          *
+    317          ************************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    318          void List_Remove
+    319            (
+    320            anchor_t *pAnchor, //IN: List to remove block from
+    321            void *pPrevBlock,  //IN: Previous List element used to fix the list after modification.
+    322            void *pBlock       //IN: List element used to reference the next element in the list.
+    323            )
+    324          {
+   \                     List_Remove: (+1)
+   \   00000000   0xE92D 0x41F0      PUSH     {R4-R8,LR}
+   \   00000004   0x0004             MOVS     R4,R0
+   \   00000006   0x000D             MOVS     R5,R1
+   \   00000008   0x0016             MOVS     R6,R2
+    325            uint32_t saveInt;
+    326          
+    327          #define prevBlock (((listHeader_t *)pPrevBlock)-1)
+    328          
+    329            listHeader_t *nextBlock =  (listHeader_t *)pBlock;
+   \   0000000A   0x46B0             MOV      R8,R6
+    330          
+    331            if (NULL == pBlock || NULL == pAnchor)
+   \   0000000C   0x2E00             CMP      R6,#+0
+   \   0000000E   0xD001             BEQ.N    ??List_Remove_0
+   \   00000010   0x2C00             CMP      R4,#+0
+   \   00000012   0xD100             BNE.N    ??List_Remove_1
+    332          	return;
+   \                     ??List_Remove_0: (+1)
+   \   00000014   0xE015             B.N      ??List_Remove_2
+    333            MM_DEBUG_LOG(List_Remove);
+    334          
+    335            saveInt = IntDisableAll();
+   \                     ??List_Remove_1: (+1)
+   \   00000016   0x.... 0x....      BL       IntDisableAll
+   \   0000001A   0x0007             MOVS     R7,R0
+    336          
+    337              // Use current element as temp var to point at next element.
+    338            nextBlock = ((nextBlock)-1)->pNext;
+   \   0000001C   0xF858 0x8C08      LDR      R8,[R8, #-8]
+    339          
+    340            if(pPrevBlock) {
+   \   00000020   0x2D00             CMP      R5,#+0
+   \   00000022   0xD009             BEQ.N    ??List_Remove_3
+    341                // Let previous block point to next block.
+    342              prevBlock->pNext = nextBlock;
+   \   00000024   0xF845 0x8C08      STR      R8,[R5, #-8]
+    343                // Adjust tail pointer if pBlock was the last element in the list.
+    344              if(prevBlock->pNext == 0) {
+   \   00000028   0xF855 0x0C08      LDR      R0,[R5, #-8]
+   \   0000002C   0x2800             CMP      R0,#+0
+   \   0000002E   0xD105             BNE.N    ??List_Remove_4
+    345                pAnchor->pTail = prevBlock;
+   \   00000030   0xF1B5 0x0008      SUBS     R0,R5,#+8
+   \   00000034   0x6060             STR      R0,[R4, #+4]
+   \   00000036   0xE001             B.N      ??List_Remove_4
+    346              }
+    347            }
+    348            else {
+    349                // No previous element => remove from head.
+    350                // Set head to point at second element to remove pBlock from list.
+    351              pAnchor->pHead = nextBlock;
+   \                     ??List_Remove_3: (+1)
+   \   00000038   0xF8C4 0x8000      STR      R8,[R4, #+0]
+    352            }
+    353          
+    354            IntRestoreAll(saveInt);
+   \                     ??List_Remove_4: (+1)
+   \   0000003C   0x0038             MOVS     R0,R7
+   \   0000003E   0x.... 0x....      BL       IntRestoreAll
+    355          
+    356          #undef prevBlock
+    357          }
+   \                     ??List_Remove_2: (+1)
+   \   00000042   0xE8BD 0x81F0      POP      {R4-R8,PC}       ;; return
+    358          
+    359          
+    360          /************************************************************************************
+    361          * Returns a pointer to the first element in the list.
+    362          *
+    363          ************************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    364          void *List_GetFirst
+    365            (
+    366            anchor_t *pAnchor  //IN: The list where the first element will be returned from.
+    367            )
+    368          {
+   \                     List_GetFirst: (+1)
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+    369            listHeader_t *pBlock;
+    370            uint32_t saveInt;
+    371          
+    372            MmAssert(pAnchor);
+    373          
+    374            if (NULL == pAnchor)
+   \   00000004   0x2C00             CMP      R4,#+0
+   \   00000006   0xD101             BNE.N    ??List_GetFirst_0
+    375              return NULL;
+   \   00000008   0x2000             MOVS     R0,#+0
+   \   0000000A   0xE00C             B.N      ??List_GetFirst_1
+    376          
+    377            saveInt = IntDisableAll();
+   \                     ??List_GetFirst_0: (+1)
+   \   0000000C   0x.... 0x....      BL       IntDisableAll
+   \   00000010   0x0006             MOVS     R6,R0
+    378          
+    379            pBlock = pAnchor->pHead;
+   \   00000012   0x6820             LDR      R0,[R4, #+0]
+   \   00000014   0x0005             MOVS     R5,R0
+    380          
+    381            IntRestoreAll(saveInt);
+   \   00000016   0x0030             MOVS     R0,R6
+   \   00000018   0x.... 0x....      BL       IntRestoreAll
+    382          
+    383              // Skip header, and return pointer to data area if pointer is not NULL.
+    384            return pBlock ? pBlock+1 : pBlock;
+   \   0000001C   0x2D00             CMP      R5,#+0
+   \   0000001E   0xD001             BEQ.N    ??List_GetFirst_2
+   \   00000020   0x3508             ADDS     R5,R5,#+8
+   \   00000022   0xE7FF             B.N      ??List_GetFirst_3
+   \                     ??List_GetFirst_2: (+1)
+   \                     ??List_GetFirst_3: (+1)
+   \   00000024   0x0028             MOVS     R0,R5
+   \                     ??List_GetFirst_1: (+1)
+   \   00000026   0xBD70             POP      {R4-R6,PC}       ;; return
+    385          }
+    386          
+    387          /************************************************************************************
+    388          * Returns a pointer to the next list element in the list.
+    389          *
+    390          ************************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    391          void *List_GetNext
+    392            (
+    393            void *pBlock  //IN: List element used to reference the next element in the list.
+    394            )
+    395          {
+   \                     List_GetNext: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+    396            uint32_t saveInt;
+    397          
+    398            MmAssert(pBlock);
+    399          
+    400            if (NULL == pBlock)
+   \   00000004   0x2C00             CMP      R4,#+0
+   \   00000006   0xD101             BNE.N    ??List_GetNext_0
+    401              return NULL;
+   \   00000008   0x2000             MOVS     R0,#+0
+   \   0000000A   0xE00C             B.N      ??List_GetNext_1
+    402          
+    403            saveInt = IntDisableAll();
+   \                     ??List_GetNext_0: (+1)
+   \   0000000C   0x.... 0x....      BL       IntDisableAll
+   \   00000010   0x0005             MOVS     R5,R0
+    404          
+    405            pBlock = (((listHeader_t *)pBlock)-1)->pNext;
+   \   00000012   0xF854 0x4C08      LDR      R4,[R4, #-8]
+    406          
+    407            IntRestoreAll(saveInt);
+   \   00000016   0x0028             MOVS     R0,R5
+   \   00000018   0x.... 0x....      BL       IntRestoreAll
+    408          
+    409              // Skip header, and return pointer to data area if pointer is not NULL.
+    410            return pBlock ? ((listHeader_t *)pBlock)+1 : pBlock;
+   \   0000001C   0x2C00             CMP      R4,#+0
+   \   0000001E   0xD001             BEQ.N    ??List_GetNext_2
+   \   00000020   0x3408             ADDS     R4,R4,#+8
+   \   00000022   0xE7FF             B.N      ??List_GetNext_3
+   \                     ??List_GetNext_2: (+1)
+   \                     ??List_GetNext_3: (+1)
+   \   00000024   0x0020             MOVS     R0,R4
+   \                     ??List_GetNext_1: (+1)
+   \   00000026   0xBD32             POP      {R1,R4,R5,PC}    ;; return
+    411          }
+    412          
+    413          
+    414          /************************************************************************************
+    415          * This function can be used to add a memory block to the specified pool during
+    416          * runtime.
+    417          ************************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    418          void MM_AddToPool(pools_t *pPool, void *pBlock)
+    419          {
+   \                     MM_AddToPool: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+    420            ((listHeader_t *)pBlock)->pParentPool = pPool;
+   \   00000006   0x606C             STR      R4,[R5, #+4]
+    421            pBlock = ((listHeader_t *)pBlock) + 1;
+   \   00000008   0x3508             ADDS     R5,R5,#+8
+    422            List_AddTail(&pPool->anchor, ((listHeader_t *)pBlock));
+   \   0000000A   0x0029             MOVS     R1,R5
+   \   0000000C   0x0020             MOVS     R0,R4
+   \   0000000E   0x.... 0x....      BL       List_AddTail
+    423          }
+   \   00000012   0xBD31             POP      {R0,R4,R5,PC}    ;; return
+    424          
+    425          
+    426          /************************************************************************************
+    427          * This function returns a pointer to the buffer pool which corresponds exactly to
+    428          * the size argument. This is used with the MM_AddToPool() function to add buffers
+    429          * to the buffer pool.
+    430          *
+    431          ************************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    432          pools_t *MM_GetPool(uint8_t size)
+    433          {
+   \                     MM_GetPool: (+1)
+   \   00000000   0x0001             MOVS     R1,R0
+    434            pools_t *pPools = maMmPools;
+   \   00000002   0x....             LDR.N    R2,??DataTable5_3
+    435          
+    436            while(size) {
+   \                     ??MM_GetPool_0: (+1)
+   \   00000004   0xB2C9             UXTB     R1,R1            ;; ZeroExt  R1,R1,#+24,#+24
+   \   00000006   0x2900             CMP      R1,#+0
+   \   00000008   0xD00C             BEQ.N    ??MM_GetPool_1
+    437              if(size == pPools->blockSize)
+   \   0000000A   0x7A50             LDRB     R0,[R2, #+9]
+   \   0000000C   0xB2C9             UXTB     R1,R1            ;; ZeroExt  R1,R1,#+24,#+24
+   \   0000000E   0x4281             CMP      R1,R0
+   \   00000010   0xD101             BNE.N    ??MM_GetPool_2
+    438                return pPools;
+   \   00000012   0x0010             MOVS     R0,R2
+   \   00000014   0xE007             B.N      ??MM_GetPool_3
+    439              if(pPools->nextBlockSize == 0)
+   \                     ??MM_GetPool_2: (+1)
+   \   00000016   0x7A10             LDRB     R0,[R2, #+8]
+   \   00000018   0x2800             CMP      R0,#+0
+   \   0000001A   0xD101             BNE.N    ??MM_GetPool_4
+    440                return NULL;
+   \   0000001C   0x2000             MOVS     R0,#+0
+   \   0000001E   0xE002             B.N      ??MM_GetPool_3
+    441              pPools++;
+   \                     ??MM_GetPool_4: (+1)
+   \   00000020   0x320C             ADDS     R2,R2,#+12
+   \   00000022   0xE7EF             B.N      ??MM_GetPool_0
+    442            }
+    443            return NULL;
+   \                     ??MM_GetPool_1: (+1)
+   \   00000024   0x2000             MOVS     R0,#+0
+   \                     ??MM_GetPool_3: (+1)
+   \   00000026   0x4770             BX       LR               ;; return
+    444          }
+    445          
+    446          /************************************************************************************
+    447          * Allocate a block from the specified memory pool. The function uses the size
+    448          * argument to look up a pool with adequate block sizes.
+    449          *
+    450          ************************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    451          void *MM_AllocPool
+    452            (
+    453            pools_t *pPools, // IN: Pool to allocate from
+    454            uint8_t numBytes // IN: Minimum number of bytes to allocate
+    455            )
+    456          {
+   \                     MM_AllocPool: (+1)
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+    457            listHeader_t *pBlock;
+    458          
+    459            while(numBytes)
+   \                     ??MM_AllocPool_0: (+1)
+   \   00000006   0xB2ED             UXTB     R5,R5            ;; ZeroExt  R5,R5,#+24,#+24
+   \   00000008   0x2D00             CMP      R5,#+0
+   \   0000000A   0xD027             BEQ.N    ??MM_AllocPool_1
+    460            {
+    461              if(numBytes <= pPools->blockSize)
+   \   0000000C   0x7A60             LDRB     R0,[R4, #+9]
+   \   0000000E   0xB2ED             UXTB     R5,R5            ;; ZeroExt  R5,R5,#+24,#+24
+   \   00000010   0x42A8             CMP      R0,R5
+   \   00000012   0xD31E             BCC.N    ??MM_AllocPool_2
+    462              {
+    463                /* Do not allow to allocate the last message from the MAC Big Message Pool.
+    464                   The last message is only accessible via MM_AllocFast() */
+    465                if ((pPools == pMacPool) && (pPools->anchor.pHead == pPools->anchor.pTail))
+   \   00000014   0x....             LDR.N    R0,??DataTable5_2
+   \   00000016   0x6800             LDR      R0,[R0, #+0]
+   \   00000018   0x4284             CMP      R4,R0
+   \   0000001A   0xD106             BNE.N    ??MM_AllocPool_3
+   \   0000001C   0x6820             LDR      R0,[R4, #+0]
+   \   0000001E   0x6861             LDR      R1,[R4, #+4]
+   \   00000020   0x4288             CMP      R0,R1
+   \   00000022   0xD102             BNE.N    ??MM_AllocPool_3
+    466                  pBlock = NULL;
+   \   00000024   0x2000             MOVS     R0,#+0
+   \   00000026   0x0006             MOVS     R6,R0
+   \   00000028   0xE003             B.N      ??MM_AllocPool_4
+    467                else
+    468                  pBlock = List_RemoveHead(&pPools->anchor);
+   \                     ??MM_AllocPool_3: (+1)
+   \   0000002A   0x0020             MOVS     R0,R4
+   \   0000002C   0x.... 0x....      BL       List_RemoveHead
+   \   00000030   0x0006             MOVS     R6,R0
+    469          
+    470                if(NULL != pBlock)
+   \                     ??MM_AllocPool_4: (+1)
+   \   00000032   0x2E00             CMP      R6,#+0
+   \   00000034   0xD00B             BEQ.N    ??MM_AllocPool_5
+    471                {
+    472          
+    473                  gFreeMessagesCount--;
+   \   00000036   0x....             LDR.N    R0,??DataTable5
+   \   00000038   0x7800             LDRB     R0,[R0, #+0]
+   \   0000003A   0x1E40             SUBS     R0,R0,#+1
+   \   0000003C   0x....             LDR.N    R1,??DataTable5
+   \   0000003E   0x7008             STRB     R0,[R1, #+0]
+    474          
+    475                  (void)MM_UpdateMsgTracking(pBlock, TRUE);
+   \   00000040   0x2101             MOVS     R1,#+1
+   \   00000042   0x0030             MOVS     R0,R6
+   \   00000044   0x.... 0x....      BL       MM_UpdateMsgTracking
+   \   00000048   0x0001             MOVS     R1,R0
+    476          
+    477                  return pBlock;
+   \   0000004A   0x0030             MOVS     R0,R6
+   \   0000004C   0xE007             B.N      ??MM_AllocPool_6
+    478                }
+    479                else
+    480                    // No more blocks of that size, try next size.
+    481                  numBytes = pPools->nextBlockSize;
+   \                     ??MM_AllocPool_5: (+1)
+   \   0000004E   0x7A20             LDRB     R0,[R4, #+8]
+   \   00000050   0x0005             MOVS     R5,R0
+    482              }
+    483                // Try next pool
+    484              if(pPools->nextBlockSize)
+   \                     ??MM_AllocPool_2: (+1)
+   \   00000052   0x7A20             LDRB     R0,[R4, #+8]
+   \   00000054   0x2800             CMP      R0,#+0
+   \   00000056   0xD001             BEQ.N    ??MM_AllocPool_7
+    485                pPools++;
+   \   00000058   0x340C             ADDS     R4,R4,#+12
+   \   0000005A   0xE7D4             B.N      ??MM_AllocPool_0
+    486              else
+    487                break;
+    488            }
+    489          
+    490            MmDebug_AllocFail(pPools, numBytes);
+    491          
+    492            return NULL;
+   \                     ??MM_AllocPool_7: (+1)
+   \                     ??MM_AllocPool_1: (+1)
+   \   0000005C   0x2000             MOVS     R0,#+0
+   \                     ??MM_AllocPool_6: (+1)
+   \   0000005E   0xBD70             POP      {R4-R6,PC}       ;; return
+    493          }
+    494          
+    495          
+    496          /************************************************************************************
+    497          * Allocate a block from the MAC memory pool. The function uses the size argument to
+    498          * look up a pool with adequate block sizes.
+    499          *
+    500          ************************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    501          void *MM_Alloc
+    502            (
+    503            uint8_t numBytes // IN: Minimum number of bytes to allocate
+    504            )
+    505          {
+   \                     MM_Alloc: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+    506          #if MsgTracking_d
+    507            /* Save the Link Register */
+    508            volatile uint32_t savedLR;
+    509          
+    510            __asm("push {r1}  ");
+    511            __asm("push {r14} ");
+    512            __asm("pop  {r1} ");
+    513            __asm("str  r1, [SP, #4]");
+    514            __asm("pop {r1}");
+    515            mLinkRegister = savedLR;
+    516          #endif
+    517            return MM_AllocPool(maMmPools, numBytes);
+   \   00000004   0x0021             MOVS     R1,R4
+   \   00000006   0xB2C9             UXTB     R1,R1            ;; ZeroExt  R1,R1,#+24,#+24
+   \   00000008   0x....             LDR.N    R0,??DataTable5_3
+   \   0000000A   0x.... 0x....      BL       MM_AllocPool
+   \   0000000E   0xBD10             POP      {R4,PC}          ;; return
+    518          }
+    519          
+    520          
+    521          /************************************************************************************
+    522          * Deallocate a memory block by putting it in the corresponding pool of free blocks.
+    523          *
+    524          ************************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    525          void MM_Free
+    526            (
+    527            void *pBlock // IN: Block of memory to free
+    528            )
+    529          {
+   \                     MM_Free: (+1)
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+    530          #if MsgTracking_d
+    531            /* Save the Link Register */
+    532            volatile uint32_t savedLR;
+    533          
+    534            __asm("push {r1}  ");
+    535            __asm("push {r14} ");
+    536            __asm("pop  {r1} ");
+    537            __asm("str  r1, [SP, #4]");
+    538            __asm("pop {r1}");
+    539            mLinkRegister = savedLR;
+    540          #endif
+    541            MM_DEBUG_LOG(MM_Free);
+    542          
+    543              // Freeing a NULL pointer will be ignored.
+    544            if(pBlock) {
+   \   00000004   0x2C00             CMP      R4,#+0
+   \   00000006   0xD00F             BEQ.N    ??MM_Free_0
+    545              pools_t *pParentPool = (((listHeader_t *)pBlock)-1)->pParentPool;
+   \   00000008   0xF854 0x5C04      LDR      R5,[R4, #-4]
+    546          
+    547              gFreeMessagesCount++;
+   \   0000000C   0x....             LDR.N    R0,??DataTable5
+   \   0000000E   0x7800             LDRB     R0,[R0, #+0]
+   \   00000010   0x1C40             ADDS     R0,R0,#+1
+   \   00000012   0x....             LDR.N    R1,??DataTable5
+   \   00000014   0x7008             STRB     R0,[R1, #+0]
+    548          
+    549              (void)MM_UpdateMsgTracking(pBlock, FALSE);
+   \   00000016   0x2100             MOVS     R1,#+0
+   \   00000018   0x0020             MOVS     R0,R4
+   \   0000001A   0x.... 0x....      BL       MM_UpdateMsgTracking
+   \   0000001E   0x0006             MOVS     R6,R0
+    550              List_AddTail(&pParentPool->anchor, pBlock);
+   \   00000020   0x0021             MOVS     R1,R4
+   \   00000022   0x0028             MOVS     R0,R5
+   \   00000024   0x.... 0x....      BL       List_AddTail
+    551            }
+    552          }
+   \                     ??MM_Free_0: (+1)
+   \   00000028   0xBD70             POP      {R4-R6,PC}       ;; return
+    553          
+    554          
+    555          /************************************************************************************
+    556          * Allocate a block from the largest memory pool. This function should only be called
+    557          * from interrupt context since it is not protected. First the function tries to
+    558          * allocate from the MAC private pool. If it fails it tries to allocate from the
+    559          * public buffer pool.
+    560          *
+    561          ************************************************************************************/
+    562          
+
+   \                                 In section .text, align 2, keep-with-next
+    563          void *MM_AllocFast(void)
+    564          {
+   \                     MM_AllocFast: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+    565          #if MsgTracking_d
+    566            volatile uint32_t savedLR;
+    567          #endif
+    568            anchor_t *pAnchor;
+    569            listHeader_t *pBlock;
+    570          
+    571          #if MsgTracking_d
+    572            /* Save the Link Register */
+    573            __asm("push {r1}  ");
+    574            __asm("push {r14} ");
+    575            __asm("pop  {r1}  ");
+    576            __asm("str  r1, [SP, #4]");
+    577            __asm("pop  {r1}  ");
+    578            mLinkRegister = savedLR;
+    579          #endif
+    580            pAnchor = (anchor_t *)&(pMacPool->anchor);
+   \   00000002   0x....             LDR.N    R0,??DataTable5_2
+   \   00000004   0x6800             LDR      R0,[R0, #+0]
+   \   00000006   0x0004             MOVS     R4,R0
+    581            pBlock = pAnchor->pHead;
+   \   00000008   0x6820             LDR      R0,[R4, #+0]
+   \   0000000A   0x0005             MOVS     R5,R0
+    582          
+    583            if (NULL == pBlock)
+   \   0000000C   0x2D00             CMP      R5,#+0
+   \   0000000E   0xD101             BNE.N    ??MM_AllocFast_0
+    584              return pBlock;
+   \   00000010   0x0028             MOVS     R0,R5
+   \   00000012   0xE00E             B.N      ??MM_AllocFast_1
+    585          
+    586          
+    587            pAnchor->pHead = pBlock->pNext;
+   \                     ??MM_AllocFast_0: (+1)
+   \   00000014   0x6828             LDR      R0,[R5, #+0]
+   \   00000016   0x6020             STR      R0,[R4, #+0]
+    588          
+    589            MmDebug_Alloc(((listHeader_t *)pBlock)->pParentPool, 0);
+    590          
+    591            gFreeMessagesCount--;
+   \   00000018   0x....             LDR.N    R0,??DataTable5
+   \   0000001A   0x7800             LDRB     R0,[R0, #+0]
+   \   0000001C   0x1E40             SUBS     R0,R0,#+1
+   \   0000001E   0x....             LDR.N    R1,??DataTable5
+   \   00000020   0x7008             STRB     R0,[R1, #+0]
+    592          
+    593            (void)MM_UpdateMsgTracking(pBlock + 1, TRUE);
+   \   00000022   0x2101             MOVS     R1,#+1
+   \   00000024   0xF115 0x0008      ADDS     R0,R5,#+8
+   \   00000028   0x.... 0x....      BL       MM_UpdateMsgTracking
+   \   0000002C   0x0001             MOVS     R1,R0
+    594          
+    595            return pBlock + 1;
+   \   0000002E   0xF115 0x0008      ADDS     R0,R5,#+8
+   \                     ??MM_AllocFast_1: (+1)
+   \   00000032   0xBD32             POP      {R1,R4,R5,PC}    ;; return
+    596          }
+    597          
+    598          /************************************************************************************
+    599          * Initialize Msg tracking array. It is called by the Msg system when the MAC is reset
+    600          *
+    601          * Interface assumptions:
+    602          *   None
+    603          *
+    604          * Return value:
+    605          *   None.
+    606          *
+    607          ************************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    608          void MM_InitMsgTracking(void) {
+    609          #if MsgTracking_d
+    610             FLib_MemSet16((uint8_t* )&MsgTrackingArray[0],0,(sizeof(MsgTrackingArray[0]) * TotalNoOfMsgs_c));
+    611             NoOfWrongAddrs = 0;
+    612          #endif
+    613          }
+   \                     MM_InitMsgTracking: (+1)
+   \   00000000   0x4770             BX       LR               ;; return
+    614          /************************************************************************************
+    615          * Initialize Msg tracking array a current index with a Msg address.
+    616          * This functions is called for once for every Msg when the MAC is reset.
+    617          *
+    618          * Interface assumptions:
+    619          *   None
+    620          *
+    621          * Return value:
+    622          *   None.
+    623          *
+    624          ************************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    625          void   MM_AddMsgToTrackingArray(uint8_t Index, uint32_t Addr) {
+    626          #if MsgTracking_d
+    627                MsgTrackingArray[Index].MsgAddr = Addr;
+    628          #else
+    629            /*To prevent compiler warinngs:*/
+    630            (void) Index;
+    631            (void) Addr;
+    632          #endif
+    633          }
+   \                     MM_AddMsgToTrackingArray: (+1)
+   \   00000000   0x4770             BX       LR               ;; return
+    634          /************************************************************************************
+    635          * This function finds the index of a Msg in the Tracking array
+    636          * -1 is returned if Msg not found and the NoOfWrongAddrs is incremented.
+    637          *
+    638          * Interface assumptions:
+    639          *   None
+    640          *
+    641          * Return value:
+    642          *   Index of message in tracking array
+    643          *
+    644          ************************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    645          int8_t MM_GetMsgIndex(const uint32_t MsgAddr)
+    646          {
+   \                     MM_GetMsgIndex: (+1)
+   \   00000000   0x0001             MOVS     R1,R0
+    647          #if MsgTracking_d
+    648            uint8_t i;
+    649            /*Search through the Tracking array*/
+    650            for (i = 0; i < TotalNoOfMsgs_c; i++)
+    651            {
+    652              /*If Msg Addr found then exit with Index*/
+    653              if (MsgAddr == MsgTrackingArray[i].MsgAddr)
+    654                return i;
+    655            }
+    656            /*Msg addr not found, increment error counter and return*/
+    657            NoOfWrongAddrs++;
+    658            return -1;
+    659          #else
+    660            /*To prevent compiler warinngs:*/
+    661           (void) MsgAddr;
+    662           return -1;
+   \   00000002   0xF05F 0x30FF      MOVS     R0,#-1
+   \   00000006   0x4770             BX       LR               ;; return
+    663          #endif
+    664          }
+    665          
+    666          /************************************************************************************
+    667          * Provide the mLinkRegister value to Message Tracking module
+    668          ************************************************************************************/
+    669          #if MsgTracking_d
+    670          uint32_t MM_GetLinkRegister(void)
+    671          {
+    672            return mLinkRegister;
+    673          }
+    674          #endif
+    675          
+    676          /************************************************************************************
+    677          * This function is called when ever a Msg is freed or allocated and updates
+    678          * the tracking information for that particular Msg
+    679          *
+    680          *
+    681          * Interface assumptions:
+    682          *   None
+    683          *
+    684          * Return value:
+    685          *   Success status
+    686          *
+    687          ************************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    688          bool_t MM_UpdateMsgTracking(const void *pBlock, const bool_t Alloc)
+    689          {
+   \                     MM_UpdateMsgTracking: (+1)
+   \   00000000   0x0002             MOVS     R2,R0
+    690          #if MsgTracking_d
+    691            int8_t index = MM_GetMsgIndex((uint32_t)pBlock);
+    692            if (index >= 0)
+    693            {
+    694              if (MsgTrackingArray[index].AllocStatus == Alloc)
+    695              {
+    696               return FALSE;
+    697              }
+    698          
+    699              MsgTrackingArray[index].AllocStatus = Alloc;
+    700          
+    701              /*Update MsgTracking array counters and return address of alloc or free */
+    702              if (Alloc) {
+    703                MsgTrackingArray[index].AllocCounter++;
+    704                MsgTrackingArray[index].AllocAddr = MM_GetLinkRegister();
+    705              }
+    706              else {
+    707                MsgTrackingArray[index].FreeCounter++;
+    708                MsgTrackingArray[index].FreeAddr = MM_GetLinkRegister();
+    709              }
+    710              return TRUE;
+    711          
+    712            }
+    713            else
+    714              return FALSE;
+    715          #else
+    716            /*To prevent compiler warinngs:*/
+    717            (void) pBlock;
+    718            (void) Alloc;
+    719            return TRUE;
+   \   00000002   0x2001             MOVS     R0,#+1
+   \   00000004   0x4770             BX       LR               ;; return
+    720          #endif
+    721          }
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable5:
+   \   00000000   0x........         DC32     gFreeMessagesCount
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable5_1:
+   \   00000000   0x........         DC32     maMmPools+0xC
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable5_2:
+   \   00000000   0x........         DC32     pMacPool
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable5_3:
+   \   00000000   0x........         DC32     maMmPools
+    722          
+    723          /************************************************************************************
+    724          *************************************************************************************
+    725          * Private functions
+    726          *************************************************************************************
+    727          ************************************************************************************/
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+      24   List_AddHead
+        24   -> IntDisableAll
+        24   -> IntRestoreAll
+      16   List_AddTail
+        16   -> IntDisableAll
+        16   -> IntRestoreAll
+       0   List_ClearAnchor
+      16   List_GetFirst
+        16   -> IntDisableAll
+        16   -> IntRestoreAll
+      16   List_GetNext
+        16   -> IntDisableAll
+        16   -> IntRestoreAll
+      24   List_Remove
+        24   -> IntDisableAll
+        24   -> IntRestoreAll
+      16   List_RemoveHead
+        16   -> IntDisableAll
+        16   -> IntRestoreAll
+       0   MM_AddMsgToTrackingArray
+      16   MM_AddToPool
+        16   -> List_AddTail
+       8   MM_Alloc
+         8   -> MM_AllocPool
+      16   MM_AllocFast
+        16   -> MM_UpdateMsgTracking
+      16   MM_AllocPool
+        16   -> List_RemoveHead
+        16   -> MM_UpdateMsgTracking
+      16   MM_Free
+        16   -> List_AddTail
+        16   -> MM_UpdateMsgTracking
+       0   MM_GetMsgIndex
+       0   MM_GetPool
+      24   MM_Init
+        24   -> List_ClearAnchor
+        24   -> MM_AddMsgToTrackingArray
+        24   -> MM_AddToPool
+        24   -> MM_InitMsgTracking
+       0   MM_InitMsgTracking
+       0   MM_UpdateMsgTracking
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable5
+       4  ??DataTable5_1
+       4  ??DataTable5_2
+       4  ??DataTable5_3
+      50  List_AddHead
+      52  List_AddTail
+       6  List_ClearAnchor
+      40  List_GetFirst
+      40  List_GetNext
+      70  List_Remove
+      48  List_RemoveHead
+       2  MM_AddMsgToTrackingArray
+      20  MM_AddToPool
+      16  MM_Alloc
+      52  MM_AllocFast
+      96  MM_AllocPool
+      42  MM_Free
+       8  MM_GetMsgIndex
+      40  MM_GetPool
+     118  MM_Init
+       2  MM_InitMsgTracking
+       6  MM_UpdateMsgTracking
+       1  gFreeMessagesCount
+    2940  maMacHeap
+      36  maMmPools
+       4  pMacPool
+      12  poolInfo
+
+ 
+ 2 981 bytes in section .bss
+    12 bytes in section .rodata
+   724 bytes in section .text
+ 
+   724 bytes of CODE  memory
+    12 bytes of CONST memory
+ 2 981 bytes of DATA  memory
+
+Errors: none
+Warnings: none

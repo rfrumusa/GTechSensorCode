@@ -1,0 +1,338 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.20.5.7591/W32 for ARM        20/Mar/2018  09:41:55
+# Copyright 1999-2014 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity
+#        Test\PLM\Source\USB\Driver\usb_sim_settings.c
+#    Command line =  
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity
+#        Test\PLM\Source\USB\Driver\usb_sim_settings.c" -D IAR --preprocess
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\Debug\List\" -lC
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\Debug\List\" -lB
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\Debug\List\"
+#        --diag_suppress Pe014,Pe001,Pe991,Pa039,Pe520,Pe550,Pe177,Pa082 -o
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\Debug\Obj\" --no_cse
+#        --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering
+#        --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=None
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        7.0\arm\INC\c\DLib_Config_Normal.h" -I "C:\Users\rfrum\OneDrive\2018
+#        Spring Semester\Senior Design\Sensor Code\Shanit Origional
+#        Code\Connectivity Test\PLM\Configure\" -I
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\PLM\Environment\" -I
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\PLM\Interface\" -I
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\Generic
+#        Services\Interface\" -I "C:\Users\rfrum\OneDrive\2018 Spring
+#        Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity
+#        Test\PLM\Source\Uart\" -I "C:\Users\rfrum\OneDrive\2018 Spring
+#        Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity
+#        Test\PLM\Source\USB\" -I "C:\Users\rfrum\OneDrive\2018 Spring
+#        Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity
+#        Test\PLM\Source\USB\APP\" -I "C:\Users\rfrum\OneDrive\2018 Spring
+#        Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity
+#        Test\PLM\Source\USB\APP\CDC\" -I "C:\Users\rfrum\OneDrive\2018 Spring
+#        Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity
+#        Test\PLM\Source\USB\APP\Descriptor\" -I "C:\Users\rfrum\OneDrive\2018
+#        Spring Semester\Senior Design\Sensor Code\Shanit Origional
+#        Code\Connectivity Test\PLM\Source\USB\Class\" -I
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\PLM\Source\USB\Common\"
+#        -I "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\PLM\Source\USB\Driver\"
+#        -I "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\PLM\Source\TMR\" -I
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity
+#        Test\PLM\Source\Radio\MC1324x\PHY\" -I "C:\Users\rfrum\OneDrive\2018
+#        Spring Semester\Senior Design\Sensor Code\Shanit Origional
+#        Code\Connectivity Test\PLM\Source\Radio\MC1324x\DRV\" -I
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\PLM\Source\Sys Common\"
+#        -I "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\SMAC\Source\" -I
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\SMAC\Interface\" -I
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\SMAC\Configure\" -I
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\Application\Source\" -I
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\Application\Configure\"
+#        -I "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\PLM\Source\NVM\" -I
+#        "C:\Users\Robert\SkyDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\PLM\Source\NVM\" -I
+#        "C:\Users\Robert\SkyDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\PLM\Source\ADC\" -I
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\PLM\Source\ADC\" -On
+#    List file    =  
+#        C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity
+#        Test\Debug\List\usb_sim_settings.lst
+#    Object file  =  
+#        C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity
+#        Test\Debug\Obj\usb_sim_settings.o
+#
+###############################################################################
+
+C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity Test\PLM\Source\USB\Driver\usb_sim_settings.c
+      1          /******************************************************************************
+      2           *
+      3           * Freescale Semiconductor Inc.
+      4           * (c) Copyright 2004-2010 Freescale Semiconductor, Inc.
+      5           * ALL RIGHTS RESERVED.
+      6           *
+      7           ******************************************************************************
+      8           *
+      9           * THIS SOFTWARE IS PROVIDED BY FREESCALE "AS IS" AND ANY EXPRESSED OR
+     10           * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+     11           * OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+     12           * IN NO EVENT SHALL FREESCALE OR ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
+     13           * INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+     14           * (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+     15           * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+     16           * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+     17           * STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING
+     18           * IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF
+     19           * THE POSSIBILITY OF SUCH DAMAGE.
+     20           *
+     21           **************************************************************************//*!
+     22           *
+     23           * @file main_kinetis.c
+     24           *
+     25           * @author
+     26           *
+     27           * @version
+     28           *
+     29           * @date
+     30           *
+     31           * @brief   This software is the USB driver stack for S08 family
+     32           *****************************************************************************/
+     33          #include "EmbeddedTypes.h"
+     34          #include "PortConfig.h"
+     35          #include "USB_Interface.h"
+     36          #include "usb_sim_settings.h"
+     37          #include "SMAC.h"
+     38          
+     39          /*****************************************************************************
+     40           * Global Functions Prototypes
+     41           *****************************************************************************/
+     42          
+     43          
+     44          
+     45          
+     46          #if gUsbIncluded_d
+     47          /*****************************************************************************
+     48           *
+     49           *    @name     USB_SIM_Settings
+     50           *
+     51           *    @brief    This function Initializes USB module
+     52           *
+     53           *    @param    None
+     54           *
+     55           *    @return   None
+     56           *
+     57           ***************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+     58          void USB_SIM_Settings(void)
+     59          {
+   \                     USB_SIM_Settings: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+     60          
+     61            SIM_CLKDIV2 &= (uint32_t)(~(SIM_CLKDIV2_USBFRAC_MASK | SIM_CLKDIV2_USBDIV_MASK));
+   \   00000002   0x....             LDR.N    R0,??DataTable2  ;; 0x40048048
+   \   00000004   0x6800             LDR      R0,[R0, #+0]
+   \   00000006   0x0900             LSRS     R0,R0,#+4
+   \   00000008   0x0100             LSLS     R0,R0,#+4
+   \   0000000A   0x....             LDR.N    R1,??DataTable2  ;; 0x40048048
+   \   0000000C   0x6008             STR      R0,[R1, #+0]
+     62            /* Configure USBFRAC = 0, USBDIV = 0 => frq(USBout) = 1 / 1 * frq(PLLin) */
+     63            SIM_CLKDIV2 = SIM_CLKDIV2_USBDIV(0);
+   \   0000000E   0x2000             MOVS     R0,#+0
+   \   00000010   0x....             LDR.N    R1,??DataTable2  ;; 0x40048048
+   \   00000012   0x6008             STR      R0,[R1, #+0]
+     64            /*  Configure USB to be clocked from PLL */
+     65            SIM_SOPT2 |= SIM_SOPT2_USBSRC_MASK | SIM_SOPT2_PLLFLLSEL_MASK;
+   \   00000014   0x....             LDR.N    R0,??DataTable2_1  ;; 0x40048004
+   \   00000016   0x6800             LDR      R0,[R0, #+0]
+   \   00000018   0xF450 0x20A0      ORRS     R0,R0,#0x50000
+   \   0000001C   0x....             LDR.N    R1,??DataTable2_1  ;; 0x40048004
+   \   0000001E   0x6008             STR      R0,[R1, #+0]
+     66            /*  Enable USB-OTG IP clocking */
+     67            SIM_SCGC4 |= (SIM_SCGC4_USBOTG_MASK);
+   \   00000020   0x....             LDR.N    R0,??DataTable2_2  ;; 0x40048034
+   \   00000022   0x6800             LDR      R0,[R0, #+0]
+   \   00000024   0xF450 0x2080      ORRS     R0,R0,#0x40000
+   \   00000028   0x....             LDR.N    R1,??DataTable2_2  ;; 0x40048034
+   \   0000002A   0x6008             STR      R0,[R1, #+0]
+     68            /* old documentation writes setting this bit is mandatory */
+     69            USB0_USBTRC0 = 0x40;
+   \   0000002C   0x2040             MOVS     R0,#+64
+   \   0000002E   0x....             LDR.N    R1,??DataTable2_3  ;; 0x4007210c
+   \   00000030   0x7008             STRB     R0,[R1, #+0]
+     70            SIM_SOPT1CFG |= SIM_SOPT1CFG_URWE_MASK;
+   \   00000032   0x....             LDR.N    R0,??DataTable2_4  ;; 0x40047004
+   \   00000034   0x6800             LDR      R0,[R0, #+0]
+   \   00000036   0xF050 0x7080      ORRS     R0,R0,#0x1000000
+   \   0000003A   0x....             LDR.N    R1,??DataTable2_4  ;; 0x40047004
+   \   0000003C   0x6008             STR      R0,[R1, #+0]
+     71            /* Configure enable USB regulator for device */
+     72            SIM_SOPT1 |= SIM_SOPT1_USBREGEN_MASK;	// enable usb voltage regulator
+   \   0000003E   0x....             LDR.N    R0,??DataTable2_5  ;; 0x40047000
+   \   00000040   0x6800             LDR      R0,[R0, #+0]
+   \   00000042   0xF050 0x4000      ORRS     R0,R0,#0x80000000
+   \   00000046   0x....             LDR.N    R1,??DataTable2_5  ;; 0x40047000
+   \   00000048   0x6008             STR      R0,[R1, #+0]
+     73            NVIC_ClearPendingIRQ(gUSBOTG_IntNo_c);
+   \   0000004A   0x2035             MOVS     R0,#+53
+   \   0000004C   0x.... 0x....      BL       NVIC_ClearPendingIRQ
+     74            NVIC_EnableIRQ(gUSBOTG_IntNo_c);
+   \   00000050   0x2035             MOVS     R0,#+53
+   \   00000052   0x.... 0x....      BL       NVIC_EnableIRQ
+     75          }
+   \   00000056   0xBD01             POP      {R0,PC}          ;; return
+     76          
+     77          /*****************************************************************************
+     78           *
+     79           *    @name     USB_SIM_UsbIntEnable
+     80           *
+     81           *    @brief    This function Initializes USB module
+     82           *
+     83           *    @param    None
+     84           *
+     85           *    @return   None
+     86           *
+     87           ***************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+     88          void USB_SIM_UsbIntEnable(void)
+     89          {
+     90          uint8_t iserIndex;
+     91          uint32_t iserIntVal;
+     92          iserIndex = gUSBOTG_IntNo_c/32;
+   \                     USB_SIM_UsbIntEnable: (+1)
+   \   00000000   0x2201             MOVS     R2,#+1
+   \   00000002   0x0010             MOVS     R0,R2
+     93          iserIntVal = 1<<(gUSBOTG_IntNo_c%32);
+   \   00000004   0xF45F 0x1200      MOVS     R2,#+2097152
+   \   00000008   0x0011             MOVS     R1,R2
+     94          NVIC_ISER_REG(NVIC_BASE_PTR,iserIndex) = iserIntVal;
+   \   0000000A   0x....             LDR.N    R2,??DataTable2_6  ;; 0xe000e100
+   \   0000000C   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   0000000E   0xF842 0x1020      STR      R1,[R2, R0, LSL #+2]
+     95          }
+   \   00000012   0x4770             BX       LR               ;; return
+     96          /*****************************************************************************
+     97           *
+     98           *    @name     USB_SIM_UsbIntDisable
+     99           *
+    100           *    @brief    This function Initializes USB module
+    101           *
+    102           *    @param    None
+    103           *
+    104           *    @return   None
+    105           *
+    106           ***************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    107          void USB_SIM_UsbIntDisable(void)
+    108          {
+    109          uint8_t icerIndex;
+    110          uint32_t icerIntVal;
+    111          icerIndex = gUSBOTG_IntNo_c/32;
+   \                     USB_SIM_UsbIntDisable: (+1)
+   \   00000000   0x2201             MOVS     R2,#+1
+   \   00000002   0x0010             MOVS     R0,R2
+    112          icerIntVal = 1<<(gUSBOTG_IntNo_c%32);
+   \   00000004   0xF45F 0x1200      MOVS     R2,#+2097152
+   \   00000008   0x0011             MOVS     R1,R2
+    113          NVIC_ICER_REG(NVIC_BASE_PTR,icerIndex) = icerIntVal;
+   \   0000000A   0x....             LDR.N    R2,??DataTable2_7  ;; 0xe000e180
+   \   0000000C   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   0000000E   0xF842 0x1020      STR      R1,[R2, R0, LSL #+2]
+    114          }
+   \   00000012   0x4770             BX       LR               ;; return
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2:
+   \   00000000   0x40048048         DC32     0x40048048
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2_1:
+   \   00000000   0x40048004         DC32     0x40048004
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2_2:
+   \   00000000   0x40048034         DC32     0x40048034
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2_3:
+   \   00000000   0x4007210C         DC32     0x4007210c
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2_4:
+   \   00000000   0x40047004         DC32     0x40047004
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2_5:
+   \   00000000   0x40047000         DC32     0x40047000
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2_6:
+   \   00000000   0xE000E100         DC32     0xe000e100
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2_7:
+   \   00000000   0xE000E180         DC32     0xe000e180
+    115          #endif
+    116          /* EOF */
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       8   USB_SIM_Settings
+         8   -> NVIC_ClearPendingIRQ
+         8   -> NVIC_EnableIRQ
+       0   USB_SIM_UsbIntDisable
+       0   USB_SIM_UsbIntEnable
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable2
+       4  ??DataTable2_1
+       4  ??DataTable2_2
+       4  ??DataTable2_3
+       4  ??DataTable2_4
+       4  ??DataTable2_5
+       4  ??DataTable2_6
+       4  ??DataTable2_7
+      88  USB_SIM_Settings
+      20  USB_SIM_UsbIntDisable
+      20  USB_SIM_UsbIntEnable
+
+ 
+ 160 bytes in section .text
+ 
+ 160 bytes of CODE memory
+
+Errors: none
+Warnings: none

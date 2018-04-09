@@ -1,0 +1,719 @@
+###############################################################################
+#
+# IAR ELF Linker V7.20.5.7591/W32 for ARM                 23/Mar/2018  14:45:45
+# Copyright 2007-2014 IAR Systems AB.
+#
+#    Output file  =  
+#        C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor Code
+#        - Copy\Shanit Origional Code\Connectivity Test\Debug\Exe\Connectivity
+#        Test.out
+#    Map file     =  
+#        C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor Code
+#        - Copy\Shanit Origional Code\Connectivity Test\Debug\List\Connectivity
+#        Test.map
+#    Command line =  
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code - Copy\Shanit Origional Code\Connectivity Test\Debug\Obj\AD1.o"
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code - Copy\Shanit Origional Code\Connectivity
+#        Test\Debug\Obj\CommUtil.o" "C:\Users\rfrum\OneDrive\2018 Spring
+#        Semester\Senior Design\Sensor Code - Copy\Shanit Origional
+#        Code\Connectivity Test\Debug\Obj\ConnectivityMenus.o"
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code - Copy\Shanit Origional Code\Connectivity Test\Debug\Obj\crt0.o"
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code - Copy\Shanit Origional Code\Connectivity
+#        Test\Debug\Obj\Interrupt.o" "C:\Users\rfrum\OneDrive\2018 Spring
+#        Semester\Senior Design\Sensor Code - Copy\Shanit Origional
+#        Code\Connectivity Test\Debug\Obj\Keyboard.o"
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code - Copy\Shanit Origional Code\Connectivity Test\Debug\Obj\LED.o"
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code - Copy\Shanit Origional Code\Connectivity Test\Debug\Obj\main.o"
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code - Copy\Shanit Origional Code\Connectivity Test\Debug\Obj\mcg.o"
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code - Copy\Shanit Origional Code\Connectivity
+#        Test\PLM\Interface\mmcau_lib.a" "C:\Users\rfrum\OneDrive\2018 Spring
+#        Semester\Senior Design\Sensor Code - Copy\Shanit Origional
+#        Code\Connectivity Test\Debug\Obj\MsgSystem.o"
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code - Copy\Shanit Origional Code\Connectivity
+#        Test\Debug\Obj\NV_Flash.o" "C:\Users\rfrum\OneDrive\2018 Spring
+#        Semester\Senior Design\Sensor Code - Copy\Shanit Origional
+#        Code\Connectivity Test\Debug\Obj\NV_FlashHAL.o"
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code - Copy\Shanit Origional Code\Connectivity
+#        Test\Debug\Obj\PhyISR.o" "C:\Users\rfrum\OneDrive\2018 Spring
+#        Semester\Senior Design\Sensor Code - Copy\Shanit Origional
+#        Code\Connectivity Test\Debug\Obj\PhyPacketProcessor.o"
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code - Copy\Shanit Origional Code\Connectivity
+#        Test\Debug\Obj\PhyPlmeData.o" "C:\Users\rfrum\OneDrive\2018 Spring
+#        Semester\Senior Design\Sensor Code - Copy\Shanit Origional
+#        Code\Connectivity Test\Debug\Obj\PhyTime.o"
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code - Copy\Shanit Origional Code\Connectivity
+#        Test\Debug\Obj\SimplePhy.o" "C:\Users\rfrum\OneDrive\2018 Spring
+#        Semester\Senior Design\Sensor Code - Copy\Shanit Origional
+#        Code\Connectivity Test\Debug\Obj\SMAC.o" "C:\Users\rfrum\OneDrive\2018
+#        Spring Semester\Senior Design\Sensor Code - Copy\Shanit Origional
+#        Code\Connectivity Test\Debug\Obj\Timer.o"
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code - Copy\Shanit Origional Code\Connectivity
+#        Test\Debug\Obj\TransceiverDrv.o" "C:\Users\rfrum\OneDrive\2018 Spring
+#        Semester\Senior Design\Sensor Code - Copy\Shanit Origional
+#        Code\Connectivity Test\Debug\Obj\UART.o" "C:\Users\rfrum\OneDrive\2018
+#        Spring Semester\Senior Design\Sensor Code - Copy\Shanit Origional
+#        Code\Connectivity Test\Debug\Obj\USB.o" "C:\Users\rfrum\OneDrive\2018
+#        Spring Semester\Senior Design\Sensor Code - Copy\Shanit Origional
+#        Code\Connectivity Test\Debug\Obj\usb_cdc.o"
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code - Copy\Shanit Origional Code\Connectivity
+#        Test\Debug\Obj\usb_cdc_descriptor.o" "C:\Users\rfrum\OneDrive\2018
+#        Spring Semester\Senior Design\Sensor Code - Copy\Shanit Origional
+#        Code\Connectivity Test\Debug\Obj\usb_cdc_pstn.o"
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code - Copy\Shanit Origional Code\Connectivity
+#        Test\Debug\Obj\usb_class.o" "C:\Users\rfrum\OneDrive\2018 Spring
+#        Semester\Senior Design\Sensor Code - Copy\Shanit Origional
+#        Code\Connectivity Test\Debug\Obj\usb_dci.o"
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code - Copy\Shanit Origional Code\Connectivity
+#        Test\Debug\Obj\usb_descriptor.o" "C:\Users\rfrum\OneDrive\2018 Spring
+#        Semester\Senior Design\Sensor Code - Copy\Shanit Origional
+#        Code\Connectivity Test\Debug\Obj\usb_driver.o"
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code - Copy\Shanit Origional Code\Connectivity
+#        Test\Debug\Obj\usb_framework.o" "C:\Users\rfrum\OneDrive\2018 Spring
+#        Semester\Senior Design\Sensor Code - Copy\Shanit Origional
+#        Code\Connectivity Test\Debug\Obj\usb_hid.o"
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code - Copy\Shanit Origional Code\Connectivity
+#        Test\Debug\Obj\usb_sim_settings.o" "C:\Users\rfrum\OneDrive\2018
+#        Spring Semester\Senior Design\Sensor Code - Copy\Shanit Origional
+#        Code\Connectivity Test\Debug\Obj\UsbMsgQueue.o"
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code - Copy\Shanit Origional Code\Connectivity
+#        Test\Debug\Obj\Utilities.o" "C:\Users\rfrum\OneDrive\2018 Spring
+#        Semester\Senior Design\Sensor Code - Copy\Shanit Origional
+#        Code\Connectivity Test\Debug\Obj\vectors.o"
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code - Copy\Shanit Origional Code\Connectivity
+#        Test\Debug\Obj\virtual_com.o" "C:\Users\rfrum\OneDrive\2018 Spring
+#        Semester\Senior Design\Sensor Code - Copy\Shanit Origional
+#        Code\Connectivity Test\Debug\Obj\wdog.o" -o
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code - Copy\Shanit Origional Code\Connectivity
+#        Test\Debug\Exe\Connectivity Test.out" --redirect _Printf=_PrintfTiny
+#        --redirect _Scanf=_ScanfSmall --map "C:\Users\rfrum\OneDrive\2018
+#        Spring Semester\Senior Design\Sensor Code - Copy\Shanit Origional
+#        Code\Connectivity Test\Debug\List\Connectivity Test.map" --log
+#        initialization,modules,sections,veneers --log_file
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code - Copy\Shanit Origional Code\Connectivity
+#        Test\Debug\List\Connectivity Test.log" --config
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code - Copy\Shanit Origional Code\Connectivity
+#        Test\PLM\Environment\MKW24D512V_myLinkerConfig.icf" --diag_suppress
+#        Lt010,Lt018 --semihosting --entry __iar_program_start --redirect
+#        __write=__write_buffered --no_exceptions --merge_duplicate_sections
+#        --no_vfe
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A1":  place at 0x00000000 { ro section .intvec };
+"P2":  place in [from 0x00000000 to 0x000003ff] |
+                [from 0x00000410 to 0x0007b7ff] { ro, block CodeRelocate };
+"P3":  place in [from 0x1fff8000 to 0x1fffffff] |
+                [from 0x20000000 to 0x20007bff] { rw, block CodeRelocateRam };
+
+  Section              Kind        Address    Size  Object
+  -------              ----        -------    ----  ------
+"A1":                                        0x144
+  .intvec              const    0x00000000   0x144  vectors.o [1]
+                              - 0x00000144   0x144
+
+"P2", part 1 of 2:                             0x8
+  .rodata              const    0x00000144     0x0  zero_init3.o [4]
+  .rodata              const    0x00000144     0x0  copy_init3.o [4]
+  Initializer bytes    ro data  0x00000144     0x8  <for P3 s0>
+                              - 0x0000014c     0x8
+
+"P2", part 2 of 2:                          0x54f0
+  .text                ro code  0x00000410  0x162c  main.o [1]
+  .text                ro code  0x00001a3c   0x200  AD1.o [1]
+  .text                ro code  0x00001c3c   0x712  SMAC.o [1]
+  .text                ro code  0x0000234e    0x2e  copy_init3.o [4]
+  .text                ro code  0x0000237c    0x56  ABImemcpy_unaligned.o [4]
+  .text                ro code  0x000023d2    0x22  zero_init3.o [4]
+  .text                ro code  0x000023f4   0x170  Interrupt.o [1]
+  .text                ro code  0x00002564    0xd4  Utilities.o [1]
+  .text                ro code  0x00002638   0x3f4  NV_FlashHAL.o [1]
+  .text                ro code  0x00002a2c   0x918  TransceiverDrv.o [1]
+  .text                ro code  0x00003344   0x3cc  Timer.o [1]
+  .text                ro code  0x00003710    0xd4  MsgSystem.o [1]
+  .text                ro code  0x000037e4    0x98  LED.o [1]
+  .text                ro code  0x0000387c  0x134c  UART.o [1]
+  .text                ro code  0x00004bc8    0xac  Keyboard.o [1]
+  .text                ro code  0x00004c74   0x2b2  PhyPlmeData.o [1]
+  .text                ro code  0x00004f28   0x25e  PhyPacketProcessor.o [1]
+  .text                ro code  0x00005186    0x10  SimplePhy.o [1]
+  .text                ro code  0x00005196    0xc2  PhyTime.o [1]
+  Veneer               ro code  0x00005258     0x8  - Linker created -
+  .text                ro code  0x00005260   0x100  mcg.o [1]
+  .text                ro code  0x00005360   0x3c8  PhyISR.o [1]
+  .text                ro code  0x00005728    0x60  crt0.o [1]
+  CodeRelocate                  0x00005788    0x48  <Block>
+    Initializer bytes  ro data  0x00005788    0x48  <for CodeRelocateRam-1>
+  .text                ro code  0x000057d0    0x28  data_init.o [4]
+  .iar.init_table      const    0x000057f8    0x38  - Linker created -
+  .rodata              const    0x00005830    0x20  main.o [1]
+  .rodata              const    0x00005850    0x20  PhyPlmeData.o [1]
+  .text                ro code  0x00005870    0x1a  cmain.o [4]
+  .text                ro code  0x0000588a     0x4  exit.o [3]
+  .text                ro code  0x00005890     0xa  cexit.o [4]
+  .text                ro code  0x0000589c    0x14  exit.o [5]
+  .rodata              const    0x000058b0    0x10  PhyPlmeData.o [1]
+  .rodata              const    0x000058c0    0x10  UART.o [1]
+  .rodata              const    0x000058d0     0xc  MsgSystem.o [1]
+  .text                ro code  0x000058dc     0xc  vectors.o [1]
+  .text                ro code  0x000058e8     0xc  cstartup_M.o [4]
+  .rodata              const    0x000058f4     0x4  main.o [1]
+  .rodata              const    0x000058f8     0x4  main.o [1]
+  .rodata              const    0x000058fc     0x4  NV_FlashHAL.o [1]
+                              - 0x00005900  0x54f0
+
+"P3":                                       0x11c4
+  CodeRelocateRam               0x1fff8000    0x48  <Block>
+    CodeRelocateRam-1           0x1fff8000    0x48  <Init block>
+      .textrw          inited   0x1fff8000    0x48  mcg.o [1]
+  P3 s0                         0x1fff8048     0x8  <Init block>
+    .data              inited   0x1fff8048     0x4  Timer.o [1]
+    .data              inited   0x1fff804c     0x1  LED.o [1]
+    .data              inited   0x1fff804d     0x1  PhyPlmeData.o [1]
+  .bss                 zero     0x1fff8050   0xb7c  MsgSystem.o [1]
+  .bss                 zero     0x1fff8bcc   0x198  Timer.o [1]
+  .bss                 zero     0x1fff8d64    0xfc  UART.o [1]
+  .bss                 zero     0x1fff8e60    0xd0  UART.o [1]
+  .bss                 zero     0x1fff8f30    0x84  main.o [1]
+  .bss                 zero     0x1fff8fb4    0x80  main.o [1]
+  .bss                 zero     0x1fff9034    0x48  main.o [1]
+  .bss                 zero     0x1fff907c    0x24  MsgSystem.o [1]
+  .bss                 zero     0x1fff90a0    0x24  Timer.o [1]
+  .bss                 zero     0x1fff90c4    0x20  main.o [1]
+  .bss                 zero     0x1fff90e4    0x18  main.o [1]
+  .bss                 zero     0x1fff90fc    0x18  UART.o [1]
+  .bss                 zero     0x1fff9114     0xc  PhyISR.o [1]
+  .bss                 zero     0x1fff9120     0x8  main.o [1]
+  .bss                 zero     0x1fff9128     0x8  SMAC.o [1]
+  .bss                 zero     0x1fff9130     0x4  main.o [1]
+  .bss                 zero     0x1fff9134     0x4  main.o [1]
+  .bss                 zero     0x1fff9138     0x4  main.o [1]
+  .bss                 zero     0x1fff913c     0x4  main.o [1]
+  .bss                 zero     0x1fff9140     0x4  main.o [1]
+  .bss                 zero     0x1fff9144     0x4  main.o [1]
+  .bss                 zero     0x1fff9148     0x4  main.o [1]
+  .bss                 zero     0x1fff914c     0x4  main.o [1]
+  .bss                 zero     0x1fff9150     0x4  main.o [1]
+  .bss                 zero     0x1fff9154     0x4  main.o [1]
+  .bss                 zero     0x1fff9158     0x4  mcg.o [1]
+  .bss                 zero     0x1fff915c     0x4  mcg.o [1]
+  .bss                 zero     0x1fff9160     0x4  mcg.o [1]
+  .bss                 zero     0x1fff9164     0x4  MsgSystem.o [1]
+  .bss                 zero     0x1fff9168     0x4  NV_FlashHAL.o [1]
+  .bss                 zero     0x1fff916c     0x4  PhyISR.o [1]
+  .bss                 zero     0x1fff9170     0x4  PhyISR.o [1]
+  .bss                 zero     0x1fff9174     0x4  SMAC.o [1]
+  .bss                 zero     0x1fff9178     0x4  SMAC.o [1]
+  .bss                 zero     0x1fff917c     0x4  SMAC.o [1]
+  .bss                 zero     0x1fff9180     0x4  SMAC.o [1]
+  .bss                 zero     0x1fff9184     0x4  Timer.o [1]
+  .bss                 zero     0x1fff9188     0x4  UART.o [1]
+  .bss                 zero     0x1fff918c     0x4  UART.o [1]
+  .bss                 zero     0x1fff9190     0x2  main.o [1]
+  .bss                 zero     0x1fff9192     0x2  main.o [1]
+  .bss                 zero     0x1fff9194     0x2  SMAC.o [1]
+  .bss                 zero     0x1fff9196     0x2  Timer.o [1]
+  .bss                 zero     0x1fff9198     0x2  Timer.o [1]
+  .bss                 zero     0x1fff919a     0x1  main.o [1]
+  .bss                 zero     0x1fff919b     0x1  main.o [1]
+  .bss                 zero     0x1fff919c     0x1  main.o [1]
+  .bss                 zero     0x1fff919d     0x1  main.o [1]
+  .bss                 zero     0x1fff919e     0x1  main.o [1]
+  .bss                 zero     0x1fff919f     0x1  main.o [1]
+  .bss                 zero     0x1fff91a0     0x1  main.o [1]
+  .bss                 zero     0x1fff91a1     0x1  main.o [1]
+  .bss                 zero     0x1fff91a2     0x1  main.o [1]
+  .bss                 zero     0x1fff91a3     0x1  main.o [1]
+  .bss                 zero     0x1fff91a4     0x1  main.o [1]
+  .bss                 zero     0x1fff91a5     0x1  main.o [1]
+  .bss                 zero     0x1fff91a6     0x1  main.o [1]
+  .bss                 zero     0x1fff91a7     0x1  main.o [1]
+  .bss                 zero     0x1fff91a8     0x1  main.o [1]
+  .bss                 zero     0x1fff91a9     0x1  main.o [1]
+  .bss                 zero     0x1fff91aa     0x1  main.o [1]
+  .bss                 zero     0x1fff91ab     0x1  main.o [1]
+  .bss                 zero     0x1fff91ac     0x1  main.o [1]
+  .bss                 zero     0x1fff91ad     0x1  main.o [1]
+  .bss                 zero     0x1fff91ae     0x1  main.o [1]
+  .bss                 zero     0x1fff91af     0x1  main.o [1]
+  .bss                 zero     0x1fff91b0     0x1  main.o [1]
+  .bss                 zero     0x1fff91b1     0x1  main.o [1]
+  .bss                 zero     0x1fff91b2     0x1  main.o [1]
+  .bss                 zero     0x1fff91b3     0x1  main.o [1]
+  .bss                 zero     0x1fff91b4     0x1  main.o [1]
+  .bss                 zero     0x1fff91b5     0x1  MsgSystem.o [1]
+  .bss                 zero     0x1fff91b6     0x1  SMAC.o [1]
+  .bss                 zero     0x1fff91b7     0x1  SMAC.o [1]
+  .bss                 zero     0x1fff91b8     0x1  SMAC.o [1]
+  .bss                 zero     0x1fff91b9     0x1  SMAC.o [1]
+  .bss                 zero     0x1fff91ba     0x1  SMAC.o [1]
+  .bss                 zero     0x1fff91bb     0x1  Timer.o [1]
+  .bss                 zero     0x1fff91bc     0x1  Timer.o [1]
+  .bss                 zero     0x1fff91bd     0x1  Timer.o [1]
+  .bss                 zero     0x1fff91be     0x1  UART.o [1]
+  .bss                 zero     0x1fff91bf     0x1  UART.o [1]
+  .bss                 zero     0x1fff91c0     0x1  UART.o [1]
+  .bss                 zero     0x1fff91c1     0x1  UART.o [1]
+                              - 0x1fff91c2  0x11c2
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address     Size
+          -------     ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x1172:
+          0x1fff8050  0x1172
+
+Copy (__iar_copy_init3)
+    1 source range, total size 0x48:
+          0x00005788    0x48
+    1 destination range, total size 0x48:
+          0x1fff8000    0x48
+
+Copy (__iar_copy_init3)
+    1 source range, total size 0x8 (133% of destination):
+          0x00000144     0x8
+    1 destination range, total size 0x6:
+          0x1fff8048     0x6
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                 ro code  rw code  ro data  rw data
+    ------                 -------  -------  -------  -------
+C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor Code - Copy\Shanit Origional Code\Connectivity Test\Debug\Obj: [1]
+    AD1.o                      512
+    Interrupt.o                368
+    Keyboard.o                 172
+    LED.o                      152                 1        1
+    MsgSystem.o                212                12    2 981
+    NV_FlashHAL.o            1 012                 4        4
+    PhyISR.o                   968                         20
+    PhyPacketProcessor.o       606
+    PhyPlmeData.o              690                49        1
+    PhyTime.o                  194
+    SMAC.o                   1 810                         31
+    SimplePhy.o                 16
+    Timer.o                    972                 4      459
+    TransceiverDrv.o         2 328
+    UART.o                   4 940                16      496
+    Utilities.o                212
+    crt0.o                      96
+    main.o                   5 676                40      467
+    mcg.o                      256       72       72       12
+    vectors.o                   12               324
+    ---------------------------------------------------------
+    Total:                  21 204       72      522    4 472
+
+command line: [2]
+    ---------------------------------------------------------
+    Total:
+
+dl7M_tln.a: [3]
+    exit.o                       4
+    ---------------------------------------------------------
+    Total:                       4
+
+rt7M_tl.a: [4]
+    ABImemcpy_unaligned.o       86
+    cexit.o                     10
+    cmain.o                     26
+    copy_init3.o                46
+    cstartup_M.o                12
+    data_init.o                 40
+    zero_init3.o                34
+    ---------------------------------------------------------
+    Total:                     254
+
+shb_l.a: [5]
+    exit.o                      20
+    ---------------------------------------------------------
+    Total:                      20
+
+    Gaps                         6
+    Linker created               8                58
+-------------------------------------------------------------
+    Grand Total:            21 496       72      580    4 472
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                      Address   Size  Type      Object
+-----                      -------   ----  ----      ------
+?main                   0x00005871         Code  Gb  cmain.o [4]
+ADCInit                 0x00001a3d  0x104  Code  Gb  AD1.o [1]
+AXIS                    0x1fff9144    0x4  Data  Gb  main.o [1]
+ChooseBestChannel       0x00000a01   0xe4  Code  Gb  main.o [1]
+ClearADCContents        0x00001b41   0x26  Code  Gb  AD1.o [1]
+CodeRelocate$$Base      0x00005788          --   Gb  - Linker created -
+CodeRelocate$$Limit     0x000057d0          --   Gb  - Linker created -
+CodeRelocateRam$$Base   0x1fff8000          --   Gb  - Linker created -
+CodeRelocateRam$$Limit  0x1fff8048          --   Gb  - Linker created -
+CommRxCallback          0x00001771   0x22  Code  Gb  main.o [1]
+ConversionAComplete     0x00001b67   0x10  Code  Gb  AD1.o [1]
+CopyBinaryPacketToSMAC  0x0000106d  0x1ee  Code  Gb  main.o [1]
+CopyOptPacketToSMAC     0x00001279   0xfa  Code  Gb  main.o [1]
+CopyOptionsFromRecvPacket
+                        0x00000e8b   0xd8  Code  Gb  main.o [1]
+CopyPngPacketToSMAC     0x00000fe7   0x4c  Code  Gb  main.o [1]
+EffectiveWrBytesCnt     0x1fff9168    0x4  Data  Gb  NV_FlashHAL.o [1]
+FlashSaveOptions        0x000014f7   0x60  Code  Gb  main.o [1]
+GetConversionValue      0x00001bbd    0x6  Code  Gb  AD1.o [1]
+GetDeviceData           0x00000793   0xe6  Code  Gb  main.o [1]
+GetFactoryOptions       0x00001557   0x32  Code  Gb  main.o [1]
+GetLinkQdBm             0x000009f1   0x10  Code  Gb  main.o [1]
+GetRandomNibble         0x000009b7   0x3a  Code  Gb  main.o [1]
+GlobalDataInit          0x000016cd   0x66  Code  Gb  main.o [1]
+INIT_PIT                0x00000879   0x48  Code  Gb  main.o [1]
+InitAccelControlls      0x00000721   0x72  Code  Gb  main.o [1]
+InitPacket              0x000013e1  0x116  Code  Gb  main.o [1]
+InitProject             0x0000158d  0x13a  Code  Lc  main.o [1]
+InitSmac                0x00001733   0x3a  Code  Gb  main.o [1]
+IntDisableAll           0x00002521    0xc  Code  Gb  Interrupt.o [1]
+IntRestoreAll           0x0000251b    0x6  Code  Gb  Interrupt.o [1]
+KeyboardInit            0x00004bc9   0x2e  Code  Gb  Keyboard.o [1]
+LED_Init                0x000037e5   0x7e  Code  Gb  LED.o [1]
+List_AddTail            0x0000378d   0x34  Code  Gb  MsgSystem.o [1]
+List_ClearAnchor        0x00003787    0x6  Code  Gb  MsgSystem.o [1]
+MC1324xDrv_DirectAccessSPIMultiByteRead
+                        0x00002e83  0x12e  Code  Gb  TransceiverDrv.o [1]
+MC1324xDrv_DirectAccessSPIMultiByteWrite
+                        0x00002b8d  0x12c  Code  Gb  TransceiverDrv.o [1]
+MC1324xDrv_DirectAccessSPIRead
+                        0x00002dd3   0xb0  Code  Gb  TransceiverDrv.o [1]
+MC1324xDrv_DirectAccessSPIWrite
+                        0x00002af5   0x98  Code  Gb  TransceiverDrv.o [1]
+MC1324xDrv_IRQ_Clear    0x00003251    0xe  Code  Gb  TransceiverDrv.o [1]
+MC1324xDrv_IRQ_Disable  0x00003229    0xe  Code  Gb  TransceiverDrv.o [1]
+MC1324xDrv_IRQ_Enable   0x00003237   0x1a  Code  Gb  TransceiverDrv.o [1]
+MC1324xDrv_IRQ_PortConfig
+                        0x000031fd   0x1a  Code  Gb  TransceiverDrv.o [1]
+MC1324xDrv_IndirectAccessSPIRead
+                        0x00003173   0x8a  Code  Gb  TransceiverDrv.o [1]
+MC1324xDrv_IndirectAccessSPIWrite
+                        0x000030d1   0xa2  Code  Gb  TransceiverDrv.o [1]
+MC1324xDrv_IsIrqPending
+                        0x00003217   0x12  Code  Gb  TransceiverDrv.o [1]
+MC1324xDrv_PB_SPIBurstRead
+                        0x00002fb1  0x120  Code  Gb  TransceiverDrv.o [1]
+MC1324xDrv_PB_SPIBurstWrite
+                        0x00002cb9  0x11a  Code  Gb  TransceiverDrv.o [1]
+MC1324xDrv_RST_B_Assert
+                        0x00003291    0xe  Code  Gb  TransceiverDrv.o [1]
+MC1324xDrv_RST_B_Deassert
+                        0x0000329f    0xe  Code  Gb  TransceiverDrv.o [1]
+MC1324xDrv_RST_B_PortConfig
+                        0x0000325f   0x32  Code  Gb  TransceiverDrv.o [1]
+MC1324xDrv_SPIInit      0x00002a2d   0xc8  Code  Gb  TransceiverDrv.o [1]
+MC1324xDrv_Set_CLK_OUT_Freq
+                        0x00003321   0x24  Code  Gb  TransceiverDrv.o [1]
+MCG_PLLInit             0x00005261   0xda  Code  Gb  mcg.o [1]
+MCG_SetSysDividers      0x1fff8001   0x48  Code  Lc  mcg.o [1]
+MCPSDataConfirm         0x00001793    0x8  Code  Gb  main.o [1]
+MCPSDataIndication      0x0000179b    0xe  Code  Gb  main.o [1]
+MCPSDataRequest         0x00001c3d   0x84  Code  Gb  SMAC.o [1]
+MCU_InitClock           0x000025e5   0x30  Code  Gb  Utilities.o [1]
+MLMELinkQuality         0x00001d87   0x22  Code  Gb  SMAC.o [1]
+MLMEPAOutputAdjust      0x00001f21   0x58  Code  Gb  SMAC.o [1]
+MLMERXEnableRequest     0x00001cc1   0xc6  Code  Gb  SMAC.o [1]
+MLMERadioInit           0x00001da9  0x110  Code  Gb  SMAC.o [1]
+MLMEScanConfirm         0x000017ad    0xc  Code  Gb  main.o [1]
+MLMESetChannelRequest   0x00001eb9   0x68  Code  Gb  SMAC.o [1]
+MLMESetPromiscuousMode  0x00001fa1   0x12  Code  Gb  SMAC.o [1]
+MLMEXtalAdjust          0x00001f79   0x28  Code  Gb  SMAC.o [1]
+MM_AddMsgToTrackingArray
+                        0x000037e3    0x2  Code  Gb  MsgSystem.o [1]
+MM_AddToPool            0x000037c1   0x14  Code  Gb  MsgSystem.o [1]
+MM_Init                 0x00003711   0x76  Code  Gb  MsgSystem.o [1]
+MM_InitMsgTracking      0x000037e1    0x2  Code  Gb  MsgSystem.o [1]
+MemoryCpy               0x000025d1   0x14  Code  Gb  Utilities.o [1]
+NVIC_ClearPendingIRQ    0x0000252d   0x14  Code  Gb  Interrupt.o [1]
+NVIC_DisableIRQ         0x00002491   0x66  Code  Gb  Interrupt.o [1]
+NVIC_EnableIRQ          0x000023f5   0x9c  Code  Gb  Interrupt.o [1]
+NVIC_SetPriority        0x000024f7   0x24  Code  Gb  Interrupt.o [1]
+NV_FlashEraseSector     0x0000275b   0xb6  Code  Gb  NV_FlashHAL.o [1]
+NV_FlashInit            0x00002735   0x26  Code  Gb  NV_FlashHAL.o [1]
+NV_FlashProgramLongword
+                        0x00002811  0x16e  Code  Gb  NV_FlashHAL.o [1]
+NV_FlashProgramUnalignedLongword
+                        0x0000297f   0x84  Code  Gb  NV_FlashHAL.o [1]
+NV_FlashRead            0x00002a19   0x14  Code  Gb  NV_FlashHAL.o [1]
+NvFlashCommandSequence  0x00002639   0xfc  Code  Lc  NV_FlashHAL.o [1]
+OptSwapEndianness       0x00000f63   0x68  Code  Gb  main.o [1]
+PHY_InterruptHandler    0x00005451  0x2ca  Code  Gb  PhyISR.o [1]
+PIT_ISR                 0x000008c1   0xf6  Code  Gb  main.o [1]
+PIT_ITTERATIONS         0x1fff9140    0x4  Data  Gb  main.o [1]
+PhyInit                 0x00004f71  0x216  Code  Gb  PhyPacketProcessor.o [1]
+PhyIsrSeqCleanup        0x00005371   0x50  Code  Gb  PhyISR.o [1]
+PhyIsrTimeoutCleanup    0x000053c1   0x80  Code  Gb  PhyISR.o [1]
+PhyPassRxDataPtr        0x00005369    0x8  Code  Gb  PhyISR.o [1]
+PhyPassRxParams         0x00005361    0x8  Code  Gb  PhyISR.o [1]
+PhyPdDataConfirm        0x00002079   0x58  Code  Gb  SMAC.o [1]
+PhyPdDataIndication     0x000020d1   0xc6  Code  Gb  SMAC.o [1]
+PhyPdDataRequest        0x00004c75   0xe4  Code  Gb  PhyPlmeData.o [1]
+PhyPlmeCcaConfirm       0x00002197   0x54  Code  Gb  SMAC.o [1]
+PhyPlmeCcaEdRequest     0x00004e11   0xbc  Code  Gb  PhyPlmeData.o [1]
+PhyPlmeEdConfirm        0x000021eb   0x90  Code  Gb  SMAC.o [1]
+PhyPlmeRxRequest        0x00004d59   0xb8  Code  Gb  PhyPlmeData.o [1]
+PhyPlmeSetCurrentChannelRequestPAN0
+                        0x00004ecd   0x3c  Code  Gb  PhyPlmeData.o [1]
+PhyPlmeSetPwrLevelRequest
+                        0x00004f15   0x12  Code  Gb  PhyPlmeData.o [1]
+PhyPlmeSyncLossIndication
+                        0x0000227b   0x8a  Code  Gb  SMAC.o [1]
+PhyPpGetState           0x00004f61    0xe  Code  Gb  PhyPacketProcessor.o [1]
+PhyPpSetCcaThreshold    0x00004f51   0x10  Code  Gb  PhyPacketProcessor.o [1]
+PhyPpSetPromiscuous     0x00004f29   0x28  Code  Gb  PhyPacketProcessor.o [1]
+PhyTimeDisableEventTimeout
+                        0x000051ff   0x46  Code  Gb  PhyTime.o [1]
+PhyTimeReadClock        0x00005245   0x14  Code  Gb  PhyTime.o [1]
+PhyTimeRxTimeoutIndication
+                        0x00002305   0x1a  Code  Gb  SMAC.o [1]
+PhyTimeSetEventTimeout  0x00005197   0x68  Code  Gb  PhyTime.o [1]
+PhyTimeStartEventIndication
+                        0x0000234d    0x2  Code  Gb  SMAC.o [1]
+PhyXtalAdjust           0x00005187   0x10  Code  Gb  SimplePhy.o [1]
+Phy_GetEnergyLevel      0x00005441   0x10  Code  Gb  PhyISR.o [1]
+PngSwapEndianness       0x00000fcb   0x1c  Code  Gb  main.o [1]
+ReceivePacket           0x00000ae5   0xd2  Code  Gb  main.o [1]
+Region$$Table$$Base     0x000057f8          --   Gb  - Linker created -
+Region$$Table$$Limit    0x00005830          --   Gb  - Linker created -
+SendBinaryPacket        0x00001395   0x32  Code  Gb  main.o [1]
+SendCurrentOptions      0x000006df   0x42  Code  Gb  main.o [1]
+ShortCutsParser         0x000017b9  0x10c  Code  Gb  main.o [1]
+SmacFormatTxPacket      0x00002047   0x32  Code  Gb  SMAC.o [1]
+SmacScanTheNextChannel  0x00001fb3   0x78  Code  Gb  SMAC.o [1]
+SmacSetRxTimeout        0x0000202b   0x1c  Code  Gb  SMAC.o [1]
+SndSwapEndianness       0x00000bb7  0x2d4  Code  Gb  main.o [1]
+StartBattConversion     0x00001b77    0xe  Code  Gb  AD1.o [1]
+StartTempConversion     0x00001baf    0xe  Code  Gb  AD1.o [1]
+StartXConversion        0x00001b85    0xe  Code  Gb  AD1.o [1]
+StartYConversion        0x00001b93    0xe  Code  Gb  AD1.o [1]
+StartZConversion        0x00001ba1    0xe  Code  Gb  AD1.o [1]
+Switch_Press_ISR        0x00004bf7   0x5e  Code  Gb  Keyboard.o [1]
+TMR_AllocateTimer       0x00003421   0x2c  Code  Gb  Timer.o [1]
+TMR_GetTimerStatus      0x00003345    0xe  Code  Lc  Timer.o [1]
+TMR_GetTimerType        0x0000336b    0xe  Code  Lc  Timer.o [1]
+TMR_Init                0x00003385   0x9c  Code  Gb  Timer.o [1]
+TMR_InterruptHandler    0x0000344d   0x3c  Code  Gb  Timer.o [1]
+TMR_SetTimerStatus      0x00003353   0x18  Code  Lc  Timer.o [1]
+TMR_StopTimer           0x00003489   0x72  Code  Gb  Timer.o [1]
+TMR_Task                0x000034fb  0x1d4  Code  Gb  Timer.o [1]
+TempSumx                0x1fff9148    0x4  Data  Gb  main.o [1]
+TempSumy                0x1fff914c    0x4  Data  Gb  main.o [1]
+TempSumz                0x1fff9150    0x4  Data  Gb  main.o [1]
+TmrTicksFromMilliseconds
+                        0x00003379    0xc  Code  Lc  Timer.o [1]
+Uart1ErrorIsr           0x00004b2d   0x6c  Code  Gb  UART.o [1]
+Uart1Isr                0x00004aa9   0x84  Code  Gb  UART.o [1]
+Uart1_GetByteFromRxBuffer
+                        0x000049d1   0x2c  Code  Gb  UART.o [1]
+Uart1_SetBaud           0x00004a35   0x70  Code  Gb  UART.o [1]
+Uart1_SetRxCallBack     0x00004a09   0x26  Code  Gb  UART.o [1]
+UartBaseAddress_c       0x000058c0   0x10  Data  Gb  UART.o [1]
+UartCancelReadData      0x00004649   0x5a  Code  Lc  UART.o [1]
+UartCancelWriteData     0x000046a3   0x52  Code  Lc  UART.o [1]
+UartDivide              0x00003b51   0x14  Code  Lc  UART.o [1]
+UartExecPendingCallbacks
+                        0x000048ab   0x5c  Code  Lc  UART.o [1]
+UartGetByteFromRxBuffer
+                        0x00004765   0xf4  Code  Lc  UART.o [1]
+UartGetConfig           0x0000418d   0xc2  Code  Lc  UART.o [1]
+UartGetStatus           0x00004705   0x5a  Code  Lc  UART.o [1]
+UartOpen                0x00003b65  0x186  Code  Lc  UART.o [1]
+UartOpenCloseTransceiver
+                        0x00004859   0x52  Code  Lc  UART.o [1]
+UartReadComplete        0x00003aef   0x62  Code  Lc  UART.o [1]
+UartReadData            0x00004475  0x1d0  Code  Lc  UART.o [1]
+UartReceiverIsr         0x0000387d   0x68  Code  Lc  UART.o [1]
+UartSetConfig           0x00003ceb  0x4a2  Code  Lc  UART.o [1]
+UartSetReceiverThreshold
+                        0x0000424f  0x116  Code  Lc  UART.o [1]
+UartSetTransmitterThreshold
+                        0x00004365  0x110  Code  Lc  UART.o [1]
+UartTransmitterIsr      0x000038e5  0x20a  Code  Lc  UART.o [1]
+Uart_ModuleInit         0x00004907   0xca  Code  Gb  UART.o [1]
+VECT_DefaultISR         0x000058e1    0x4  Code  Gb  vectors.o [1]
+VECT_HWfaultISR         0x000058e5    0x4  Code  Gb  vectors.o [1]
+VECT_NMIInterrupt       0x000058dd    0x2  Code  Gb  vectors.o [1]
+ValidateOptions         0x0000064d   0x92  Code  Gb  main.o [1]
+__BOOT_STACK_ADDRESS {Abs}
+                        0x20007ff8          --   Gb  command line/config [2]
+__VECTOR_TABLE {Abs}    0x00000000          --   Gb  command line/config [2]
+__as_entries_start      0xffffffff          --   Gb  command line/config [2]
+__as_table_start        0xffffffff          --   Gb  command line/config [2]
+__cmain                 0x00005871         Code  Gb  cmain.o [4]
+__exit                  0x0000589d   0x14  Code  Gb  exit.o [5]
+__iar_copy_init3        0x0000234f   0x2e  Code  Gb  copy_init3.o [4]
+__iar_data_init3        0x000057d1   0x28  Code  Gb  data_init.o [4]
+__iar_program_start     0x000058e9         Code  Gb  cstartup_M.o [4]
+__iar_unaligned___aeabi_memcpy4
+                        0x0000237d         Code  Gb  ABImemcpy_unaligned.o [4]
+__iar_unaligned___aeabi_memcpy8
+                        0x0000237d         Code  Gb  ABImemcpy_unaligned.o [4]
+__iar_zero_init3        0x000023d3   0x22  Code  Gb  zero_init3.o [4]
+__low_level_init        0x00005729   0x60  Code  Gb  crt0.o [1]
+__region_RAM2_end__ {Abs}
+                        0x20007fff          --   Gb  command line/config [2]
+__region_RAM2_start__ {Abs}
+                        0x20000000          --   Gb  command line/config [2]
+__region_RAM_end__ {Abs}
+                        0x1fffffff          --   Gb  command line/config [2]
+__region_RAM_start__ {Abs}
+                        0x1fff8000          --   Gb  command line/config [2]
+__region_ROM_end__ {Abs}
+                        0x0007ffff          --   Gb  command line/config [2]
+__region_ROM_start__ {Abs}
+                        0x00000000          --   Gb  command line/config [2]
+__size_cstack__ {Abs}   0x00000400          --   Gb  command line/config [2]
+__vector_table          0x00000000  0x144  Data  Gb  vectors.o [1]
+_call_main              0x0000587d         Code  Gb  cmain.o [4]
+_exit                   0x00005891         Code  Gb  cexit.o [4]
+_main                   0x00005887         Code  Gb  cmain.o [4]
+appState                0x1fff919a    0x1  Data  Gb  main.o [1]
+bRxDone                 0x1fff919e    0x1  Data  Gb  main.o [1]
+bScanDone               0x1fff919f    0x1  Data  Gb  main.o [1]
+bTxDone                 0x1fff919d    0x1  Data  Gb  main.o [1]
+bestChannel             0x1fff91a0    0x1  Data  Gb  main.o [1]
+cTxRxState              0x1fff91ad    0x1  Data  Gb  main.o [1]
+connState               0x1fff91ac    0x1  Data  Gb  main.o [1]
+contTestRunning         0x1fff91a8    0x1  Data  Gb  main.o [1]
+delayMs                 0x00002565   0x6c  Code  Gb  Utilities.o [1]
+evDataFromCOMM          0x1fff91a9    0x1  Data  Gb  main.o [1]
+evTestParameters        0x1fff91aa    0x1  Data  Gb  main.o [1]
+exit                    0x0000588b    0x4  Code  Gb  exit.o [3]
+gAppRxPacket            0x1fff9134    0x4  Data  Lc  main.o [1]
+gAppTxPacket            0x1fff9130    0x4  Data  Lc  main.o [1]
+gFlashDeadBeef          0x1fff913c    0x4  Data  Gb  main.o [1]
+gFreeMessagesCount      0x1fff91b5    0x1  Data  Gb  MsgSystem.o [1]
+gIsAck                  0x1fff919b    0x1  Data  Gb  main.o [1]
+gIsMyAck                0x1fff919c    0x1  Data  Gb  main.o [1]
+gMCG_coreClkKHz         0x1fff9158    0x4  Data  Gb  mcg.o [1]
+gMCG_coreClkMHz         0x1fff915c    0x4  Data  Gb  mcg.o [1]
+gMCG_periphClkKHz       0x1fff9160    0x4  Data  Gb  mcg.o [1]
+gOpt                    0x1fff90c4   0x20  Data  Gb  main.o [1]
+gOptions                0x1fff90e4   0x18  Data  Gb  main.o [1]
+gPhyCurrentChannelPAN0  0x1fff804d    0x1  Data  Lc  PhyPlmeData.o [1]
+gPng                    0x1fff9120    0x8  Data  Gb  main.o [1]
+gRxTimeout              0x1fff9138    0x4  Data  Gb  main.o [1]
+gSnd                    0x1fff9034   0x48  Data  Lc  main.o [1]
+g_DEAD_BEEF             0x000058f4    0x4  Data  Gb  main.o [1]
+gau8RxDataBuffer        0x1fff8f30   0x84  Data  Lc  main.o [1]
+gau8TxDataBuffer        0x1fff8fb4   0x80  Data  Lc  main.o [1]
+gu8CommData             0x1fff91a1    0x1  Data  Gb  main.o [1]
+mClkSourceKhz           0x1fff8048    0x4  Data  Lc  Timer.o [1]
+mLEDTimerID             0x1fff804c    0x1  Data  Lc  LED.o [1]
+mMaxToCountDown_c       0x1fff9198    0x2  Data  Lc  Timer.o [1]
+mSci1TxBufRefTrailingIndex
+                        0x1fff91c1    0x1  Data  Lc  UART.o [1]
+mSci1TxCurIndex         0x1fff91c0    0x1  Data  Lc  UART.o [1]
+mStatusAndControlRegs   0x1fff9114    0xc  Data  Gb  PhyISR.o [1]
+mTicksFor4ms            0x1fff9184    0x4  Data  Lc  Timer.o [1]
+mUartModule             0x1fff8e60   0xd0  Data  Lc  UART.o [1]
+maMacHeap               0x1fff8050  0xb7c  Data  Gb  MsgSystem.o [1]
+maMmPools               0x1fff907c   0x24  Data  Gb  MsgSystem.o [1]
+maSci1RxBuf             0x1fff8d64   0xfc  Data  Lc  UART.o [1]
+maSci1TxBufLenTable     0x1fff9188    0x4  Data  Lc  UART.o [1]
+maSci1TxBufRefTable     0x1fff90fc   0x18  Data  Lc  UART.o [1]
+maTmrTimerStatusTable   0x1fff90a0   0x24  Data  Lc  Timer.o [1]
+maTmrTimerTable         0x1fff8bcc  0x198  Data  Lc  Timer.o [1]
+main                    0x00000411  0x23c  Code  Gb  main.o [1]
+mpRxData                0x1fff9170    0x4  Data  Lc  PhyISR.o [1]
+mpRxParams              0x1fff916c    0x4  Data  Lc  PhyISR.o [1]
+numberOfActiveTimers    0x1fff91bb    0x1  Data  Lc  Timer.o [1]
+numberOfLowPowerActiveTimers
+                        0x1fff91bc    0x1  Data  Lc  Timer.o [1]
+pMacPool                0x1fff9164    0x4  Data  Gb  MsgSystem.o [1]
+pTestPacket             0x1fff9178    0x4  Data  Lc  SMAC.o [1]
+perRxState              0x1fff91af    0x1  Data  Gb  main.o [1]
+perTxState              0x1fff91ae    0x1  Data  Gb  main.o [1]
+pfSci1RxCallBack        0x1fff918c    0x4  Data  Lc  UART.o [1]
+pll_frac                0x00005850   0x20  Data  Lc  PhyPlmeData.o [1]
+pll_int                 0x000058b0   0x10  Data  Lc  PhyPlmeData.o [1]
+poolInfo                0x000058d0    0xc  Data  Gb  MsgSystem.o [1]
+prevOpMode              0x1fff91a3    0x1  Data  Gb  main.o [1]
+previousTimeInTicks     0x1fff9196    0x2  Data  Lc  Timer.o [1]
+rangeRxState            0x1fff91b1    0x1  Data  Gb  main.o [1]
+rangeTxState            0x1fff91b0    0x1  Data  Gb  main.o [1]
+rxTestIndex             0x1fff91b3    0x1  Data  Gb  main.o [1]
+sensorID                0x1fff9190    0x2  Data  Gb  main.o [1]
+sentPackets             0x1fff9192    0x2  Data  Gb  main.o [1]
+settingsAddress         0x000058f8    0x4  Data  Gb  main.o [1]
+shortCutsEnabled        0x1fff91ab    0x1  Data  Gb  main.o [1]
+smacChannelsBeingScanned
+                        0x1fff9194    0x2  Data  Lc  SMAC.o [1]
+smacClearestChann       0x1fff91ba    0x1  Data  Lc  SMAC.o [1]
+smacCurrentChannel      0x1fff91b8    0x1  Data  Lc  SMAC.o [1]
+smacEdValue             0x1fff91b6    0x1  Data  Lc  SMAC.o [1]
+smacFlags               0x1fff9180    0x4  Data  Gb  SMAC.o [1]
+smacLastDataRxParams    0x1fff9128    0x8  Data  Lc  SMAC.o [1]
+smacProccesPacketPtr    0x1fff917c    0x4  Data  Lc  SMAC.o [1]
+smacScanCurrentChannel  0x1fff91b9    0x1  Data  Lc  SMAC.o [1]
+smacState               0x1fff91b7    0x1  Data  Lc  SMAC.o [1]
+smacTimeout             0x1fff9174    0x4  Data  Lc  SMAC.o [1]
+testChannel             0x1fff91a4    0x1  Data  Gb  main.o [1]
+testOpMode              0x1fff91a2    0x1  Data  Gb  main.o [1]
+testPayloadLen          0x1fff91a7    0x1  Data  Gb  main.o [1]
+testPower               0x1fff91a5    0x1  Data  Gb  main.o [1]
+testTrimmValue          0x1fff91a6    0x1  Data  Gb  main.o [1]
+timerHardwareIsRunning  0x1fff91bd    0x1  Data  Lc  Timer.o [1]
+txTestIndex             0x1fff91b2    0x1  Data  Gb  main.o [1]
+uart1_ungetByte         0x1fff91bf    0x1  Data  Lc  UART.o [1]
+uart1_ungetFlag         0x1fff91be    0x1  Data  Lc  UART.o [1]
+
+
+[1] = C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor Code - Copy\Shanit Origional Code\Connectivity Test\Debug\Obj
+[2] = command line
+[3] = dl7M_tln.a
+[4] = rt7M_tl.a
+[5] = shb_l.a
+
+  21 496 bytes of readonly  code memory
+      72 bytes of readwrite code memory
+     580 bytes of readonly  data memory
+   4 472 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

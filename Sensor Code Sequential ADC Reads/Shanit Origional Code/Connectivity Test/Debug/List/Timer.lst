@@ -1,0 +1,1976 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.20.5.7591/W32 for ARM        20/Mar/2018  09:41:51
+# Copyright 1999-2014 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\PLM\Source\TMR\Timer.c
+#    Command line =  
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\PLM\Source\TMR\Timer.c"
+#        -D IAR --preprocess "C:\Users\rfrum\OneDrive\2018 Spring
+#        Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity
+#        Test\Debug\List\" -lC "C:\Users\rfrum\OneDrive\2018 Spring
+#        Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity
+#        Test\Debug\List\" -lB "C:\Users\rfrum\OneDrive\2018 Spring
+#        Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity
+#        Test\Debug\List\" --diag_suppress
+#        Pe014,Pe001,Pe991,Pa039,Pe520,Pe550,Pe177,Pa082 -o
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\Debug\Obj\" --no_cse
+#        --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering
+#        --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=None
+#        --dlib_config "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        7.0\arm\INC\c\DLib_Config_Normal.h" -I "C:\Users\rfrum\OneDrive\2018
+#        Spring Semester\Senior Design\Sensor Code\Shanit Origional
+#        Code\Connectivity Test\PLM\Configure\" -I
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\PLM\Environment\" -I
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\PLM\Interface\" -I
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\Generic
+#        Services\Interface\" -I "C:\Users\rfrum\OneDrive\2018 Spring
+#        Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity
+#        Test\PLM\Source\Uart\" -I "C:\Users\rfrum\OneDrive\2018 Spring
+#        Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity
+#        Test\PLM\Source\USB\" -I "C:\Users\rfrum\OneDrive\2018 Spring
+#        Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity
+#        Test\PLM\Source\USB\APP\" -I "C:\Users\rfrum\OneDrive\2018 Spring
+#        Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity
+#        Test\PLM\Source\USB\APP\CDC\" -I "C:\Users\rfrum\OneDrive\2018 Spring
+#        Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity
+#        Test\PLM\Source\USB\APP\Descriptor\" -I "C:\Users\rfrum\OneDrive\2018
+#        Spring Semester\Senior Design\Sensor Code\Shanit Origional
+#        Code\Connectivity Test\PLM\Source\USB\Class\" -I
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\PLM\Source\USB\Common\"
+#        -I "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\PLM\Source\USB\Driver\"
+#        -I "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\PLM\Source\TMR\" -I
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity
+#        Test\PLM\Source\Radio\MC1324x\PHY\" -I "C:\Users\rfrum\OneDrive\2018
+#        Spring Semester\Senior Design\Sensor Code\Shanit Origional
+#        Code\Connectivity Test\PLM\Source\Radio\MC1324x\DRV\" -I
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\PLM\Source\Sys Common\"
+#        -I "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\SMAC\Source\" -I
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\SMAC\Interface\" -I
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\SMAC\Configure\" -I
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\Application\Source\" -I
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\Application\Configure\"
+#        -I "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\PLM\Source\NVM\" -I
+#        "C:\Users\Robert\SkyDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\PLM\Source\NVM\" -I
+#        "C:\Users\Robert\SkyDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\PLM\Source\ADC\" -I
+#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\PLM\Source\ADC\" -On
+#    List file    =  
+#        C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\Debug\List\Timer.lst
+#    Object file  =  
+#        C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
+#        Code\Shanit Origional Code\Connectivity Test\Debug\Obj\Timer.o
+#
+###############################################################################
+
+C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity Test\PLM\Source\TMR\Timer.c
+      1          /******************************************************************************
+      2           * Source file for Timer driver.
+      3           * 
+      4           * Freescale Semiconductor Inc.
+      5           * (c) Copyright 2004-2011 Freescale Semiconductor, Inc.
+      6           * ALL RIGHTS RESERVED.
+      7           *
+      8          *******************************************************************************
+      9           *
+     10           * THIS SOFTWARE IS PROVIDED BY FREESCALE "AS IS" AND ANY EXPRESSED OR 
+     11           * IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES 
+     12           * OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.  
+     13           * IN NO EVENT SHALL FREESCALE OR ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT, 
+     14           * INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES 
+     15           * (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR 
+     16           * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) 
+     17           * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, 
+     18           * STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING 
+     19           * IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF 
+     20           * THE POSSIBILITY OF SUCH DAMAGE.
+     21           *
+     22          ***************************************************************************//*!
+     23          ******************************************************************************/
+     24          
+     25          /******************************************************************************
+     26          *******************************************************************************
+     27          * Includes
+     28          *******************************************************************************
+     29          ******************************************************************************/
+     30          
+     31          #include "EmbeddedTypes.h"
+     32          #include "PortConfig.h"
+     33          #include "TMR_Interface.h"
+     34          #include "Timer.h"
+     35          #include "Interrupt.h"
+     36          
+     37          
+     38          /******************************************************************************
+     39          *******************************************************************************
+     40          * Private memory declarations
+     41          *******************************************************************************
+     42          ******************************************************************************/
+     43          
+     44          /******************************************************************************
+     45           * NAME: previousTimeInTicks
+     46           * DESCRIPTION: The previous time in ticks when the counter register was read
+     47           * VALUES: 0..65535
+     48           *****************************************************************************/
+
+   \                                 In section .bss, align 2
+     49          static tmrTimerTicks16_t previousTimeInTicks;
+   \                     previousTimeInTicks:
+   \   00000000                      DS8 2
+     50          
+     51          /******************************************************************************
+     52           * NAME: mMaxToCountDown_c
+     53           * DESCRIPTION:  Count to maximum (0xffff - 2*4ms(in ticks)), to be sure that 
+     54           * the currentTimeInTicks will never roll over previousTimeInTicks in the 
+     55           * TMR_Task(); A task have to be executed at most in 4ms.
+     56           * VALUES: 0..65535
+     57           *****************************************************************************/
+
+   \                                 In section .bss, align 2
+     58          static uint16_t mMaxToCountDown_c; 
+   \                     mMaxToCountDown_c:
+   \   00000000                      DS8 2
+     59          
+     60          /******************************************************************************
+     61           * NAME: mTicksFor4ms
+     62           * DESCRIPTION:  Ticks for 4ms. The TMR_Task()event will not be issued faster than 4ms
+     63           * VALUES: uint32_t range
+     64           *****************************************************************************/
+
+   \                                 In section .bss, align 4
+     65          static uint32_t mTicksFor4ms;
+   \                     mTicksFor4ms:
+   \   00000000                      DS8 4
+     66          
+     67          /******************************************************************************
+     68           * NAME: mClkSourceKhz
+     69           * DESCRIPTION:  The source clock in Khz
+     70           * VALUES: see definition
+     71           *****************************************************************************/
+
+   \                                 In section .data, align 4
+     72          static uint32_t mClkSourceKhz = (uint32_t)(gTmrSourceClkKHz_c);
+   \                     mClkSourceKhz:
+   \   00000000   0x0000BB80         DC32 48000
+     73          
+     74          /******************************************************************************
+     75           * NAME: maTmrTimerTable
+     76           * DESCRIPTION:  Main timer table. All allocated timers are stored here.
+     77           *               A timer's ID is it's index in this table.
+     78           * VALUES: see definition
+     79           *****************************************************************************/
+
+   \                                 In section .bss, align 4
+     80          static tmrTimerTableEntry_t maTmrTimerTable[gTmrTotalTimers_c];
+   \                     maTmrTimerTable:
+   \   00000000                      DS8 408
+     81          
+     82          /******************************************************************************
+     83           * NAME: maTmrTimerStatusTable
+     84           * DESCRIPTION: timer status stable. Making the single-byte-per-timer status
+     85           *              table a separate array saves a bit of code space.
+     86           *              If an entry is == 0, the timer is not allocated.
+     87           * VALUES: see definition
+     88           *****************************************************************************/
+
+   \                                 In section .bss, align 4
+     89          static tmrStatus_t maTmrTimerStatusTable[gTmrTotalTimers_c];
+   \                     maTmrTimerStatusTable:
+   \   00000000                      DS8 36
+     90          
+     91          /******************************************************************************
+     92           * NAME: numberOfActiveTimers
+     93           * DESCRIPTION: Number of Active timers (without low power capability)
+     94           *              the MCU can not enter low power if numberOfActiveTimers!=0
+     95           * VALUES: 0..255
+     96           *****************************************************************************/
+
+   \                                 In section .bss, align 1
+     97          static uint8_t numberOfActiveTimers = 0;
+   \                     numberOfActiveTimers:
+   \   00000000                      DS8 1
+     98          
+     99          /******************************************************************************
+    100           * NAME: numberOfLowPowerActiveTimers
+    101           * DESCRIPTION: Number of low power active timer.
+    102           *              The MCU can enter in low power if more low power timers are active
+    103           * VALUES:
+    104           *****************************************************************************/
+
+   \                                 In section .bss, align 1
+    105          static uint8_t numberOfLowPowerActiveTimers = 0;
+   \                     numberOfLowPowerActiveTimers:
+   \   00000000                      DS8 1
+    106          
+    107          #define IncrementActiveTimerNumber(type)  (((type) & gTmrLowPowerTimer_c) \
+    108                                                    ?(++numberOfLowPowerActiveTimers) \
+    109                                                    :(++numberOfActiveTimers) )                                   
+    110          #define DecrementActiveTimerNumber(type)  (((type) & gTmrLowPowerTimer_c) \
+    111                                                    ?(--numberOfLowPowerActiveTimers) \
+    112                                                    :(--numberOfActiveTimers) ) 
+    113                                                    
+    114          
+    115          /******************************************************************************
+    116           * NAME: timerHardwareIsRunning
+    117           * DESCRIPTION: Flag if the hardware timer is running or not
+    118           * VALUES: TRUE/FALSE
+    119           *****************************************************************************/
+
+   \                                 In section .bss, align 1
+    120          static bool_t timerHardwareIsRunning = FALSE;
+   \                     timerHardwareIsRunning:
+   \   00000000                      DS8 1
+    121          
+    122          /******************************************************************************
+    123          *******************************************************************************
+    124          * Private Prototypes
+    125          *******************************************************************************
+    126          ******************************************************************************/
+    127          
+    128          /******************************************************************************
+    129           * NAME: TMR_GetTimerStatus
+    130           * DESCRIPTION: RETURNs the timer status
+    131           * PARAMETERS:  IN: timerID - the timer ID
+    132           * RETURN: see definition of tmrStatus_t
+    133           * NOTES: none
+    134           *****************************************************************************/
+    135          static tmrStatus_t TMR_GetTimerStatus 
+    136          ( 
+    137              tmrTimerID_t timerID 
+    138          );
+    139          
+    140          /******************************************************************************
+    141           * NAME: TMR_SetTimerStatus
+    142           * DESCRIPTION: Set the timer status
+    143           * PARAMETERS:  IN: timerID - the timer ID
+    144           * 			   IN: status - the status of the timer
+    145           * RETURN: None
+    146           * NOTES: none
+    147           *****************************************************************************/
+    148          static void TMR_SetTimerStatus
+    149          ( 
+    150              tmrTimerID_t timerID,
+    151              tmrStatus_t status
+    152          );
+    153          
+    154          /******************************************************************************
+    155           * NAME: TMR_GetTimerType
+    156           * DESCRIPTION: RETURNs the timer type
+    157           * PARAMETERS:  IN: timerID - the timer ID
+    158           * RETURN: see definition of tmrTimerType_t
+    159           * NOTES: none
+    160           *****************************************************************************/
+    161          static tmrTimerType_t TMR_GetTimerType 
+    162          ( 
+    163              tmrTimerID_t timerID 
+    164          );
+    165          
+    166          /******************************************************************************
+    167           * NAME: TMR_SetTimerType
+    168           * DESCRIPTION: Set the timer type
+    169           * PARAMETERS:  IN: timerID - the timer ID
+    170           * 			    IN: type - timer type
+    171           * RETURN: none
+    172           * NOTES: none
+    173           *****************************************************************************/
+    174          static void TMR_SetTimerType
+    175          (
+    176              tmrTimerID_t timerID,
+    177              tmrTimerType_t type
+    178          );
+    179          
+    180          /******************************************************************************
+    181           * NAME: TmrTicksFromMilliseconds
+    182           * DESCRIPTION: Convert milliseconds to ticks
+    183           * PARAMETERS:  IN: milliseconds
+    184           * RETURN: tmrTimerTicks32_t - ticks number
+    185           * NOTES: none
+    186           *****************************************************************************/
+    187          static tmrTimerTicks32_t TmrTicksFromMilliseconds 
+    188          ( 
+    189              tmrTimeInMilliseconds_t milliseconds 
+    190          );
+    191          
+    192          /******************************************************************************
+    193          *******************************************************************************
+    194          * Private functions
+    195          *******************************************************************************
+    196          ******************************************************************************/
+    197          
+    198          /******************************************************************************
+    199          * NAME: TMR_GetTimerStatus
+    200          * DESCRIPTION: Returns the timer status
+    201          * PARAMETERS:  IN: timerID - the timer ID
+    202          * RETURN: see definition of tmrStatus_t
+    203          * NOTES: none
+    204          ******************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    205          static tmrStatus_t TMR_GetTimerStatus
+    206          (
+    207              tmrTimerID_t timerID
+    208          )
+    209          {
+    210              return maTmrTimerStatusTable[timerID] & mTimerStatusMask_c;
+   \                     TMR_GetTimerStatus: (+1)
+   \   00000000   0x.... 0x....      LDR.W    R1,??DataTable16
+   \   00000004   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000006   0x5C40             LDRB     R0,[R0, R1]
+   \   00000008   0xF010 0x00E0      ANDS     R0,R0,#0xE0
+   \   0000000C   0x4770             BX       LR               ;; return
+    211          }
+    212          
+    213          /******************************************************************************
+    214          * NAME: TMR_SetTimerStatus
+    215          * DESCRIPTION: Set the timer status
+    216          * PARAMETERS:  IN: timerID - the timer ID
+    217          * 			   IN: status - the status of the timer	
+    218          * RETURN: None
+    219          * NOTES: none
+    220          ******************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    221          static void TMR_SetTimerStatus
+    222          (
+    223              tmrTimerID_t timerID, 
+    224              tmrStatus_t status
+    225          )
+    226          {
+    227              maTmrTimerStatusTable[timerID] = (maTmrTimerStatusTable[timerID] & ~mTimerStatusMask_c) | status;
+   \                     TMR_SetTimerStatus: (+1)
+   \   00000000   0x.... 0x....      LDR.W    R2,??DataTable16
+   \   00000004   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000006   0x5C82             LDRB     R2,[R0, R2]
+   \   00000008   0xF012 0x021F      ANDS     R2,R2,#0x1F
+   \   0000000C   0x430A             ORRS     R2,R1,R2
+   \   0000000E   0x.... 0x....      LDR.W    R3,??DataTable16
+   \   00000012   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000014   0x54C2             STRB     R2,[R0, R3]
+    228          }
+   \   00000016   0x4770             BX       LR               ;; return
+    229          
+    230          /******************************************************************************
+    231          * NAME: TMR_GetTimerType
+    232          * DESCRIPTION: Returns the timer type
+    233          * PARAMETERS:  IN: timerID - the timer ID
+    234          * RETURN: see definition of tmrTimerType_t
+    235          * NOTES: none
+    236          ******************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    237          static tmrTimerType_t TMR_GetTimerType
+    238          (
+    239              tmrTimerID_t timerID
+    240          )
+    241          {
+    242              return maTmrTimerStatusTable[timerID] & mTimerType_c;
+   \                     TMR_GetTimerType: (+1)
+   \   00000000   0x.... 0x....      LDR.W    R1,??DataTable16
+   \   00000004   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000006   0x5C40             LDRB     R0,[R0, R1]
+   \   00000008   0xF010 0x001F      ANDS     R0,R0,#0x1F
+   \   0000000C   0x4770             BX       LR               ;; return
+    243          }
+    244          
+    245          /******************************************************************************
+    246          * NAME: TMR_SetTimerType
+    247          * DESCRIPTION: Set the timer type
+    248          * PARAMETERS:  IN: timerID - the timer ID
+    249          * 			   IN: type - timer type	
+    250          * RETURN: none
+    251          * NOTES: none
+    252          ******************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    253          static void TMR_SetTimerType
+    254          (
+    255              tmrTimerID_t timerID, 
+    256              tmrTimerType_t type
+    257          )
+    258          {
+    259              maTmrTimerStatusTable[timerID] = (maTmrTimerStatusTable[timerID] & ~mTimerType_c) | type;
+   \                     TMR_SetTimerType: (+1)
+   \   00000000   0x.... 0x....      LDR.W    R2,??DataTable16
+   \   00000004   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000006   0x5C82             LDRB     R2,[R0, R2]
+   \   00000008   0xF012 0x02E0      ANDS     R2,R2,#0xE0
+   \   0000000C   0x430A             ORRS     R2,R1,R2
+   \   0000000E   0x.... 0x....      LDR.W    R3,??DataTable16
+   \   00000012   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000014   0x54C2             STRB     R2,[R0, R3]
+    260          } 
+   \   00000016   0x4770             BX       LR               ;; return
+    261          
+    262          /******************************************************************************
+    263           * NAME: TmrTicksFromMilliseconds
+    264           * DESCRIPTION: Convert milliseconds to ticks
+    265           * PARAMETERS:  IN: milliseconds
+    266           * RETURN: tmrTimerTicks32_t - ticks number
+    267           * NOTES: none
+    268           ******************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    269          static tmrTimerTicks32_t TmrTicksFromMilliseconds
+    270          (
+    271              tmrTimeInMilliseconds_t milliseconds
+    272          )
+    273          {
+    274              return (milliseconds * (mClkSourceKhz/(0x01<<gFTMxSC_PrescaleCount_c)));
+   \                     TmrTicksFromMilliseconds: (+1)
+   \   00000000   0x.... 0x....      LDR.W    R1,??DataTable16_1
+   \   00000004   0x6809             LDR      R1,[R1, #+0]
+   \   00000006   0x09C9             LSRS     R1,R1,#+7
+   \   00000008   0x4348             MULS     R0,R1,R0
+   \   0000000A   0x4770             BX       LR               ;; return
+    275          } 
+    276          
+    277          /******************************************************************************
+    278          *******************************************************************************
+    279          * Public functions
+    280          *******************************************************************************
+    281          ******************************************************************************/
+    282          
+    283          /******************************************************************************
+    284           * NAME: TMR_Init
+    285           * DESCRIPTION: initialize the timer module
+    286           * PARAMETERS: -
+    287           * RETURN: -
+    288           ******************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    289          void TMR_Init 
+    290          (
+    291              void
+    292          )
+    293          {
+   \                     TMR_Init: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+    294              /* Configure a FTM channel: enable interrupts; set output compare mode. */
+    295          
+    296              /* Enable timer IRQ */
+    297              NVIC_EnableIRQ(gTMR_FTMIrqNo);
+   \   00000002   0x202A             MOVS     R0,#+42
+   \   00000004   0x.... 0x....      BL       NVIC_EnableIRQ
+    298              /* Set timer IRQ priority */
+    299              NVIC_SetPriority(gTMR_FTMIrqNo, gTMR_FTMInterruptPriority);
+   \   00000008   0x2103             MOVS     R1,#+3
+   \   0000000A   0x202A             MOVS     R0,#+42
+   \   0000000C   0x.... 0x....      BL       NVIC_SetPriority
+    300          
+    301              /* Setup the system clock gating */
+    302              gTMR_FTM_SIM_SCGC_REG_c |= (1<<gTMR_FTM_SIM_SCGC_BIT_c);
+   \   00000010   0x.... 0x....      LDR.W    R0,??DataTable16_2  ;; 0x4004803c
+   \   00000014   0x6800             LDR      R0,[R0, #+0]
+   \   00000016   0xF050 0x7080      ORRS     R0,R0,#0x1000000
+   \   0000001A   0x.... 0x....      LDR.W    R1,??DataTable16_2  ;; 0x4004803c
+   \   0000001E   0x6008             STR      R0,[R1, #+0]
+    303          
+    304              /* Dummy read of the FTMx_SC register to clear the interrupt flag */                       
+    305              (void)(gFTMxSC_c == 0U);
+   \   00000020   0x.... 0x....      LDR.W    R0,??DataTable16_3  ;; 0x40038000
+   \   00000024   0x6800             LDR      R0,[R0, #+0]
+   \   00000026   0x2800             CMP      R0,#+0
+   \   00000028   0xD101             BNE.N    ??TMR_Init_0
+   \   0000002A   0x2001             MOVS     R0,#+1
+   \   0000002C   0xE000             B.N      ??TMR_Init_1
+   \                     ??TMR_Init_0: (+1)
+   \   0000002E   0x2000             MOVS     R0,#+0
+   \                     ??TMR_Init_1: (+1)
+   \   00000030   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+    306              /* Stop the counter */
+    307              gFTMxSC_c = (uint32_t)0x00UL;
+   \   00000032   0x2000             MOVS     R0,#+0
+   \   00000034   0x.... 0x....      LDR.W    R1,??DataTable16_3  ;; 0x40038000
+   \   00000038   0x6008             STR      R0,[R1, #+0]
+    308              /* Dummy read of the FTMx_CnSC register to clear the interrupt flag */
+    309              (void)(gFTMxCnSC_c == 0U);             
+   \   0000003A   0x.... 0x....      LDR.W    R0,??DataTable16_4  ;; 0x4003800c
+   \   0000003E   0x6800             LDR      R0,[R0, #+0]
+   \   00000040   0x2800             CMP      R0,#+0
+   \   00000042   0xD101             BNE.N    ??TMR_Init_2
+   \   00000044   0x2001             MOVS     R0,#+1
+   \   00000046   0xE000             B.N      ??TMR_Init_3
+   \                     ??TMR_Init_2: (+1)
+   \   00000048   0x2000             MOVS     R0,#+0
+   \                     ??TMR_Init_3: (+1)
+   \   0000004A   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+    310          
+    311              /* Disable write protection */
+    312              /* FTMx_MODE: WPDIS=1 */
+    313              gFTMxMODE_c |= (uint32_t)0x04UL;       
+   \   0000004C   0x.... 0x....      LDR.W    R0,??DataTable16_5  ;; 0x40038054
+   \   00000050   0x6800             LDR      R0,[R0, #+0]
+   \   00000052   0xF050 0x0004      ORRS     R0,R0,#0x4
+   \   00000056   0x.... 0x....      LDR.W    R1,??DataTable16_5  ;; 0x40038054
+   \   0000005A   0x6008             STR      R0,[R1, #+0]
+    314              /* FTMx_MODE: FTMEN=0 */
+    315              gFTMxMODE_c &= (uint32_t)~0x01UL;     
+   \   0000005C   0x.... 0x....      LDR.W    R0,??DataTable16_5  ;; 0x40038054
+   \   00000060   0x6800             LDR      R0,[R0, #+0]
+   \   00000062   0x0840             LSRS     R0,R0,#+1
+   \   00000064   0x0040             LSLS     R0,R0,#+1
+   \   00000066   0x.... 0x....      LDR.W    R1,??DataTable16_5  ;; 0x40038054
+   \   0000006A   0x6008             STR      R0,[R1, #+0]
+    316          
+    317              /* Clear modulo register */
+    318              gFTMxMOD_c = (uint32_t)0x00UL;	
+   \   0000006C   0x2000             MOVS     R0,#+0
+   \   0000006E   0x.... 0x....      LDR.W    R1,??DataTable16_6  ;; 0x40038008
+   \   00000072   0x6008             STR      R0,[R1, #+0]
+    319          
+    320              gFTMxCnSC_c = (uint32_t)0x50UL; 
+   \   00000074   0x2050             MOVS     R0,#+80
+   \   00000076   0x.... 0x....      LDR.W    R1,??DataTable16_4  ;; 0x4003800c
+   \   0000007A   0x6008             STR      R0,[R1, #+0]
+    321          
+    322              //gTimerTaskID = TS_CreateTask(gTsTimerTaskPriority_c, TMR_Task);
+    323              //TMR_Task();
+    324              /* Count to maximum (0xffff - 2*4ms(in ticks)), to be sure that the currentTimeInTicks 
+    325              will never roll over previousTimeInTicks in the TMR_Task() */
+    326              mMaxToCountDown_c = 0xFFFF - TmrTicksFromMilliseconds(8); 
+   \   0000007C   0xF64F 0x74FF      MOVW     R4,#+65535
+   \   00000080   0x2008             MOVS     R0,#+8
+   \   00000082   0x.... 0x....      BL       TmrTicksFromMilliseconds
+   \   00000086   0x1A20             SUBS     R0,R4,R0
+   \   00000088   0x.... 0x....      LDR.W    R1,??DataTable16_7
+   \   0000008C   0x8008             STRH     R0,[R1, #+0]
+    327              /* The TMR_Task()event will not be issued faster than 4ms*/
+    328              mTicksFor4ms = TmrTicksFromMilliseconds(4);
+   \   0000008E   0x2004             MOVS     R0,#+4
+   \   00000090   0x.... 0x....      BL       TmrTicksFromMilliseconds
+   \   00000094   0x.... 0x....      LDR.W    R1,??DataTable16_8
+   \   00000098   0x6008             STR      R0,[R1, #+0]
+    329          }
+   \   0000009A   0xBD10             POP      {R4,PC}          ;; return
+    330          
+    331          /******************************************************************************
+    332           * NAME: TMR_NotifyClkChanged
+    333           * DESCRIPTION: This function is called when the clock is changed
+    334           * PARAMETERS: IN: clkKhz (uint32_t) - new clock
+    335           * RETURN: -
+    336           *****************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    337          void TMR_NotifyClkChanged
+    338          (
+    339              uint32_t clkKhz
+    340          )
+    341          {
+   \                     TMR_NotifyClkChanged: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+    342              mClkSourceKhz = clkKhz;
+   \   00000004   0x.... 0x....      LDR.W    R0,??DataTable16_1
+   \   00000008   0x6004             STR      R4,[R0, #+0]
+    343              /* Clock was changed, so calculate again  mMaxToCountDown_c.
+    344              Count to maximum (0xffff - 2*4ms(in ticks)), to be sure that the currentTimeInTicks 
+    345              will never roll over previousTimeInTicks in the TMR_Task() */
+    346              mMaxToCountDown_c = 0xFFFF - TmrTicksFromMilliseconds(8); 
+   \   0000000A   0xF64F 0x75FF      MOVW     R5,#+65535
+   \   0000000E   0x2008             MOVS     R0,#+8
+   \   00000010   0x.... 0x....      BL       TmrTicksFromMilliseconds
+   \   00000014   0x1A28             SUBS     R0,R5,R0
+   \   00000016   0x.... 0x....      LDR.W    R1,??DataTable16_7
+   \   0000001A   0x8008             STRH     R0,[R1, #+0]
+    347              /* The TMR_Task()event will not be issued faster than 4ms*/
+    348              mTicksFor4ms = TmrTicksFromMilliseconds(4);  
+   \   0000001C   0x2004             MOVS     R0,#+4
+   \   0000001E   0x.... 0x....      BL       TmrTicksFromMilliseconds
+   \   00000022   0x.... 0x....      LDR.W    R1,??DataTable16_8
+   \   00000026   0x6008             STR      R0,[R1, #+0]
+    349          }
+   \   00000028   0xBD31             POP      {R0,R4,R5,PC}    ;; return
+    350          
+    351          /******************************************************************************
+    352           * NAME: TMR_AllocateTimer
+    353           * DESCRIPTION: allocate a timer
+    354           * PARAMETERS: -
+    355           * RETURN: timer ID
+    356           *****************************************************************************/
+    357          
+
+   \                                 In section .text, align 2, keep-with-next
+    358          tmrTimerID_t TMR_AllocateTimer
+    359          (
+    360              void
+    361          )
+    362          {
+   \                     TMR_AllocateTimer: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+    363              uint32_t i;
+    364            
+    365              for (i = 0; i < NumberOfElements(maTmrTimerTable); ++i) 
+   \   00000002   0x2000             MOVS     R0,#+0
+   \   00000004   0x0004             MOVS     R4,R0
+   \                     ??TMR_AllocateTimer_0: (+1)
+   \   00000006   0x2C22             CMP      R4,#+34
+   \   00000008   0xD20E             BCS.N    ??TMR_AllocateTimer_1
+    366              {
+    367                  if (!TMR_IsTimerAllocated(i)) 
+   \   0000000A   0x.... 0x....      LDR.W    R0,??DataTable16
+   \   0000000E   0x5C20             LDRB     R0,[R4, R0]
+   \   00000010   0x2800             CMP      R0,#+0
+   \   00000012   0xD107             BNE.N    ??TMR_AllocateTimer_2
+    368                  {
+    369                      TMR_SetTimerStatus(i, mTmrStatusInactive_c);
+   \   00000014   0x2180             MOVS     R1,#+128
+   \   00000016   0x0020             MOVS     R0,R4
+   \   00000018   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   0000001A   0x.... 0x....      BL       TMR_SetTimerStatus
+    370                      return i;
+   \   0000001E   0x0020             MOVS     R0,R4
+   \   00000020   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000022   0xE002             B.N      ??TMR_AllocateTimer_3
+    371                  }
+    372             }
+   \                     ??TMR_AllocateTimer_2: (+1)
+   \   00000024   0x1C64             ADDS     R4,R4,#+1
+   \   00000026   0xE7EE             B.N      ??TMR_AllocateTimer_0
+    373            
+    374             return gTmrInvalidTimerID_c;
+   \                     ??TMR_AllocateTimer_1: (+1)
+   \   00000028   0x20FF             MOVS     R0,#+255
+   \                     ??TMR_AllocateTimer_3: (+1)
+   \   0000002A   0xBD10             POP      {R4,PC}          ;; return
+    375          }                                      
+    376          
+    377          /******************************************************************************
+    378           * NAME: TMR_AreAllTimersOff
+    379           * DESCRIPTION: Check if all timers except the LP timers are OFF.
+    380           * PARAMETERS: -
+    381           * RETURN: TRUE if there are no active non-low power timers, FALSE otherwise
+    382           *****************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    383          bool_t TMR_AreAllTimersOff
+    384          (
+    385              void
+    386          )
+    387          {
+    388              return !numberOfActiveTimers;
+   \                     TMR_AreAllTimersOff: (+1)
+   \   00000000   0x.... 0x....      LDR.W    R0,??DataTable16_9
+   \   00000004   0x7800             LDRB     R0,[R0, #+0]
+   \   00000006   0x2800             CMP      R0,#+0
+   \   00000008   0xD101             BNE.N    ??TMR_AreAllTimersOff_0
+   \   0000000A   0x2001             MOVS     R0,#+1
+   \   0000000C   0xE000             B.N      ??TMR_AreAllTimersOff_1
+   \                     ??TMR_AreAllTimersOff_0: (+1)
+   \   0000000E   0x2000             MOVS     R0,#+0
+   \                     ??TMR_AreAllTimersOff_1: (+1)
+   \   00000010   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000012   0x4770             BX       LR               ;; return
+    389          }                                      
+    390          
+    391          /******************************************************************************
+    392           * NAME: TMR_FreeTimer
+    393           * DESCRIPTION: Free a timer
+    394           * PARAMETERS:  IN: timerID - the ID of the timer
+    395           * RETURN: -
+    396           * NOTES: Safe to call even if the timer is running.
+    397           *        Harmless if the timer is already free.
+    398           *****************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    399          void TMR_FreeTimer
+    400          (
+    401              tmrTimerID_t timerID
+    402          )
+    403          {
+   \                     TMR_FreeTimer: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+    404              TMR_StopTimer(timerID);
+   \   00000004   0x0020             MOVS     R0,R4
+   \   00000006   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000008   0x.... 0x....      BL       TMR_StopTimer
+    405              TMR_MarkTimerFree(timerID);
+   \   0000000C   0x2000             MOVS     R0,#+0
+   \   0000000E   0x.... 0x....      LDR.W    R1,??DataTable16
+   \   00000012   0xB2E4             UXTB     R4,R4            ;; ZeroExt  R4,R4,#+24,#+24
+   \   00000014   0x5460             STRB     R0,[R4, R1]
+    406          }                                       
+   \   00000016   0xBD10             POP      {R4,PC}          ;; return
+    407          
+    408          /******************************************************************************
+    409           * NAME: TMR_InterruptHandler
+    410           * DESCRIPTION: Timer Module Interrupt Service Routine
+    411           * PARAMETERS: -
+    412           * RETURN: -
+    413           * NOTES: This function have to be added to Interrupt Vector Table
+    414           *****************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    415          void TMR_InterruptHandler
+    416          (
+    417              void
+    418          ) 
+    419          {
+   \                     TMR_InterruptHandler: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+    420              /* Clearing the overflow flag requires reading it and then writing it. */
+    421          
+    422              if(gFTMxSC_c & gFTMxSC_TOF_c) 
+   \   00000002   0x.... 0x....      LDR.W    R0,??DataTable16_3  ;; 0x40038000
+   \   00000006   0x6800             LDR      R0,[R0, #+0]
+   \   00000008   0x0600             LSLS     R0,R0,#+24
+   \   0000000A   0xD507             BPL.N    ??TMR_InterruptHandler_0
+    423              {
+    424                  gFTMxSC_c  &= ~ gFTMxSC_TOF_c;
+   \   0000000C   0x.... 0x....      LDR.W    R0,??DataTable16_3  ;; 0x40038000
+   \   00000010   0x6800             LDR      R0,[R0, #+0]
+   \   00000012   0xF030 0x0080      BICS     R0,R0,#0x80
+   \   00000016   0x.... 0x....      LDR.W    R1,??DataTable16_3  ;; 0x40038000
+   \   0000001A   0x6008             STR      R0,[R1, #+0]
+    425              }
+    426          
+    427              if ( gFTMxCnSC_c & gFTMxCnSC_CHF_c ) 
+   \                     ??TMR_InterruptHandler_0: (+1)
+   \   0000001C   0x.... 0x....      LDR.W    R0,??DataTable16_4  ;; 0x4003800c
+   \   00000020   0x6800             LDR      R0,[R0, #+0]
+   \   00000022   0x0600             LSLS     R0,R0,#+24
+   \   00000024   0xD509             BPL.N    ??TMR_InterruptHandler_1
+    428              {
+    429                  gFTMxCnSC_c &= ~gFTMxCnSC_CHF_c;
+   \   00000026   0x.... 0x....      LDR.W    R0,??DataTable16_4  ;; 0x4003800c
+   \   0000002A   0x6800             LDR      R0,[R0, #+0]
+   \   0000002C   0xF030 0x0080      BICS     R0,R0,#0x80
+   \   00000030   0x.... 0x....      LDR.W    R1,??DataTable16_4  ;; 0x4003800c
+   \   00000034   0x6008             STR      R0,[R1, #+0]
+    430                  TMR_Task();
+   \   00000036   0x.... 0x....      BL       TMR_Task
+    431              }
+    432          }
+   \                     ??TMR_InterruptHandler_1: (+1)
+   \   0000003A   0xBD01             POP      {R0,PC}          ;; return
+    433          
+    434          /******************************************************************************
+    435           * NAME: TMR_IsTimerActive
+    436           * DESCRIPTION: Check if a specified timer is active
+    437           * PARAMETERS: IN: timerID - the ID of the timer
+    438           * RETURN: TRUE if the timer (specified by the timerID) is active,
+    439           *         FALSE otherwise
+    440           *****************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    441          bool_t TMR_IsTimerActive
+    442          (
+    443              tmrTimerID_t timerID
+    444          )
+    445          {
+   \                     TMR_IsTimerActive: (+1)
+   \   00000000   0xB510             PUSH     {R4,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+    446              return TMR_GetTimerStatus(timerID) == mTmrStatusActive_c;
+   \   00000004   0x0020             MOVS     R0,R4
+   \   00000006   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000008   0x.... 0x....      BL       TMR_GetTimerStatus
+   \   0000000C   0x2820             CMP      R0,#+32
+   \   0000000E   0xD101             BNE.N    ??TMR_IsTimerActive_0
+   \   00000010   0x2001             MOVS     R0,#+1
+   \   00000012   0xE000             B.N      ??TMR_IsTimerActive_1
+   \                     ??TMR_IsTimerActive_0: (+1)
+   \   00000014   0x2000             MOVS     R0,#+0
+   \                     ??TMR_IsTimerActive_1: (+1)
+   \   00000016   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000018   0xBD10             POP      {R4,PC}          ;; return
+    447          } 
+    448          
+    449          /******************************************************************************
+    450           * NAME: TMR_StartTimer (BeeStack or application)
+    451           * DESCRIPTION: Start a specified timer
+    452           * PARAMETERS: IN: timerId - the ID of the timer
+    453           *             IN: timerType - the type of the timer
+    454           *             IN: timeInMilliseconds - time expressed in millisecond units
+    455           *             IN: pfTmrCallBack - callback function
+    456           * RETURN: -
+    457           * NOTES: When the timer expires, the callback function is called in
+    458           *        non-interrupt context. If the timer is already running when
+    459           *        this function is called, it will be stopped and restarted.
+    460           *****************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    461          void TMR_StartTimer
+    462          (
+    463              tmrTimerID_t timerID,                       
+    464              tmrTimerType_t timerType,                   
+    465              tmrTimeInMilliseconds_t timeInMilliseconds, 
+    466              void (*pfTimerCallBack)(tmrTimerID_t)       
+    467          )
+    468          {
+   \                     TMR_StartTimer: (+1)
+   \   00000000   0xE92D 0x41F0      PUSH     {R4-R8,LR}
+   \   00000004   0x0004             MOVS     R4,R0
+   \   00000006   0x000D             MOVS     R5,R1
+   \   00000008   0x0016             MOVS     R6,R2
+   \   0000000A   0x001F             MOVS     R7,R3
+    469              tmrTimerTicks32_t intervalInTicks;
+    470              
+    471              /* check if timer is not allocated or if it has an invalid ID (fix@ENGR223389) */
+    472              if (!TMR_IsTimerAllocated(timerID) || (gTmrInvalidTimerID_c == timerID)) 
+   \   0000000C   0x.... 0x....      LDR.W    R0,??DataTable16
+   \   00000010   0xB2E4             UXTB     R4,R4            ;; ZeroExt  R4,R4,#+24,#+24
+   \   00000012   0x5C20             LDRB     R0,[R4, R0]
+   \   00000014   0x2800             CMP      R0,#+0
+   \   00000016   0xD002             BEQ.N    ??TMR_StartTimer_0
+   \   00000018   0xB2E4             UXTB     R4,R4            ;; ZeroExt  R4,R4,#+24,#+24
+   \   0000001A   0x2CFF             CMP      R4,#+255
+   \   0000001C   0xD100             BNE.N    ??TMR_StartTimer_1
+    473                return;
+   \                     ??TMR_StartTimer_0: (+1)
+   \   0000001E   0xE02D             B.N      ??TMR_StartTimer_2
+    474          
+    475              /* Stopping an already stopped timer is harmless. */
+    476              TMR_StopTimer(timerID);
+   \                     ??TMR_StartTimer_1: (+1)
+   \   00000020   0x0020             MOVS     R0,R4
+   \   00000022   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000024   0x.... 0x....      BL       TMR_StopTimer
+    477          
+    478              intervalInTicks = TmrTicksFromMilliseconds(timeInMilliseconds);
+   \   00000028   0x0030             MOVS     R0,R6
+   \   0000002A   0x.... 0x....      BL       TmrTicksFromMilliseconds
+   \   0000002E   0x4680             MOV      R8,R0
+    479              if (!intervalInTicks) 
+   \   00000030   0xF1B8 0x0F00      CMP      R8,#+0
+   \   00000034   0xD101             BNE.N    ??TMR_StartTimer_3
+    480              {
+    481                  intervalInTicks = 1;
+   \   00000036   0x2001             MOVS     R0,#+1
+   \   00000038   0x4680             MOV      R8,R0
+    482              }
+    483          
+    484              TMR_SetTimerType(timerID, timerType);
+   \                     ??TMR_StartTimer_3: (+1)
+   \   0000003A   0x0029             MOVS     R1,R5
+   \   0000003C   0xB2C9             UXTB     R1,R1            ;; ZeroExt  R1,R1,#+24,#+24
+   \   0000003E   0x0020             MOVS     R0,R4
+   \   00000040   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000042   0x.... 0x....      BL       TMR_SetTimerType
+    485              maTmrTimerTable[timerID].intervalInTicks = intervalInTicks;
+   \   00000046   0x.... 0x....      LDR.W    R0,??DataTable16_10
+   \   0000004A   0xB2E4             UXTB     R4,R4            ;; ZeroExt  R4,R4,#+24,#+24
+   \   0000004C   0x210C             MOVS     R1,#+12
+   \   0000004E   0xFB01 0x0004      MLA      R0,R1,R4,R0
+   \   00000052   0xF8C0 0x8000      STR      R8,[R0, #+0]
+    486              maTmrTimerTable[timerID].remainingTicks = intervalInTicks;
+   \   00000056   0x.... 0x....      LDR.W    R0,??DataTable16_10
+   \   0000005A   0xB2E4             UXTB     R4,R4            ;; ZeroExt  R4,R4,#+24,#+24
+   \   0000005C   0x210C             MOVS     R1,#+12
+   \   0000005E   0xFB01 0x0004      MLA      R0,R1,R4,R0
+   \   00000062   0xF8C0 0x8004      STR      R8,[R0, #+4]
+    487              maTmrTimerTable[timerID].pfCallBack = pfTimerCallBack;
+   \   00000066   0x.... 0x....      LDR.W    R0,??DataTable16_10
+   \   0000006A   0xB2E4             UXTB     R4,R4            ;; ZeroExt  R4,R4,#+24,#+24
+   \   0000006C   0x210C             MOVS     R1,#+12
+   \   0000006E   0xFB01 0x0004      MLA      R0,R1,R4,R0
+   \   00000072   0x6087             STR      R7,[R0, #+8]
+    488          
+    489              /* Enable timer, the timer task will do the rest of the work. */
+    490              TMR_EnableTimer(timerID);
+   \   00000074   0x0020             MOVS     R0,R4
+   \   00000076   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000078   0x.... 0x....      BL       TMR_EnableTimer
+    491          }
+   \                     ??TMR_StartTimer_2: (+1)
+   \   0000007C   0xE8BD 0x81F0      POP      {R4-R8,PC}       ;; return
+    492          
+    493          /******************************************************************************
+    494           * NAME: TMR_StartLowPowerTimer
+    495           * DESCRIPTION: Start a low power timer. When the timer goes off, call the 
+    496           *              callback function in non-interrupt context. 
+    497           *              If the timer is running when this function is called, it will 
+    498           *              be stopped and restarted. 
+    499           *              Start the timer with the following timer types:
+    500           *                          - gTmrLowPowerMinuteTimer_c
+    501           *                          - gTmrLowPowerSecondTimer_c
+    502           *                          - gTmrLowPowerSingleShotMillisTimer_c
+    503           *                          - gTmrLowPowerIntervalMillisTimer_c
+    504           *              The MCU can enter in low power if there are only active low 
+    505           *              power timers.
+    506           * PARAMETERS: IN: timerId - the ID of the timer
+    507           *             IN: timerType - the type of the timer
+    508           *             IN: timeIn - time in ticks
+    509           *             IN: pfTmrCallBack - callback function
+    510           * RETURN: type/DESCRIPTION
+    511           *****************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    512          void TMR_StartLowPowerTimer
+    513          (
+    514              tmrTimerID_t timerId,
+    515              tmrTimerType_t timerType,
+    516              uint32_t timeIn,
+    517              void (*pfTmrCallBack)(tmrTimerID_t)
+    518          ) 
+    519          {
+   \                     TMR_StartLowPowerTimer: (+1)
+   \   00000000   0xB5F8             PUSH     {R3-R7,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+   \   00000006   0x0016             MOVS     R6,R2
+   \   00000008   0x001F             MOVS     R7,R3
+    520          #if(gTMR_EnableLowPowerTimers_d)
+    521              TMR_StartTimer(timerId, timerType | gTmrLowPowerTimer_c, timeIn, pfTmrCallBack);
+   \   0000000A   0x003B             MOVS     R3,R7
+   \   0000000C   0x0032             MOVS     R2,R6
+   \   0000000E   0xF055 0x0110      ORRS     R1,R5,#0x10
+   \   00000012   0xB2C9             UXTB     R1,R1            ;; ZeroExt  R1,R1,#+24,#+24
+   \   00000014   0x0020             MOVS     R0,R4
+   \   00000016   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000018   0x.... 0x....      BL       TMR_StartTimer
+    522          #else
+    523              timerId = timerId;
+    524              timerType = timerType;
+    525              timeIn = timeIn;
+    526              pfTmrCallBack = pfTmrCallBack;
+    527          #endif
+    528          }
+   \   0000001C   0xBDF1             POP      {R0,R4-R7,PC}    ;; return
+    529          
+    530          /******************************************************************************
+    531           * NAME: TMR_StartMinuteTimer
+    532           * DESCRIPTION: Starts a minutes timer
+    533           * PARAMETERS:  IN: timerId - the ID of the timer
+    534           *              IN: timeInMinutes - time expressed in minutes
+    535           *              IN: pfTmrCallBack - callback function
+    536           * RETURN: None
+    537           * NOTES: Customized form of TMR_StartTimer(). This is a single shot timer.
+    538           *        There are no interval minute timers.
+    539           *****************************************************************************/
+    540           #if gTMR_EnableMinutesSecondsTimers_d
+
+   \                                 In section .text, align 2, keep-with-next
+    541          void TMR_StartMinuteTimer
+    542          (
+    543              tmrTimerID_t timerId, 
+    544              tmrTimeInMinutes_t timeInMinutes, 
+    545              void (*pfTmrCallBack)(tmrTimerID_t)
+    546          )
+    547          {
+   \                     TMR_StartMinuteTimer: (+1)
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+   \   00000006   0x0016             MOVS     R6,R2
+    548              TMR_StartTimer(timerId, gTmrMinuteTimer_c, TmrMinutes(timeInMinutes), pfTmrCallBack);
+   \   00000008   0x0033             MOVS     R3,R6
+   \   0000000A   0xF64E 0x2060      MOVW     R0,#+60000
+   \   0000000E   0xFB00 0xF205      MUL      R2,R0,R5
+   \   00000012   0x2104             MOVS     R1,#+4
+   \   00000014   0x0020             MOVS     R0,R4
+   \   00000016   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000018   0x.... 0x....      BL       TMR_StartTimer
+    549          }
+   \   0000001C   0xBD70             POP      {R4-R6,PC}       ;; return
+    550          #endif
+    551            
+    552          /******************************************************************************
+    553           * NAME: TMR_StartSecondTimer
+    554           * DESCRIPTION: Starts a seconds timer
+    555           * PARAMETERS:  IN: timerId - the ID of the timer
+    556           *              IN: timeInSeconds - time expressed in seconds
+    557           *              IN: pfTmrCallBack - callback function
+    558           * RETURN: None
+    559           * NOTES: Customized form of TMR_StartTimer(). This is a single shot timer.
+    560           *        There are no interval seconds timers.
+    561           *****************************************************************************/
+    562           #if gTMR_EnableMinutesSecondsTimers_d
+
+   \                                 In section .text, align 2, keep-with-next
+    563          void TMR_StartSecondTimer
+    564          (
+    565              tmrTimerID_t timerId, 
+    566              tmrTimeInSeconds_t timeInSeconds, 
+    567              void (*pfTmrCallBack)(tmrTimerID_t)
+    568          ) 
+    569          {
+   \                     TMR_StartSecondTimer: (+1)
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+   \   00000006   0x0016             MOVS     R6,R2
+    570              TMR_StartTimer(timerId, gTmrSecondTimer_c, TmrSeconds(timeInSeconds), pfTmrCallBack);
+   \   00000008   0x0033             MOVS     R3,R6
+   \   0000000A   0xF44F 0x707A      MOV      R0,#+1000
+   \   0000000E   0xFB00 0xF205      MUL      R2,R0,R5
+   \   00000012   0x2108             MOVS     R1,#+8
+   \   00000014   0x0020             MOVS     R0,R4
+   \   00000016   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000018   0x.... 0x....      BL       TMR_StartTimer
+    571          }
+   \   0000001C   0xBD70             POP      {R4-R6,PC}       ;; return
+    572          #endif
+    573           
+    574          /******************************************************************************
+    575           * NAME: TMR_StartIntervalTimer
+    576           * DESCRIPTION: Starts an interval count timer
+    577           * PARAMETERS:  IN: timerId - the ID of the timer
+    578           *              IN: timeInMilliseconds - time expressed in milliseconds
+    579           *              IN: pfTmrCallBack - callback function
+    580           * RETURN: None
+    581           * NOTES: Customized form of TMR_StartTimer()
+    582           *****************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    583          void TMR_StartIntervalTimer
+    584          (
+    585              tmrTimerID_t timerID,
+    586              tmrTimeInMilliseconds_t timeInMilliseconds,
+    587              void (*pfTimerCallBack)(tmrTimerID_t)
+    588          )
+    589          {
+   \                     TMR_StartIntervalTimer: (+1)
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+   \   00000006   0x0016             MOVS     R6,R2
+    590              TMR_StartTimer(timerID, gTmrIntervalTimer_c, timeInMilliseconds, pfTimerCallBack);
+   \   00000008   0x0033             MOVS     R3,R6
+   \   0000000A   0x002A             MOVS     R2,R5
+   \   0000000C   0x2102             MOVS     R1,#+2
+   \   0000000E   0x0020             MOVS     R0,R4
+   \   00000010   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000012   0x.... 0x....      BL       TMR_StartTimer
+    591          }
+   \   00000016   0xBD70             POP      {R4-R6,PC}       ;; return
+    592          
+    593          /******************************************************************************
+    594           * NAME: TMR_StartSingleShotTimer
+    595           * DESCRIPTION: Starts an single-shot timer
+    596           * PARAMETERS:  IN: timerId - the ID of the timer
+    597           *              IN: timeInMilliseconds - time expressed in milliseconds
+    598           *              IN: pfTmrCallBack - callback function
+    599           * RETURN: None
+    600           * NOTES: Customized form of TMR_StartTimer()
+    601           *****************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    602          void TMR_StartSingleShotTimer
+    603          (
+    604              tmrTimerID_t timerID,
+    605              tmrTimeInMilliseconds_t timeInMilliseconds,
+    606              void (*pfTimerCallBack)(tmrTimerID_t)
+    607          )
+    608          {
+   \                     TMR_StartSingleShotTimer: (+1)
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+   \   00000004   0x000D             MOVS     R5,R1
+   \   00000006   0x0016             MOVS     R6,R2
+    609              TMR_StartTimer(timerID, gTmrSingleShotTimer_c, timeInMilliseconds, pfTimerCallBack);
+   \   00000008   0x0033             MOVS     R3,R6
+   \   0000000A   0x002A             MOVS     R2,R5
+   \   0000000C   0x2101             MOVS     R1,#+1
+   \   0000000E   0x0020             MOVS     R0,R4
+   \   00000010   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000012   0x.... 0x....      BL       TMR_StartTimer
+    610          }
+   \   00000016   0xBD70             POP      {R4-R6,PC}       ;; return
+    611          
+    612          /******************************************************************************
+    613           * NAME: TMR_StopTimer
+    614           * DESCRIPTION: Stop a timer
+    615           * PARAMETERS:  IN: timerID - the ID of the timer
+    616           * RETURN: None
+    617           * NOTES: Associated timer callback function is not called, even if the timer
+    618           *        expires. Does not frees the timer. Safe to call anytime, regardless
+    619           *        of the state of the timer.
+    620           *****************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    621          void TMR_StopTimer
+    622          (
+    623              tmrTimerID_t timerID
+    624          )
+    625          {
+   \                     TMR_StopTimer: (+1)
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+    626              tmrStatus_t status;
+    627              unsigned int saveInt;
+    628              
+    629              saveInt = IntDisableAll();
+   \   00000004   0x.... 0x....      BL       IntDisableAll
+   \   00000008   0x0006             MOVS     R6,R0
+    630              status = TMR_GetTimerStatus(timerID);
+   \   0000000A   0x0020             MOVS     R0,R4
+   \   0000000C   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   0000000E   0x.... 0x....      BL       TMR_GetTimerStatus
+   \   00000012   0x0005             MOVS     R5,R0
+    631              
+    632              if ( (status == mTmrStatusActive_c) || (status == mTmrStatusReady_c) ) 
+   \   00000014   0xB2ED             UXTB     R5,R5            ;; ZeroExt  R5,R5,#+24,#+24
+   \   00000016   0x2D20             CMP      R5,#+32
+   \   00000018   0xD002             BEQ.N    ??TMR_StopTimer_0
+   \   0000001A   0xB2ED             UXTB     R5,R5            ;; ZeroExt  R5,R5,#+24,#+24
+   \   0000001C   0x2D40             CMP      R5,#+64
+   \   0000001E   0xD124             BNE.N    ??TMR_StopTimer_1
+    633              {
+    634                  TMR_SetTimerStatus(timerID, mTmrStatusInactive_c);
+   \                     ??TMR_StopTimer_0: (+1)
+   \   00000020   0x2180             MOVS     R1,#+128
+   \   00000022   0x0020             MOVS     R0,R4
+   \   00000024   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000026   0x.... 0x....      BL       TMR_SetTimerStatus
+    635                  DecrementActiveTimerNumber(TMR_GetTimerType(timerID));
+   \   0000002A   0x0020             MOVS     R0,R4
+   \   0000002C   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   0000002E   0x.... 0x....      BL       TMR_GetTimerType
+   \   00000032   0x06C0             LSLS     R0,R0,#+27
+   \   00000034   0xD508             BPL.N    ??TMR_StopTimer_2
+   \   00000036   0x.... 0x....      LDR.W    R0,??DataTable16_11
+   \   0000003A   0x7800             LDRB     R0,[R0, #+0]
+   \   0000003C   0x1E40             SUBS     R0,R0,#+1
+   \   0000003E   0x....             LDR.N    R1,??DataTable16_11
+   \   00000040   0x7008             STRB     R0,[R1, #+0]
+   \   00000042   0x....             LDR.N    R0,??DataTable16_11
+   \   00000044   0x7800             LDRB     R0,[R0, #+0]
+   \   00000046   0xE006             B.N      ??TMR_StopTimer_3
+   \                     ??TMR_StopTimer_2: (+1)
+   \   00000048   0x....             LDR.N    R0,??DataTable16_9
+   \   0000004A   0x7800             LDRB     R0,[R0, #+0]
+   \   0000004C   0x1E40             SUBS     R0,R0,#+1
+   \   0000004E   0x....             LDR.N    R1,??DataTable16_9
+   \   00000050   0x7008             STRB     R0,[R1, #+0]
+   \   00000052   0x....             LDR.N    R0,??DataTable16_9
+   \   00000054   0x7800             LDRB     R0,[R0, #+0]
+    636                  /* if no sw active timers are enabled, */
+    637                  /* call the TMR_Task() to countdown the ticks and stop the hw timer*/
+    638                  if (!numberOfActiveTimers && !numberOfLowPowerActiveTimers) 
+   \                     ??TMR_StopTimer_3: (+1)
+   \   00000056   0x....             LDR.N    R0,??DataTable16_9
+   \   00000058   0x7800             LDRB     R0,[R0, #+0]
+   \   0000005A   0x2800             CMP      R0,#+0
+   \   0000005C   0xD105             BNE.N    ??TMR_StopTimer_1
+   \   0000005E   0x....             LDR.N    R0,??DataTable16_11
+   \   00000060   0x7800             LDRB     R0,[R0, #+0]
+   \   00000062   0x2800             CMP      R0,#+0
+   \   00000064   0xD101             BNE.N    ??TMR_StopTimer_1
+    639                      TMR_Task();
+   \   00000066   0x.... 0x....      BL       TMR_Task
+    640              }	
+    641          
+    642              IntRestoreAll(saveInt);
+   \                     ??TMR_StopTimer_1: (+1)
+   \   0000006A   0x0030             MOVS     R0,R6
+   \   0000006C   0x.... 0x....      BL       IntRestoreAll
+    643          }  
+   \   00000070   0xBD70             POP      {R4-R6,PC}       ;; return
+    644          
+    645          /******************************************************************************
+    646           * NAME: TMR_Task
+    647           * DESCRIPTION: Timer task. 
+    648           *              Called by the kernel when the timer ISR posts a timer event.
+    649           * PARAMETERS:  IN: events - timer events mask
+    650           * RETURN: None
+    651           * NOTES: none
+    652           *****************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    653          void TMR_Task
+    654          (
+    655              void
+    656          )
+    657          {
+   \                     TMR_Task: (+1)
+   \   00000000   0xE92D 0x4FF8      PUSH     {R3-R11,LR}
+    658              tmrTimerTicks16_t nextInterruptTime;
+    659              pfTmrCallBack_t pfCallBack;
+    660              tmrTimerTicks16_t currentTimeInTicks;
+    661              tmrTimerStatus_t status;
+    662              tmrTimerTicks16_t ticksSinceLastHere, ticksdiff; 
+    663              uint8_t timerID;
+    664              unsigned int saveInt;
+    665              tmrTimerType_t timerType;
+    666          
+    667              saveInt = IntDisableAll();
+   \   00000004   0x.... 0x....      BL       IntDisableAll
+   \   00000008   0x4682             MOV      R10,R0
+    668          
+    669              FTMReadCNTRegister(currentTimeInTicks);
+   \   0000000A   0x....             LDR.N    R0,??DataTable16_12  ;; 0x40038004
+   \   0000000C   0x6800             LDR      R0,[R0, #+0]
+   \   0000000E   0x4683             MOV      R11,R0
+    670          
+    671              IntRestoreAll(saveInt);
+   \   00000010   0x4650             MOV      R0,R10
+   \   00000012   0x.... 0x....      BL       IntRestoreAll
+    672          
+    673              /* calculate difference between current and previous.  */
+    674              ticksSinceLastHere = (currentTimeInTicks - previousTimeInTicks);
+   \   00000016   0x....             LDR.N    R0,??DataTable16_13
+   \   00000018   0x8800             LDRH     R0,[R0, #+0]
+   \   0000001A   0xEBBB 0x0000      SUBS     R0,R11,R0
+   \   0000001E   0x0007             MOVS     R7,R0
+    675              /* remember for next time */
+    676              previousTimeInTicks = currentTimeInTicks;
+   \   00000020   0x....             LDR.N    R0,??DataTable16_13
+   \   00000022   0xF8A0 0xB000      STRH     R11,[R0, #+0]
+    677            
+    678              for (timerID = 0; timerID < NumberOfElements(maTmrTimerTable); ++timerID) 
+   \   00000026   0x2000             MOVS     R0,#+0
+   \   00000028   0x4681             MOV      R9,R0
+   \                     ??TMR_Task_0: (+1)
+   \   0000002A   0xFA5F 0xF989      UXTB     R9,R9            ;; ZeroExt  R9,R9,#+24,#+24
+   \   0000002E   0xF1B9 0x0F22      CMP      R9,#+34
+   \   00000032   0xD263             BCS.N    ??TMR_Task_1
+    679              {
+    680                  saveInt = IntDisableAll();
+   \   00000034   0x.... 0x....      BL       IntDisableAll
+   \   00000038   0x4682             MOV      R10,R0
+    681                  status = TMR_GetTimerStatus(timerID);
+   \   0000003A   0x4648             MOV      R0,R9
+   \   0000003C   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   0000003E   0x.... 0x....      BL       TMR_GetTimerStatus
+   \   00000042   0x0006             MOVS     R6,R0
+    682                  /* If TMR_StartTimer() has been called for this timer, start it's count */
+    683                  /* down as of now. */
+    684                  if (status == mTmrStatusReady_c) 
+   \   00000044   0xB2F6             UXTB     R6,R6            ;; ZeroExt  R6,R6,#+24,#+24
+   \   00000046   0x2E40             CMP      R6,#+64
+   \   00000048   0xD108             BNE.N    ??TMR_Task_2
+    685                  {
+    686                      TMR_SetTimerStatus(timerID, mTmrStatusActive_c);
+   \   0000004A   0x2120             MOVS     R1,#+32
+   \   0000004C   0x4648             MOV      R0,R9
+   \   0000004E   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000050   0x.... 0x....      BL       TMR_SetTimerStatus
+    687                      IntRestoreAll(saveInt);
+   \   00000054   0x4650             MOV      R0,R10
+   \   00000056   0x.... 0x....      BL       IntRestoreAll
+    688                      continue;
+   \   0000005A   0xE04C             B.N      ??TMR_Task_3
+    689                  }
+    690                  IntRestoreAll(saveInt);
+   \                     ??TMR_Task_2: (+1)
+   \   0000005C   0x4650             MOV      R0,R10
+   \   0000005E   0x.... 0x....      BL       IntRestoreAll
+    691          
+    692                  /* Ignore any timer that is not active. */
+    693                  if (status != mTmrStatusActive_c) 
+   \   00000062   0xB2F6             UXTB     R6,R6            ;; ZeroExt  R6,R6,#+24,#+24
+   \   00000064   0x2E20             CMP      R6,#+32
+   \   00000066   0xD146             BNE.N    ??TMR_Task_3
+    694                  {
+    695                      continue;
+    696                  }
+    697          
+    698                  /* This timer is active. Decrement it's countdown.. */
+    699                  if (maTmrTimerTable[timerID].remainingTicks > ticksSinceLastHere) 
+   \                     ??TMR_Task_4: (+1)
+   \   00000068   0xB2BF             UXTH     R7,R7            ;; ZeroExt  R7,R7,#+16,#+16
+   \   0000006A   0x....             LDR.N    R0,??DataTable16_10
+   \   0000006C   0xFA5F 0xF989      UXTB     R9,R9            ;; ZeroExt  R9,R9,#+24,#+24
+   \   00000070   0x210C             MOVS     R1,#+12
+   \   00000072   0xFB01 0x0009      MLA      R0,R1,R9,R0
+   \   00000076   0x6840             LDR      R0,[R0, #+4]
+   \   00000078   0x4287             CMP      R7,R0
+   \   0000007A   0xD210             BCS.N    ??TMR_Task_5
+    700                  {
+    701                      maTmrTimerTable[timerID].remainingTicks -= ticksSinceLastHere;
+   \   0000007C   0x....             LDR.N    R0,??DataTable16_10
+   \   0000007E   0xFA5F 0xF989      UXTB     R9,R9            ;; ZeroExt  R9,R9,#+24,#+24
+   \   00000082   0x210C             MOVS     R1,#+12
+   \   00000084   0xFB01 0x0009      MLA      R0,R1,R9,R0
+   \   00000088   0x6840             LDR      R0,[R0, #+4]
+   \   0000008A   0xB2BF             UXTH     R7,R7            ;; ZeroExt  R7,R7,#+16,#+16
+   \   0000008C   0x1BC0             SUBS     R0,R0,R7
+   \   0000008E   0x....             LDR.N    R1,??DataTable16_10
+   \   00000090   0xFA5F 0xF989      UXTB     R9,R9            ;; ZeroExt  R9,R9,#+24,#+24
+   \   00000094   0x220C             MOVS     R2,#+12
+   \   00000096   0xFB02 0x1109      MLA      R1,R2,R9,R1
+   \   0000009A   0x6048             STR      R0,[R1, #+4]
+    702                      continue;
+   \   0000009C   0xE02B             B.N      ??TMR_Task_3
+    703                  }
+    704          
+    705                  timerType = TMR_GetTimerType(timerID);
+   \                     ??TMR_Task_5: (+1)
+   \   0000009E   0x4648             MOV      R0,R9
+   \   000000A0   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   000000A2   0x.... 0x....      BL       TMR_GetTimerType
+   \   000000A6   0xF88D 0x0000      STRB     R0,[SP, #+0]
+    706                  /* If this is an interval timer, restart it. Otherwise, mark it as inactive. */
+    707                  if ( (timerType & gTmrSingleShotTimer_c) ||
+    708                          (timerType & gTmrSetMinuteTimer_c) ||
+    709                          (timerType & gTmrSetSecondTimer_c)  ) 
+   \   000000AA   0xF89D 0x0000      LDRB     R0,[SP, #+0]
+   \   000000AE   0x210D             MOVS     R1,#+13
+   \   000000B0   0x4208             TST      R0,R1
+   \   000000B2   0xD004             BEQ.N    ??TMR_Task_6
+    710                  {
+    711                      TMR_StopTimer(timerID);
+   \   000000B4   0x4648             MOV      R0,R9
+   \   000000B6   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   000000B8   0x.... 0x....      BL       TMR_StopTimer
+   \   000000BC   0xE00D             B.N      ??TMR_Task_7
+    712                  } 
+    713                  else 
+    714                  {
+    715                      maTmrTimerTable[timerID].remainingTicks = maTmrTimerTable[timerID].intervalInTicks;
+   \                     ??TMR_Task_6: (+1)
+   \   000000BE   0x....             LDR.N    R0,??DataTable16_10
+   \   000000C0   0xFA5F 0xF989      UXTB     R9,R9            ;; ZeroExt  R9,R9,#+24,#+24
+   \   000000C4   0x210C             MOVS     R1,#+12
+   \   000000C6   0xFB01 0x0009      MLA      R0,R1,R9,R0
+   \   000000CA   0x6800             LDR      R0,[R0, #+0]
+   \   000000CC   0x....             LDR.N    R1,??DataTable16_10
+   \   000000CE   0xFA5F 0xF989      UXTB     R9,R9            ;; ZeroExt  R9,R9,#+24,#+24
+   \   000000D2   0x220C             MOVS     R2,#+12
+   \   000000D4   0xFB02 0x1109      MLA      R1,R2,R9,R1
+   \   000000D8   0x6048             STR      R0,[R1, #+4]
+    716                  }
+    717                  /* This timer has expired. */
+    718                  pfCallBack = maTmrTimerTable[timerID].pfCallBack;
+   \                     ??TMR_Task_7: (+1)
+   \   000000DA   0x....             LDR.N    R0,??DataTable16_10
+   \   000000DC   0xFA5F 0xF989      UXTB     R9,R9            ;; ZeroExt  R9,R9,#+24,#+24
+   \   000000E0   0x210C             MOVS     R1,#+12
+   \   000000E2   0xFB01 0x0009      MLA      R0,R1,R9,R0
+   \   000000E6   0x6880             LDR      R0,[R0, #+8]
+   \   000000E8   0x0005             MOVS     R5,R0
+    719                  /*Call callback if it is not NULL
+    720                  This is done after the timer got updated,
+    721                  in case the timer gets stopped or restarted in the callback*/
+    722                  if (pfCallBack) 
+   \   000000EA   0x0028             MOVS     R0,R5
+   \   000000EC   0x2800             CMP      R0,#+0
+   \   000000EE   0xD002             BEQ.N    ??TMR_Task_3
+    723                  {
+    724                      pfCallBack(timerID);
+   \   000000F0   0x4648             MOV      R0,R9
+   \   000000F2   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   000000F4   0x47A8             BLX      R5
+    725                  }
+    726              }  /* for (timerID = 0; timerID < ... */
+   \                     ??TMR_Task_3: (+1)
+   \   000000F6   0xF119 0x0901      ADDS     R9,R9,#+1
+   \   000000FA   0xE796             B.N      ??TMR_Task_0
+    727            
+    728              /* Find the shortest active timer. */
+    729              nextInterruptTime = mMaxToCountDown_c;
+   \                     ??TMR_Task_1: (+1)
+   \   000000FC   0x....             LDR.N    R0,??DataTable16_7
+   \   000000FE   0x8800             LDRH     R0,[R0, #+0]
+   \   00000100   0x0004             MOVS     R4,R0
+    730              
+    731              for (timerID = 0; timerID < NumberOfElements(maTmrTimerTable); ++timerID) 
+   \   00000102   0x2000             MOVS     R0,#+0
+   \   00000104   0x4681             MOV      R9,R0
+   \                     ??TMR_Task_8: (+1)
+   \   00000106   0xFA5F 0xF989      UXTB     R9,R9            ;; ZeroExt  R9,R9,#+24,#+24
+   \   0000010A   0xF1B9 0x0F22      CMP      R9,#+34
+   \   0000010E   0xD21A             BCS.N    ??TMR_Task_9
+    732              {
+    733                  if (TMR_GetTimerStatus(timerID) == mTmrStatusActive_c) 
+   \   00000110   0x4648             MOV      R0,R9
+   \   00000112   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000114   0x.... 0x....      BL       TMR_GetTimerStatus
+   \   00000118   0x2820             CMP      R0,#+32
+   \   0000011A   0xD111             BNE.N    ??TMR_Task_10
+    734                  {
+    735                      if (nextInterruptTime > maTmrTimerTable[timerID].remainingTicks) 
+   \   0000011C   0x....             LDR.N    R0,??DataTable16_10
+   \   0000011E   0xFA5F 0xF989      UXTB     R9,R9            ;; ZeroExt  R9,R9,#+24,#+24
+   \   00000122   0x210C             MOVS     R1,#+12
+   \   00000124   0xFB01 0x0009      MLA      R0,R1,R9,R0
+   \   00000128   0x6840             LDR      R0,[R0, #+4]
+   \   0000012A   0xB2A4             UXTH     R4,R4            ;; ZeroExt  R4,R4,#+16,#+16
+   \   0000012C   0x42A0             CMP      R0,R4
+   \   0000012E   0xD207             BCS.N    ??TMR_Task_10
+    736                      {
+    737                          nextInterruptTime = maTmrTimerTable[timerID].remainingTicks;
+   \   00000130   0x....             LDR.N    R0,??DataTable16_10
+   \   00000132   0xFA5F 0xF989      UXTB     R9,R9            ;; ZeroExt  R9,R9,#+24,#+24
+   \   00000136   0x210C             MOVS     R1,#+12
+   \   00000138   0xFB01 0x0009      MLA      R0,R1,R9,R0
+   \   0000013C   0x6840             LDR      R0,[R0, #+4]
+   \   0000013E   0x0004             MOVS     R4,R0
+    738                      }
+    739                  }
+    740              }
+   \                     ??TMR_Task_10: (+1)
+   \   00000140   0xF119 0x0901      ADDS     R9,R9,#+1
+   \   00000144   0xE7DF             B.N      ??TMR_Task_8
+    741              
+    742          	saveInt = IntDisableAll();
+   \                     ??TMR_Task_9: (+1)
+   \   00000146   0x.... 0x....      BL       IntDisableAll
+   \   0000014A   0x4682             MOV      R10,R0
+    743              
+    744          	/* Check to be sure that the timer was not programmed in the past for different source clocks.
+    745          	 * The interrupts are now disabled.
+    746          	 */      	 
+    747          	FTMReadCNTRegister(ticksdiff);  
+   \   0000014C   0x....             LDR.N    R0,??DataTable16_12  ;; 0x40038004
+   \   0000014E   0x6800             LDR      R0,[R0, #+0]
+   \   00000150   0x4680             MOV      R8,R0
+    748              
+    749              /* Number of ticks to be here */
+    750              ticksdiff = (uint16_t)(ticksdiff - currentTimeInTicks); 
+   \   00000152   0xEBB8 0x080B      SUBS     R8,R8,R11
+    751              
+    752              /* Next ticks to count already expired?? */
+    753              if(ticksdiff >= nextInterruptTime)
+   \   00000156   0xFA1F 0xF888      UXTH     R8,R8            ;; ZeroExt  R8,R8,#+16,#+16
+   \   0000015A   0xB2A4             UXTH     R4,R4            ;; ZeroExt  R4,R4,#+16,#+16
+   \   0000015C   0x45A0             CMP      R8,R4
+   \   0000015E   0xD305             BCC.N    ??TMR_Task_11
+    754              {  
+    755                  /* Is assumed that a task has to be executed in 4ms...
+    756              so if the ticks already expired enter in TMR_Task() after 4ms*/
+    757                  nextInterruptTime = ticksdiff + mTicksFor4ms;
+   \   00000160   0x....             LDR.N    R0,??DataTable16_8
+   \   00000162   0x6800             LDR      R0,[R0, #+0]
+   \   00000164   0xEB10 0x0008      ADDS     R0,R0,R8
+   \   00000168   0x0004             MOVS     R4,R0
+   \   0000016A   0xE00D             B.N      ??TMR_Task_12
+    758              } 
+    759              else 
+    760              {
+    761                  /* Time reference is 4ms, so be sure that won't be loaded 
+    762                     in Cmp Reg. less that 4ms in ticks */
+    763                  if((nextInterruptTime - ticksdiff) < mTicksFor4ms) 
+   \                     ??TMR_Task_11: (+1)
+   \   0000016C   0xB2A4             UXTH     R4,R4            ;; ZeroExt  R4,R4,#+16,#+16
+   \   0000016E   0xFA1F 0xF888      UXTH     R8,R8            ;; ZeroExt  R8,R8,#+16,#+16
+   \   00000172   0xEBB4 0x0008      SUBS     R0,R4,R8
+   \   00000176   0x....             LDR.N    R1,??DataTable16_8
+   \   00000178   0x6809             LDR      R1,[R1, #+0]
+   \   0000017A   0x4288             CMP      R0,R1
+   \   0000017C   0xD204             BCS.N    ??TMR_Task_12
+    764                  {
+    765                      nextInterruptTime = ticksdiff + mTicksFor4ms;
+   \   0000017E   0x....             LDR.N    R0,??DataTable16_8
+   \   00000180   0x6800             LDR      R0,[R0, #+0]
+   \   00000182   0xEB10 0x0008      ADDS     R0,R0,R8
+   \   00000186   0x0004             MOVS     R4,R0
+    766                  }
+    767              }
+    768              /* Update the compare register */
+    769              nextInterruptTime += currentTimeInTicks;
+   \                     ??TMR_Task_12: (+1)
+   \   00000188   0xEB1B 0x0404      ADDS     R4,R11,R4
+    770              gFTMxCnV_c = nextInterruptTime;
+   \   0000018C   0xB2A4             UXTH     R4,R4            ;; ZeroExt  R4,R4,#+16,#+16
+   \   0000018E   0x....             LDR.N    R0,??DataTable16_14  ;; 0x40038010
+   \   00000190   0x6004             STR      R4,[R0, #+0]
+    771              IntRestoreAll(saveInt);
+   \   00000192   0x4650             MOV      R0,R10
+   \   00000194   0x.... 0x....      BL       IntRestoreAll
+    772          
+    773          	if (!numberOfActiveTimers && !numberOfLowPowerActiveTimers) 
+   \   00000198   0x....             LDR.N    R0,??DataTable16_9
+   \   0000019A   0x7800             LDRB     R0,[R0, #+0]
+   \   0000019C   0x2800             CMP      R0,#+0
+   \   0000019E   0xD10A             BNE.N    ??TMR_Task_13
+   \   000001A0   0x....             LDR.N    R0,??DataTable16_11
+   \   000001A2   0x7800             LDRB     R0,[R0, #+0]
+   \   000001A4   0x2800             CMP      R0,#+0
+   \   000001A6   0xD106             BNE.N    ??TMR_Task_13
+    774              {
+    775          		FTMStopTimerHardware();
+   \   000001A8   0x2000             MOVS     R0,#+0
+   \   000001AA   0x....             LDR.N    R1,??DataTable16_3  ;; 0x40038000
+   \   000001AC   0x6008             STR      R0,[R1, #+0]
+    776          		timerHardwareIsRunning = FALSE;
+   \   000001AE   0x2000             MOVS     R0,#+0
+   \   000001B0   0x....             LDR.N    R1,??DataTable16_15
+   \   000001B2   0x7008             STRB     R0,[R1, #+0]
+   \   000001B4   0xE00C             B.N      ??TMR_Task_14
+    777          	} 
+    778              else if (!timerHardwareIsRunning) 
+   \                     ??TMR_Task_13: (+1)
+   \   000001B6   0x....             LDR.N    R0,??DataTable16_15
+   \   000001B8   0x7800             LDRB     R0,[R0, #+0]
+   \   000001BA   0x2800             CMP      R0,#+0
+   \   000001BC   0xD108             BNE.N    ??TMR_Task_14
+    779              {
+    780          		FTMStartTimerHardware();
+   \   000001BE   0x....             LDR.N    R0,??DataTable16_3  ;; 0x40038000
+   \   000001C0   0x6800             LDR      R0,[R0, #+0]
+   \   000001C2   0xF050 0x000F      ORRS     R0,R0,#0xF
+   \   000001C6   0x....             LDR.N    R1,??DataTable16_3  ;; 0x40038000
+   \   000001C8   0x6008             STR      R0,[R1, #+0]
+    781          		timerHardwareIsRunning = TRUE;
+   \   000001CA   0x2001             MOVS     R0,#+1
+   \   000001CC   0x....             LDR.N    R1,??DataTable16_15
+   \   000001CE   0x7008             STRB     R0,[R1, #+0]
+    782          	}
+    783          }
+   \                     ??TMR_Task_14: (+1)
+   \   000001D0   0xE8BD 0x8FF1      POP      {R0,R4-R11,PC}   ;; return
+    784          
+    785          /******************************************************************************
+    786           * NAME: TMR_EnableTimer
+    787           * DESCRIPTION: Enable the specified timer
+    788           * PARAMETERS:  IN: tmrID - the timer ID
+    789           * RETURN: None
+    790           * NOTES: none
+    791           *****************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    792          void TMR_EnableTimer
+    793          (
+    794              tmrTimerID_t tmrID
+    795          )
+    796          {    		
+   \                     TMR_EnableTimer: (+1)
+   \   00000000   0xB538             PUSH     {R3-R5,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+    797              unsigned int saveInt;
+    798              saveInt = IntDisableAll();
+   \   00000004   0x.... 0x....      BL       IntDisableAll
+   \   00000008   0x0005             MOVS     R5,R0
+    799          
+    800              if (TMR_GetTimerStatus(tmrID) == mTmrStatusInactive_c)
+   \   0000000A   0x0020             MOVS     R0,R4
+   \   0000000C   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   0000000E   0x.... 0x....      BL       TMR_GetTimerStatus
+   \   00000012   0x2880             CMP      R0,#+128
+   \   00000014   0xD11B             BNE.N    ??TMR_EnableTimer_0
+    801              {      
+    802                  IncrementActiveTimerNumber(TMR_GetTimerType(tmrID));    
+   \   00000016   0x0020             MOVS     R0,R4
+   \   00000018   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   0000001A   0x.... 0x....      BL       TMR_GetTimerType
+   \   0000001E   0x06C0             LSLS     R0,R0,#+27
+   \   00000020   0xD507             BPL.N    ??TMR_EnableTimer_1
+   \   00000022   0x....             LDR.N    R0,??DataTable16_11
+   \   00000024   0x7800             LDRB     R0,[R0, #+0]
+   \   00000026   0x1C40             ADDS     R0,R0,#+1
+   \   00000028   0x....             LDR.N    R1,??DataTable16_11
+   \   0000002A   0x7008             STRB     R0,[R1, #+0]
+   \   0000002C   0x....             LDR.N    R0,??DataTable16_11
+   \   0000002E   0x7800             LDRB     R0,[R0, #+0]
+   \   00000030   0xE006             B.N      ??TMR_EnableTimer_2
+   \                     ??TMR_EnableTimer_1: (+1)
+   \   00000032   0x....             LDR.N    R0,??DataTable16_9
+   \   00000034   0x7800             LDRB     R0,[R0, #+0]
+   \   00000036   0x1C40             ADDS     R0,R0,#+1
+   \   00000038   0x....             LDR.N    R1,??DataTable16_9
+   \   0000003A   0x7008             STRB     R0,[R1, #+0]
+   \   0000003C   0x....             LDR.N    R0,??DataTable16_9
+   \   0000003E   0x7800             LDRB     R0,[R0, #+0]
+    803                  TMR_SetTimerStatus(tmrID, mTmrStatusReady_c);
+   \                     ??TMR_EnableTimer_2: (+1)
+   \   00000040   0x2140             MOVS     R1,#+64
+   \   00000042   0x0020             MOVS     R0,R4
+   \   00000044   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000046   0x.... 0x....      BL       TMR_SetTimerStatus
+    804                  TMR_Task();
+   \   0000004A   0x.... 0x....      BL       TMR_Task
+    805              }  	
+    806          
+    807              IntRestoreAll(saveInt);
+   \                     ??TMR_EnableTimer_0: (+1)
+   \   0000004E   0x0028             MOVS     R0,R5
+   \   00000050   0x.... 0x....      BL       IntRestoreAll
+    808          }
+   \   00000054   0xBD31             POP      {R0,R4,R5,PC}    ;; return
+    809          
+    810          /******************************************************************************
+    811           * NAME: TMR_NotCountedMillisTimeBeforeSleep
+    812           * DESCRIPTION: This function is called by Low Power module;
+    813           * Also this function stops the hardware timer.
+    814           * PARAMETERS:  none
+    815           * RETURN: uint32 - time in millisecond that wasn't counted before
+    816           *		  entering in sleep
+    817           * NOTES: none
+    818           *****************************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    819          uint16_t TMR_NotCountedTicksBeforeSleep
+    820          (
+    821              void
+    822          )
+    823          {
+    824          #if (gTMR_EnableLowPowerTimers_d)  
+    825              uint16_t currentTimeInTicks;
+    826            
+    827              if (!numberOfLowPowerActiveTimers)
+   \                     TMR_NotCountedTicksBeforeSleep: (+1)
+   \   00000000   0x....             LDR.N    R0,??DataTable16_11
+   \   00000002   0x7800             LDRB     R0,[R0, #+0]
+   \   00000004   0x2800             CMP      R0,#+0
+   \   00000006   0xD101             BNE.N    ??TMR_NotCountedTicksBeforeSleep_0
+    828                  return 0;
+   \   00000008   0x2000             MOVS     R0,#+0
+   \   0000000A   0xE00C             B.N      ??TMR_NotCountedTicksBeforeSleep_1
+    829          
+    830              FTMReadCNTRegister(currentTimeInTicks);
+   \                     ??TMR_NotCountedTicksBeforeSleep_0: (+1)
+   \   0000000C   0x....             LDR.N    R0,??DataTable16_12  ;; 0x40038004
+   \   0000000E   0x6800             LDR      R0,[R0, #+0]
+   \   00000010   0x0001             MOVS     R1,R0
+    831              FTMStopTimerHardware();
+   \   00000012   0x2000             MOVS     R0,#+0
+   \   00000014   0x....             LDR.N    R2,??DataTable16_3  ;; 0x40038000
+   \   00000016   0x6010             STR      R0,[R2, #+0]
+    832              timerHardwareIsRunning = FALSE; 
+   \   00000018   0x2000             MOVS     R0,#+0
+   \   0000001A   0x....             LDR.N    R2,??DataTable16_15
+   \   0000001C   0x7010             STRB     R0,[R2, #+0]
+    833          
+    834              /* The hw timer is stopped but keep timerHardwareIsRunning = TRUE...*/ 
+    835              /* The Lpm timers are considered as being in running mode, so that  */
+    836              /* not to start the hw timer if a TMR event occurs (this shouldn't happen) */ 
+    837               
+    838              return  (uint16_t)(currentTimeInTicks - previousTimeInTicks);
+   \   0000001E   0x....             LDR.N    R0,??DataTable16_13
+   \   00000020   0x8800             LDRH     R0,[R0, #+0]
+   \   00000022   0x1A08             SUBS     R0,R1,R0
+   \   00000024   0xB280             UXTH     R0,R0            ;; ZeroExt  R0,R0,#+16,#+16
+   \                     ??TMR_NotCountedTicksBeforeSleep_1: (+1)
+   \   00000026   0x4770             BX       LR               ;; return
+    839          #else  
+    840              return 0;
+    841          #endif
+    842          } 
+    843          
+    844          /******************************************************************************
+    845           * NAME: TMR_SyncLpmTimers
+    846           * DESCRIPTION: This function is called by the Low Power module
+    847           * each time the MCU wakes up.
+    848           * PARAMETERS:  sleep duration in milliseconds
+    849           * RETURN: none
+    850           * NOTES: none
+    851           *****************************************************************************/                             
+
+   \                                 In section .text, align 2, keep-with-next
+    852          void TMR_SyncLpmTimers
+    853          (
+    854              uint32_t sleepDurationTmrTicks
+    855          )
+    856          {
+   \                     TMR_SyncLpmTimers: (+1)
+   \   00000000   0xB570             PUSH     {R4-R6,LR}
+   \   00000002   0x0004             MOVS     R4,R0
+    857          #if (gTMR_EnableLowPowerTimers_d) 
+    858              index_t  timerID;
+    859              tmrTimerType_t timerType;
+    860          
+    861              /* Check if there are low power active timer */
+    862              if (!numberOfLowPowerActiveTimers)
+   \   00000004   0x....             LDR.N    R0,??DataTable16_11
+   \   00000006   0x7800             LDRB     R0,[R0, #+0]
+   \   00000008   0x2800             CMP      R0,#+0
+   \   0000000A   0xD03C             BEQ.N    ??TMR_SyncLpmTimers_0
+    863                  return;          
+    864          
+    865              /* For each timer, detect the timer type and count down the spent duration in sleep */  
+    866              for (timerID = 0; timerID < NumberOfElements(maTmrTimerTable); ++timerID) 
+   \                     ??TMR_SyncLpmTimers_1: (+1)
+   \   0000000C   0x2000             MOVS     R0,#+0
+   \   0000000E   0x0005             MOVS     R5,R0
+   \                     ??TMR_SyncLpmTimers_2: (+1)
+   \   00000010   0xB2ED             UXTB     R5,R5            ;; ZeroExt  R5,R5,#+24,#+24
+   \   00000012   0x2D22             CMP      R5,#+34
+   \   00000014   0xD22B             BCS.N    ??TMR_SyncLpmTimers_3
+    867              {
+    868          
+    869                  /* Detect the timer type and count down the spent duration in sleep */
+    870                  timerType = TMR_GetTimerType(timerID);
+   \   00000016   0x0028             MOVS     R0,R5
+   \   00000018   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   0000001A   0x.... 0x....      BL       TMR_GetTimerType
+   \   0000001E   0x0006             MOVS     R6,R0
+    871          
+    872                  /* Sync. only the low power timers that are active */
+    873                  if ( (TMR_GetTimerStatus(timerID) == mTmrStatusActive_c)
+    874                          && (IsLowPowerTimer(timerType)) ) 
+   \   00000020   0x0028             MOVS     R0,R5
+   \   00000022   0xB2C0             UXTB     R0,R0            ;; ZeroExt  R0,R0,#+24,#+24
+   \   00000024   0x.... 0x....      BL       TMR_GetTimerStatus
+   \   00000028   0x2820             CMP      R0,#+32
+   \   0000002A   0xD11E             BNE.N    ??TMR_SyncLpmTimers_4
+   \   0000002C   0x06F0             LSLS     R0,R6,#+27
+   \   0000002E   0xD51C             BPL.N    ??TMR_SyncLpmTimers_4
+    875                  {
+    876                      /* Timer expired when MCU was in sleep mode??? */
+    877                      if( maTmrTimerTable[timerID].remainingTicks > sleepDurationTmrTicks) 
+   \   00000030   0x....             LDR.N    R0,??DataTable16_10
+   \   00000032   0xB2ED             UXTB     R5,R5            ;; ZeroExt  R5,R5,#+24,#+24
+   \   00000034   0x210C             MOVS     R1,#+12
+   \   00000036   0xFB01 0x0005      MLA      R0,R1,R5,R0
+   \   0000003A   0x6840             LDR      R0,[R0, #+4]
+   \   0000003C   0x4284             CMP      R4,R0
+   \   0000003E   0xD20D             BCS.N    ??TMR_SyncLpmTimers_5
+    878                      {
+    879                          maTmrTimerTable[timerID].remainingTicks -= sleepDurationTmrTicks;
+   \   00000040   0x....             LDR.N    R0,??DataTable16_10
+   \   00000042   0xB2ED             UXTB     R5,R5            ;; ZeroExt  R5,R5,#+24,#+24
+   \   00000044   0x210C             MOVS     R1,#+12
+   \   00000046   0xFB01 0x0005      MLA      R0,R1,R5,R0
+   \   0000004A   0x6840             LDR      R0,[R0, #+4]
+   \   0000004C   0x1B00             SUBS     R0,R0,R4
+   \   0000004E   0x....             LDR.N    R1,??DataTable16_10
+   \   00000050   0xB2ED             UXTB     R5,R5            ;; ZeroExt  R5,R5,#+24,#+24
+   \   00000052   0x220C             MOVS     R2,#+12
+   \   00000054   0xFB02 0x1105      MLA      R1,R2,R5,R1
+   \   00000058   0x6048             STR      R0,[R1, #+4]
+   \   0000005A   0xE006             B.N      ??TMR_SyncLpmTimers_4
+    880          
+    881                      } 
+    882                      else 
+    883                      {
+    884                          maTmrTimerTable[timerID].remainingTicks = 0;           
+   \                     ??TMR_SyncLpmTimers_5: (+1)
+   \   0000005C   0x2000             MOVS     R0,#+0
+   \   0000005E   0x....             LDR.N    R1,??DataTable16_10
+   \   00000060   0xB2ED             UXTB     R5,R5            ;; ZeroExt  R5,R5,#+24,#+24
+   \   00000062   0x220C             MOVS     R2,#+12
+   \   00000064   0xFB02 0x1105      MLA      R1,R2,R5,R1
+   \   00000068   0x6048             STR      R0,[R1, #+4]
+    885                      }
+    886          
+    887                  }
+    888          
+    889              }/* end for (timerID = 0;.... */ 
+   \                     ??TMR_SyncLpmTimers_4: (+1)
+   \   0000006A   0x1C6D             ADDS     R5,R5,#+1
+   \   0000006C   0xE7D0             B.N      ??TMR_SyncLpmTimers_2
+    890          
+    891              FTMStartTimerHardware();
+   \                     ??TMR_SyncLpmTimers_3: (+1)
+   \   0000006E   0x....             LDR.N    R0,??DataTable16_3  ;; 0x40038000
+   \   00000070   0x6800             LDR      R0,[R0, #+0]
+   \   00000072   0xF050 0x000F      ORRS     R0,R0,#0xF
+   \   00000076   0x....             LDR.N    R1,??DataTable16_3  ;; 0x40038000
+   \   00000078   0x6008             STR      R0,[R1, #+0]
+    892              FTMReadCNTRegister(previousTimeInTicks);
+   \   0000007A   0x....             LDR.N    R0,??DataTable16_12  ;; 0x40038004
+   \   0000007C   0x6800             LDR      R0,[R0, #+0]
+   \   0000007E   0x....             LDR.N    R1,??DataTable16_13
+   \   00000080   0x8008             STRH     R0,[R1, #+0]
+    893          
+    894              TMR_Task();
+   \   00000082   0x.... 0x....      BL       TMR_Task
+    895          #else
+    896              sleepDurationTmrTicks = sleepDurationTmrTicks;
+    897          #endif /* #if (gTMR_EnableLowPowerTimers_d) */ 
+    898          }
+   \                     ??TMR_SyncLpmTimers_0: (+1)
+   \   00000086   0xBD70             POP      {R4-R6,PC}       ;; return
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable16:
+   \   00000000   0x........         DC32     maTmrTimerStatusTable
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable16_1:
+   \   00000000   0x........         DC32     mClkSourceKhz
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable16_2:
+   \   00000000   0x4004803C         DC32     0x4004803c
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable16_3:
+   \   00000000   0x40038000         DC32     0x40038000
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable16_4:
+   \   00000000   0x4003800C         DC32     0x4003800c
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable16_5:
+   \   00000000   0x40038054         DC32     0x40038054
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable16_6:
+   \   00000000   0x40038008         DC32     0x40038008
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable16_7:
+   \   00000000   0x........         DC32     mMaxToCountDown_c
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable16_8:
+   \   00000000   0x........         DC32     mTicksFor4ms
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable16_9:
+   \   00000000   0x........         DC32     numberOfActiveTimers
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable16_10:
+   \   00000000   0x........         DC32     maTmrTimerTable
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable16_11:
+   \   00000000   0x........         DC32     numberOfLowPowerActiveTimers
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable16_12:
+   \   00000000   0x40038004         DC32     0x40038004
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable16_13:
+   \   00000000   0x........         DC32     previousTimeInTicks
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable16_14:
+   \   00000000   0x40038010         DC32     0x40038010
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable16_15:
+   \   00000000   0x........         DC32     timerHardwareIsRunning
+    899          
+    900          /*****************************************************************************/
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       8   TMR_AllocateTimer
+         8   -> TMR_SetTimerStatus
+       0   TMR_AreAllTimersOff
+      16   TMR_EnableTimer
+        16   -> IntDisableAll
+        16   -> IntRestoreAll
+        16   -> TMR_GetTimerStatus
+        16   -> TMR_GetTimerType
+        16   -> TMR_SetTimerStatus
+        16   -> TMR_Task
+       8   TMR_FreeTimer
+         8   -> TMR_StopTimer
+       0   TMR_GetTimerStatus
+       0   TMR_GetTimerType
+       8   TMR_Init
+         8   -> NVIC_EnableIRQ
+         8   -> NVIC_SetPriority
+         8   -> TmrTicksFromMilliseconds
+       8   TMR_InterruptHandler
+         8   -> TMR_Task
+       8   TMR_IsTimerActive
+         8   -> TMR_GetTimerStatus
+       0   TMR_NotCountedTicksBeforeSleep
+      16   TMR_NotifyClkChanged
+        16   -> TmrTicksFromMilliseconds
+       0   TMR_SetTimerStatus
+       0   TMR_SetTimerType
+      16   TMR_StartIntervalTimer
+        16   -> TMR_StartTimer
+      24   TMR_StartLowPowerTimer
+        24   -> TMR_StartTimer
+      16   TMR_StartMinuteTimer
+        16   -> TMR_StartTimer
+      16   TMR_StartSecondTimer
+        16   -> TMR_StartTimer
+      16   TMR_StartSingleShotTimer
+        16   -> TMR_StartTimer
+      24   TMR_StartTimer
+        24   -> TMR_EnableTimer
+        24   -> TMR_SetTimerType
+        24   -> TMR_StopTimer
+        24   -> TmrTicksFromMilliseconds
+      16   TMR_StopTimer
+        16   -> IntDisableAll
+        16   -> IntRestoreAll
+        16   -> TMR_GetTimerStatus
+        16   -> TMR_GetTimerType
+        16   -> TMR_SetTimerStatus
+        16   -> TMR_Task
+      16   TMR_SyncLpmTimers
+        16   -> TMR_GetTimerStatus
+        16   -> TMR_GetTimerType
+        16   -> TMR_Task
+      40   TMR_Task
+        40   -- Indirect call
+        40   -> IntDisableAll
+        40   -> IntRestoreAll
+        40   -> TMR_GetTimerStatus
+        40   -> TMR_GetTimerType
+        40   -> TMR_SetTimerStatus
+        40   -> TMR_StopTimer
+       0   TmrTicksFromMilliseconds
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable16
+       4  ??DataTable16_1
+       4  ??DataTable16_10
+       4  ??DataTable16_11
+       4  ??DataTable16_12
+       4  ??DataTable16_13
+       4  ??DataTable16_14
+       4  ??DataTable16_15
+       4  ??DataTable16_2
+       4  ??DataTable16_3
+       4  ??DataTable16_4
+       4  ??DataTable16_5
+       4  ??DataTable16_6
+       4  ??DataTable16_7
+       4  ??DataTable16_8
+       4  ??DataTable16_9
+      44  TMR_AllocateTimer
+      20  TMR_AreAllTimersOff
+      86  TMR_EnableTimer
+      24  TMR_FreeTimer
+      14  TMR_GetTimerStatus
+      14  TMR_GetTimerType
+     156  TMR_Init
+      60  TMR_InterruptHandler
+      26  TMR_IsTimerActive
+      40  TMR_NotCountedTicksBeforeSleep
+      42  TMR_NotifyClkChanged
+      24  TMR_SetTimerStatus
+      24  TMR_SetTimerType
+      24  TMR_StartIntervalTimer
+      30  TMR_StartLowPowerTimer
+      30  TMR_StartMinuteTimer
+      30  TMR_StartSecondTimer
+      24  TMR_StartSingleShotTimer
+     128  TMR_StartTimer
+     114  TMR_StopTimer
+     136  TMR_SyncLpmTimers
+     468  TMR_Task
+      12  TmrTicksFromMilliseconds
+       4  mClkSourceKhz
+       2  mMaxToCountDown_c
+       4  mTicksFor4ms
+      36  maTmrTimerStatusTable
+     408  maTmrTimerTable
+       1  numberOfActiveTimers
+       1  numberOfLowPowerActiveTimers
+       2  previousTimeInTicks
+       1  timerHardwareIsRunning
+
+ 
+   455 bytes in section .bss
+     4 bytes in section .data
+ 1 634 bytes in section .text
+ 
+ 1 634 bytes of CODE memory
+   459 bytes of DATA memory
+
+Errors: none
+Warnings: none
