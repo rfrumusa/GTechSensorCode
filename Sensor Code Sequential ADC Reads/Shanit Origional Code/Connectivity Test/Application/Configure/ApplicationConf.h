@@ -159,7 +159,7 @@ enum stateVariable
 
 #define CHANNEL_NUMBER      0           // default channel number
 #define OUTPUT_POWER        100         // default output power
-#define SLEEP_AFTER_ACK     3           // number of seconds to sleep after ACK
+#define SLEEP_AFTER_ACK     300        // number of seconds to sleep after ACK
 #define TIMEOUTS_TO_KILL    360         // number timeouts before KILL
                                         // Note: # secs before kill is approx N(N+16)/2, where N = TIMEOUTS_TO_KILL
 // Receive packet timeout
@@ -202,6 +202,7 @@ void INIT_PIT(uint32_t SampleSpeed);
 void PIT_ISR();
 void WUApp_LowPwrStateMachine (void);
 void AppLedTimerCallback (tmrTimerID_t timerId);
+
 void WUApp_InitWakupSource(void);
 void WUApp_InitLowPowerMode(void);
 void WUApp_PrepareToEnterLowPower(void);

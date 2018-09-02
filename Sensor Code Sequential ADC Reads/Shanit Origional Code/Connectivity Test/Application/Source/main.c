@@ -326,8 +326,8 @@ void main(void)
     ZDiff = gSnd.zmax - gSnd.zmin;
     
     
-    if( (XDiff > threshHold || XDiff < -threshHold) || (YDiff > threshHold || YDiff < -threshHold) || (ZDiff > threshHold || ZDiff < -threshHold))
-    {
+    //if( (XDiff > threshHold || XDiff < -threshHold) || (YDiff > threshHold || YDiff < -threshHold) || (ZDiff > threshHold || ZDiff < -threshHold))
+    //{
       sentPackets++;
       flashCount=0;
       //LED_SetLed(LED2, gLedOn_c);
@@ -357,7 +357,7 @@ void main(void)
         
       }
       LoopItterations =0;
-    }
+    //}
     
     
     
@@ -412,6 +412,8 @@ void main(void)
     //------------------------------------------------------------------------------------
     //Temporary Code to just push the controller into low power mode on every itteration through the code.
     //this was just set to make sure we could go into low power mode.
+    
+    gOptions.u16SleepAfterAck = SLEEP_AFTER_ACK;
     
     while(!LowPowerEntered){
         //this loop will put the controller into sleep mode
@@ -1611,7 +1613,7 @@ void WUApp_PrepareToEnterLowPower(void)
     PORTD_PCR4 = PORT_PCR_MUX(0x1) | PORT_PCR_PE_MASK | PORT_PCR_PS_MASK;
     
     /*JTAG TDO pin*/ 
-    PORTA_PCR2 = PORT_PCR_PE_MASK | PORT_PCR_PS_MASK; //JTAG_TDO PullUp/PullSelect enable
+    // ROBBIE - Remove this comment PORTA_PCR2 = PORT_PCR_PE_MASK | PORT_PCR_PS_MASK; //JTAG_TDO PullUp/PullSelect enable
     
     
     /*EEPROM pins*/  //PTC5, PTC6, PTC7

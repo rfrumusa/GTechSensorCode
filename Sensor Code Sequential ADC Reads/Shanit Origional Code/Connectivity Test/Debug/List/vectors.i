@@ -10880,6 +10880,7 @@ void INIT_PIT(uint32_t SampleSpeed);
 void PIT_ISR();
 void WUApp_LowPwrStateMachine (void);
 void AppLedTimerCallback (tmrTimerID_t timerId);
+
 void WUApp_InitWakupSource(void);
 void WUApp_InitLowPowerMode(void);
 void WUApp_PrepareToEnterLowPower(void);
@@ -14865,6 +14866,7 @@ void INIT_PIT(uint32_t SampleSpeed);
 void PIT_ISR();
 void WUApp_LowPwrStateMachine (void);
 void AppLedTimerCallback (tmrTimerID_t timerId);
+
 void WUApp_InitWakupSource(void);
 void WUApp_InitLowPowerMode(void);
 void WUApp_PrepareToEnterLowPower(void);

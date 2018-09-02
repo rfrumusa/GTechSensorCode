@@ -10782,6 +10782,7 @@ void INIT_PIT(uint32_t SampleSpeed);
 void PIT_ISR();
 void WUApp_LowPwrStateMachine (void);
 void AppLedTimerCallback (tmrTimerID_t timerId);
+
 void WUApp_InitWakupSource(void);
 void WUApp_InitLowPowerMode(void);
 void WUApp_PrepareToEnterLowPower(void);
@@ -14767,6 +14768,7 @@ void INIT_PIT(uint32_t SampleSpeed);
 void PIT_ISR();
 void WUApp_LowPwrStateMachine (void);
 void AppLedTimerCallback (tmrTimerID_t timerId);
+
 void WUApp_InitWakupSource(void);
 void WUApp_InitLowPowerMode(void);
 void WUApp_PrepareToEnterLowPower(void);
@@ -17067,8 +17069,8 @@ void main(void)
     ZDiff = gSnd.zmax - gSnd.zmin;
     
     
-    if( (XDiff > threshHold || XDiff < -threshHold) || (YDiff > threshHold || YDiff < -threshHold) || (ZDiff > threshHold || ZDiff < -threshHold))
-    {
+    
+    
       sentPackets++;
       flashCount=0;
       
@@ -17098,7 +17100,7 @@ void main(void)
         
       }
       LoopItterations =0;
-    }
+    
     
     
     
@@ -17153,6 +17155,8 @@ void main(void)
     
     
     
+    
+    gOptions.u16SleepAfterAck = 300;
     
     while(!LowPowerEntered){
         
@@ -17908,7 +17912,7 @@ void GetFactoryOptions(tOptions* pOptions)
 
     pOptions->bLNAHighGainMode = 0; 
 
-    pOptions->u16SleepAfterAck = 3;
+    pOptions->u16SleepAfterAck = 300;
     
     return;
 }
@@ -18265,7 +18269,7 @@ void WUApp_PrepareToEnterLowPower(void)
     ((((PORT_MemMapPtr)0x4004C000u))->PCR[4]) = (((uint32_t)(((uint32_t)(0x1))<<8))&0x700u) | 0x2u | 0x1u;
     
       
-    ((((PORT_MemMapPtr)0x40049000u))->PCR[2]) = 0x2u | 0x1u; 
+    
     
     
        

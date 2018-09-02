@@ -9,7 +9,7 @@ PrevWtdReset=Hardware
 FirstRun=0
 MemConfigValue=C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.0\arm\CONFIG\debugger\Freescale\MKW21DN512xxx5.ddf
 [DebugChecksum]
-Checksum=1146803803
+Checksum=-327715258
 [Exceptions]
 StopOnUncaught=_ 0
 StopOnThrow=_ 0
@@ -32,8 +32,8 @@ MixedMode=1
 [SWOManager]
 SamplingDivider=8192
 OverrideClock=0
-CpuClock=1635017060
-SwoClock=1768843615
+CpuClock=0
+SwoClock=1330794532
 DataLogMode=0
 ItmPortsEnabled=63
 ItmTermIOPorts=1
@@ -93,24 +93,6 @@ Fmt14={W}1:quality	3	0
 Fmt15={W}1:sDeadBeef	4	0
 Fmt16={W}1:size	4	0
 Fmt17={W}1:source	4	0
-[SWOTraceWindow]
-ForcedPcSampling=0
-ForcedInterruptLogs=0
-ForcedItmLogs=0
-EventCPI=0
-EventEXC=0
-EventFOLD=0
-EventLSU=0
-EventSLEEP=0
-[PowerLog]
-LogEnabled=0
-GraphEnabled=0
-ShowTimeLog=1
-ShowTimeSum=0
-Title_0=ITrgPwr
-Symbol_0=0 4 1
-LiveEnabled=0
-LiveFile=PowerLogLive.log
 [DataLog]
 LogEnabled=0
 SumEnabled=0
@@ -139,18 +121,45 @@ GraphEnabled=0
 ShowTimeLog=1
 ShowTimeSum=1
 SumSortOrder=0
+[SWOTraceWindow]
+ForcedPcSampling=0
+ForcedInterruptLogs=0
+ForcedItmLogs=0
+EventCPI=0
+EventEXC=0
+EventFOLD=0
+EventLSU=0
+EventSLEEP=0
+[PowerLog]
+LogEnabled=0
+GraphEnabled=0
+ShowTimeLog=1
+ShowTimeSum=0
+Title_0=ITrgPwr
+Symbol_0=0 4 1
+LiveEnabled=0
+LiveFile=PowerLogLive.log
 [CallStackLog]
 Enabled=0
-[DriverProfiling]
-Enabled=0
-Mode=3
-Graph=0
-Symbiont=0
-Exclusions=
 [PowerProbe]
 Frequency=10000
 Probe0=ITrgPwr
 ProbeSetup0=2 1 1 2 0 0
+[DriverProfiling]
+Enabled=0
+Mode=0
+Graph=0
+Symbiont=0
+Exclusions=
+[Disassemble mode]
+mode=0
+[Breakpoints2]
+Bp0=_ 1 "EMUL_CODE" "{$PROJ_DIR$\Application\Source\main.c}.1665.5" 0 0 1 "" 0 "" 0
+Bp1=_ 1 "EMUL_CODE" "{$PROJ_DIR$\Application\Source\main.c}.1641.5" 0 0 1 "" 0 "" 0
+Bp2=_ 1 "EMUL_CODE" "{$PROJ_DIR$\Application\Source\main.c}.526.13" 0 0 1 "" 0 "" 0
+Bp3=_ 1 "EMUL_CODE" "{$PROJ_DIR$\Application\Source\main.c}.418.5" 0 0 1 "" 0 "" 0
+Bp4=_ 1 "EMUL_CODE" "{$PROJ_DIR$\Application\Source\main.c}.1182.5" 0 0 1 "" 0 "" 0
+Count=5
 [Log file]
 LoggingEnabled=_ 0
 LogFile=_ ""
@@ -158,12 +167,6 @@ Category=_ 0
 [TermIOLog]
 LoggingEnabled=_ 0
 LogFile=_ "C:\Users\lsw0lga\Desktop\temp\TermIO.log"
-[Disassemble mode]
-mode=0
-[Breakpoints2]
-Bp0=_ 1 "EMUL_CODE" "{$PROJ_DIR$\Application\Source\main.c}.550.7" 0 0 1 "" 0 "" 0
-Bp1=_ 1 "EMUL_CODE" "{$PROJ_DIR$\Application\Source\main.c}.389.1" 0 0 1 "" 0 "" 0
-Count=2
 [Aliases]
 A0=_ "C:\Users\Robert\SkyDrive\2018 Spring Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity Test\Application\Source\main.c" ""
 Count=1
