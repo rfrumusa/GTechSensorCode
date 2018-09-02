@@ -1,110 +1,114 @@
-"C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity Test\PLM\Source\ADC\AD1.c"
+"F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC Reads\Shanit Origional Code\Connectivity Test\PLM\Source\ADC\AD1.c"
 -std=c99
 -ferror-limit=100
 -I
-C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity Test\PLM\Configure
+F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC Reads\Shanit Origional Code\Connectivity Test\PLM\Configure
 -I
-C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity Test\PLM\Environment
+F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC Reads\Shanit Origional Code\Connectivity Test\PLM\Environment
 -I
-C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity Test\PLM\Interface
+F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC Reads\Shanit Origional Code\Connectivity Test\PLM\Interface
 -I
-C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity Test\Generic Services\Interface
+F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC Reads\Shanit Origional Code\Connectivity Test\Generic Services\Interface
 -I
-C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity Test\PLM\Source\Uart
+F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC Reads\Shanit Origional Code\Connectivity Test\PLM\Source\Uart
 -I
-C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity Test\PLM\Source\USB
+F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC Reads\Shanit Origional Code\Connectivity Test\PLM\Source\USB
 -I
-C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity Test\PLM\Source\USB\APP
+F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC Reads\Shanit Origional Code\Connectivity Test\PLM\Source\USB\APP
 -I
-C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity Test\PLM\Source\USB\APP\CDC
+F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC Reads\Shanit Origional Code\Connectivity Test\PLM\Source\USB\APP\CDC
 -I
-C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity Test\PLM\Source\USB\APP\Descriptor
+F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC Reads\Shanit Origional Code\Connectivity Test\PLM\Source\USB\APP\Descriptor
 -I
-C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity Test\PLM\Source\USB\Class
+F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC Reads\Shanit Origional Code\Connectivity Test\PLM\Source\USB\Class
 -I
-C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity Test\PLM\Source\USB\Common
+F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC Reads\Shanit Origional Code\Connectivity Test\PLM\Source\USB\Common
 -I
-C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity Test\PLM\Source\USB\Driver
+F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC Reads\Shanit Origional Code\Connectivity Test\PLM\Source\USB\Driver
 -I
-C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity Test\PLM\Source\TMR
+F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC Reads\Shanit Origional Code\Connectivity Test\PLM\Source\TMR
 -I
-C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity Test\PLM\Source\Radio\MC1324x\PHY
+F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC Reads\Shanit Origional Code\Connectivity Test\PLM\Source\Radio\MC1324x\PHY
 -I
-C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity Test\PLM\Source\Radio\MC1324x\DRV
+F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC Reads\Shanit Origional Code\Connectivity Test\PLM\Source\Radio\MC1324x\DRV
 -I
-C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity Test\PLM\Source\Sys Common
+F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC Reads\Shanit Origional Code\Connectivity Test\PLM\Source\Sys Common
 -I
-C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity Test\SMAC\Source
+F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC Reads\Shanit Origional Code\Connectivity Test\SMAC\Source
 -I
-C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity Test\SMAC\Interface
+F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC Reads\Shanit Origional Code\Connectivity Test\SMAC\Interface
 -I
-C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity Test\SMAC\Configure
+F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC Reads\Shanit Origional Code\Connectivity Test\SMAC\Configure
 -I
-C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity Test\Application\Source
+F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC Reads\Shanit Origional Code\Connectivity Test\Application\Source
 -I
-C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity Test\Application\Configure
+F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC Reads\Shanit Origional Code\Connectivity Test\Application\Configure
 -I
-C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity Test\PLM\Source\NVM
+F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC Reads\Shanit Origional Code\Connectivity Test\PLM\Source\NVM
 -I
 C:\Users\Robert\SkyDrive\2018 Spring Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity Test\PLM\Source\NVM
 -I
 C:\Users\Robert\SkyDrive\2018 Spring Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity Test\PLM\Source\ADC
 -I
 C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity Test\PLM\Source\ADC
+-I
+F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC Reads\Shanit Origional Code\Connectivity Test\PLM\Source\LPM
 -I
 C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.0\arm\inc
 -I
 C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.0\arm\inc\c
 -I
-C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity Test\PLM\Configure
+F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC Reads\Shanit Origional Code\Connectivity Test\PLM\Configure
 -I
-C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity Test\PLM\Environment
+F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC Reads\Shanit Origional Code\Connectivity Test\PLM\Environment
 -I
-C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity Test\PLM\Interface
+F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC Reads\Shanit Origional Code\Connectivity Test\PLM\Interface
 -I
-C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity Test\Generic Services\Interface
+F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC Reads\Shanit Origional Code\Connectivity Test\Generic Services\Interface
 -I
-C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity Test\PLM\Source\Uart
+F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC Reads\Shanit Origional Code\Connectivity Test\PLM\Source\Uart
 -I
-C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity Test\PLM\Source\USB
+F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC Reads\Shanit Origional Code\Connectivity Test\PLM\Source\USB
 -I
-C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity Test\PLM\Source\USB\APP
+F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC Reads\Shanit Origional Code\Connectivity Test\PLM\Source\USB\APP
 -I
-C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity Test\PLM\Source\USB\APP\CDC
+F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC Reads\Shanit Origional Code\Connectivity Test\PLM\Source\USB\APP\CDC
 -I
-C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity Test\PLM\Source\USB\APP\Descriptor
+F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC Reads\Shanit Origional Code\Connectivity Test\PLM\Source\USB\APP\Descriptor
 -I
-C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity Test\PLM\Source\USB\Class
+F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC Reads\Shanit Origional Code\Connectivity Test\PLM\Source\USB\Class
 -I
-C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity Test\PLM\Source\USB\Common
+F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC Reads\Shanit Origional Code\Connectivity Test\PLM\Source\USB\Common
 -I
-C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity Test\PLM\Source\USB\Driver
+F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC Reads\Shanit Origional Code\Connectivity Test\PLM\Source\USB\Driver
 -I
-C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity Test\PLM\Source\TMR
+F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC Reads\Shanit Origional Code\Connectivity Test\PLM\Source\TMR
 -I
-C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity Test\PLM\Source\Radio\MC1324x\PHY
+F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC Reads\Shanit Origional Code\Connectivity Test\PLM\Source\Radio\MC1324x\PHY
 -I
-C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity Test\PLM\Source\Radio\MC1324x\DRV
+F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC Reads\Shanit Origional Code\Connectivity Test\PLM\Source\Radio\MC1324x\DRV
 -I
-C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity Test\PLM\Source\Sys Common
+F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC Reads\Shanit Origional Code\Connectivity Test\PLM\Source\Sys Common
 -I
-C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity Test\SMAC\Source
+F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC Reads\Shanit Origional Code\Connectivity Test\SMAC\Source
 -I
-C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity Test\SMAC\Interface
+F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC Reads\Shanit Origional Code\Connectivity Test\SMAC\Interface
 -I
-C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity Test\SMAC\Configure
+F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC Reads\Shanit Origional Code\Connectivity Test\SMAC\Configure
 -I
-C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity Test\Application\Source
+F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC Reads\Shanit Origional Code\Connectivity Test\Application\Source
 -I
-C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity Test\Application\Configure
+F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC Reads\Shanit Origional Code\Connectivity Test\Application\Configure
 -I
-C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity Test\PLM\Source\NVM
+F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC Reads\Shanit Origional Code\Connectivity Test\PLM\Source\NVM
 -I
 C:\Users\Robert\SkyDrive\2018 Spring Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity Test\PLM\Source\NVM
 -I
 C:\Users\Robert\SkyDrive\2018 Spring Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity Test\PLM\Source\ADC
 -I
 C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity Test\PLM\Source\ADC
+-I
+F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC Reads\Shanit Origional Code\Connectivity Test\PLM\Source\LPM
 -DIAR=1
 -D__CHAR_BITS__=8
 -D__CHAR_MAX__=0xff
@@ -298,8 +302,8 @@ C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor Code\Shanit Or
 -D__HAS_LOCATED_DECLARATION__=1
 -D__HAS_LOCATED_WITH_INIT__=1
 -D__IAR_COMPILERBASE__=593926
--D__DATE__="Mar 20 2018"
--D__TIME__="09:41:43"
+-D__DATE__="Sep  2 2018"
+-D__TIME__="13:33:26"
 -D__STDC__=1
 -D__STDC_VERSION__=199901L
 -D__STDC_HOSTED__=1

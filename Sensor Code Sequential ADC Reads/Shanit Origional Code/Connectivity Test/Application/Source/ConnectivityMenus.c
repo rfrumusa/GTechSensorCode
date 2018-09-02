@@ -228,5 +228,156 @@ void PrintMenu(char * const pu8Menu[], uint8_t port)
 *************************************************************************************
 ************************************************************************************/
 
+/* Low Power Mode Vartiables 8*/
+
+#if (gEnableLowPower_d == TRUE)
+char * const cau8WUGPIOString[]={ 
+  "GPIO",
+  NULL
+};
+
+char * const cau8WULPTMRString[]={ 
+  "LPTMR",
+  NULL
+};
+
+char * const cau8WURTCString[]={ 
+  "RTC",
+  NULL
+};
+
+char * const cau8WULLSString[]={ 
+  "LLS",
+  NULL
+};
+
+char * const cau8WUVLPSString[]={ 
+  "VLPS",
+  NULL
+};
+
+char * const cau8WUVLLS2String[]={ 
+  "VLLS2",
+  NULL
+};
+
+char * const cau8WUVLLS1String[]={ 
+  "VLLS1",
+  NULL
+};
+char * const cau8WUVLLS0String[]={ 
+  "VLLS0",
+  NULL
+};
+
+char * const cau8WUGotoLLSString[]={
+  "\r\n", 
+  "The device is about to enter in LLS mode\r\n",
+  NULL
+};
+char * const cau8WUGotoVLPSString[]={
+  "\r\n",
+  "The device is about to enter in VLPS mode\r\n",
+  NULL
+};
+char * const cau8WUGotoVLLS2String[]={ 
+  "\r\n",
+  "The device is about to enter in VLLS2 mode\r\n",
+  NULL
+};
+
+char * const cau8WUGotoVLLS0String[]={ 
+  "\r\n",
+  "The device is about to enter in VLLS0 mode\r\n",
+  NULL
+};
+char * const cau8WUContinueAskString[]={  
+  "Do you want to continue? [Y/N]. ",
+  NULL
+};
+
+char * const cau8WUIsLLSModeString[]={  
+  "\f\r\n", 
+  "Now in LLS mode\r\n",
+  NULL
+};
+
+char * const cau8WUIsVLPSModeString[]={  
+  "\f\r\n", 
+  "Now in VLPS mode\r\n", 
+  NULL
+};
+
+char * const cau8WUIsVLLS2ModeString[]={  
+  "\f\r\n", 
+  "Now in VLLS2 mode\r\n", 
+  NULL
+};
 
 
+char * const cau8WUIsVLLS0ModeString[]={  
+  "\f\r\n", 
+  "Now in VLLS0 mode\r\n", 
+  NULL
+};
+
+char * const cau8WUGPIOWakeupString[]={  
+  "Press SW1 to wake up and back to main menu\r\n",
+  NULL
+};
+
+
+
+char * const cau8WURTCWakeupString[]={  
+  "Wait 10 sec to wake up and back to main menu\r\n",
+  NULL
+};
+
+#endif
+
+char * const cau8WULPTMRWakeupString[]={  
+  "Wait 10 sec to wake up and back to main menu\r\n",
+  NULL
+};
+
+char * const cau8WUIsVLLS1ModeString[]={  
+  "\f\r\n", 
+  "Now in VLLS1 mode\r\n", 
+  NULL
+};
+char * const cau8WUGotoVLLS1String[]={ 
+  "\r\n",
+  "The device is about to enter in VLLS1 mode\r\n",
+  NULL
+};
+
+
+char * const cau8WUWait4Option[]={ 
+  "\r\n", 
+  "\r>",
+  NULL
+};
+
+char * const cau8WUInvalidValueString[]={ 
+  "\r\n", 
+  "Invalid value, please try again.",
+  NULL
+};
+
+
+
+char * const cau8WUContinueAskString[]={  
+  "Do you want to continue? [Y/N]. ",
+  NULL
+};
+
+char * const cau8WULPTMRString[]={ 
+  "LPTMR",
+  NULL
+};
+
+
+char * const cau8WUVLLS1String[]={ 
+  "VLLS1",
+  NULL
+}; 

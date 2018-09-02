@@ -9323,6 +9323,51 @@ extern char * const cu8TxTestTags[];
 extern char * const cu8RxTestTags[];
 
 
+extern char const u8SequenceBytes[];
+extern char * const cau8WUMainMenuHeader[];
+extern char * const cau8WUMainMenuAddID[];
+extern char * const cau8WUMainMenuPANID[];
+extern char * const cau8WUMainMenuDestAddID[];
+extern char * const cau8WUMainMenuChannel[];
+extern char * const cau8WUMainMenuOptions[];
+extern char * const cau8WUMainMenuLowPower[];
+extern char * const cau8WUMainMenuWakeupSource[];
+extern char * const cau8WUWait4Option[];
+extern char * const cau8WUChangeAddIDString[];
+extern char * const cau8WUChangePanIDString[];
+extern char * const cau8WUChangeDestAddIDString[];
+extern char * const cau8WUChangeChannelString[];
+extern char * const cau8WUGotoLLSString[];
+extern char * const cau8WUGotoVLPSString[];
+extern char * const cau8WUGotoVLLS2String[];
+extern char * const cau8WUGotoVLLS1String[];
+extern char * const cau8WUGotoVLLS0String[];
+extern char * const cau8WUContinueAskString[];
+extern char * const cau8WULLSString[];
+extern char * const cau8WUVLPSString[];
+extern char * const cau8WUVLLS2String[];
+extern char * const cau8WUVLLS1String[];
+extern char * const cau8WUVLLS0String[];
+extern char * const cau8WUGPIOString[];
+extern char * const cau8WULPTMRString[];
+extern char * const cau8WURTCString[];
+extern char * const cau8WUIsLLSModeString[];
+extern char * const cau8WUIsVLPSModeString[];
+extern char * const cau8WUIsVLLS2ModeString[];
+extern char * const cau8WUIsVLLS1ModeString[];
+extern char * const cau8WUIsVLLS0ModeString[];
+extern char * const cau8WUGPIOWakeupString[];
+extern char * const cau8WULPTMRWakeupString[];
+extern char * const cau8WURTCWakeupString[];  
+extern char * const cau8WUInvalidValueString[];
+extern char * const cau8WUClearScreen[];
+extern char * const cau8WUSequeceToMainMenuString[];
+extern char * const cau8WUTypingMessageScreen1[];
+extern char * const cau8WUTypingMessageScreen2[];
+extern char * const cau8WUTypingMessageScreen3[];
+extern char * const cau8WUTypingMessageScreen4[];
+
+
 
 
  
@@ -9427,6 +9472,32 @@ typedef enum EditRegsStates_tag
   gERStateMaxState_c
 }EditRegsStates_t;
 
+
+typedef enum wuConfigState_tag
+{
+  gWUConfigStateMainMenu_c,
+  gWUConfigStateWait4Options_c,
+  gWUConfigStateChangeMyAddId_c,
+  gWUConfigStateChangePanId_c,
+  gWUConfigStateChangeDestAddId_c,
+  gWUConfigStateChangeChannel_c,
+  gWUConfigStateLowPowerMode_c,
+  gWUConfigStateInvalidValue_c,
+  gWUConfigStateGetHexValue_c,
+  gWUConfigStateGetDecValue_c,
+  gWUConfigStateTypingMessage_c,
+  gWUConfigStateMax_c  
+}wuConfigState_t;
+
+typedef enum wuLPStates_tag
+{
+  gWULPStateInit_c,
+  gWULPStateWait4Options_c,
+  gWULPStateGotoLowPower_c,
+  gWULPStateInvalid_c
+}wuLPConfigState_t;
+
+
 typedef enum ODRStates_tag 
 {
   gODRStateInit_c = 0,
@@ -9499,6 +9570,9 @@ typedef enum{
   gManualContinuousEnergyDetect_c,
   gMaxRxTest_c
 }RxTests_t;
+
+
+
 
 
 
@@ -10706,7 +10780,13 @@ void InitAccelControlls();
 void GetDeviceData();
 void INIT_PIT(uint32_t SampleSpeed);
 void PIT_ISR();
-
+void WUApp_LowPwrStateMachine (void);
+void AppLedTimerCallback (tmrTimerID_t timerId);
+void WUApp_InitWakupSource(void);
+void WUApp_InitLowPowerMode(void);
+void WUApp_PrepareToEnterLowPower(void);
+void WUApp_LPRestoreSettings(void);
+void WUApp_LowPowerWhile(void);
 
 
 
@@ -13368,6 +13448,1203 @@ void *MM_Alloc
   );
 
 
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+ 
+
+   
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+ 
+
+   
+ 
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+ 
+typedef enum 
+{
+  PWR_Run = 77,
+  PWR_Sleep,
+  PWR_DeepSleep,
+  PWR_Reset,
+  PWR_OFF
+} PWR_CheckForAndEnterNewPowerState_t;
+
+
+
+
+ 
+typedef  union {
+  uint8_t AllBits;
+  struct {
+    uint8_t   FromReset        :1;                
+    uint8_t   FromUART         :1;                
+    uint8_t   FromKeyBoard     :1;                
+    uint8_t   FromLPTMR        :1;                
+    uint8_t   FromRTC          :1;                
+    uint8_t   FromTimer        :1;                
+    uint8_t   DeepSleepTimeout :1;                
+    uint8_t   SleepTimeout     :1;                
+  } Bits;
+} PWRLib_WakeupReason_t;
+
+
+
+
+ 
+typedef enum{
+  StackPS_Running=122,
+  StackPS_Sleep,
+  StackPS_DeepSleep
+} PWRLib_StackPS_t;
+
+
+
+
+ 
+typedef enum{
+  PWR_ABOVE_LEVEL_3_0V,    
+  PWR_BELOW_LEVEL_3_0V,
+  PWR_BELOW_LEVEL_2_9V,
+  PWR_BELOW_LEVEL_2_8V,
+  PWR_BELOW_LEVEL_2_7V,
+  PWR_BELOW_LEVEL_2_56V,
+  PWR_BELOW_LEVEL_2_1V,
+  PWR_BELOW_LEVEL_2_0V,
+  PWR_BELOW_LEVEL_1_9V,
+  PWR_BELOW_LEVEL_1_8V,
+  PWR_LEVEL_CRITICAL 
+} PWRLib_LVD_VoltageLevel_t;
+
+
+
+
+
+
+
+ 
+
+extern PWRLib_StackPS_t PWRLib_StackPS;
+extern volatile PWRLib_WakeupReason_t PWRLib_MCU_WakeupReason;
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+ 
+extern void PWRLib_Init
+(
+  void
+);
+
+
+
+
+
+
+ 
+extern uint16_t PWRLib_GetSystemResetStatus
+(
+  void
+);
+
+
+
+
+
+
+
+
+ 
+extern void PWR_AllowDeviceToSleep
+(
+  void
+);
+
+
+
+
+
+
+
+
+ 
+extern void PWR_DisallowDeviceToSleep
+(
+  void
+);
+
+
+
+
+
+
+
+ 
+extern bool_t PWR_CheckIfDeviceCanGoToSleep
+(
+  void
+);
+
+
+
+
+
+
+ 
+extern PWRLib_WakeupReason_t PWR_HandleDeepSleep
+(
+  zbClock24_t DozeDuration
+);
+
+
+
+
+
+
+ 
+extern PWRLib_WakeupReason_t PWR_HandleSleep
+(
+  zbClock24_t DozeDuration
+);
+
+
+
+
+
+
+ 
+extern PWRLib_WakeupReason_t PWR_CheckForAndEnterNewPowerState
+(
+  PWR_CheckForAndEnterNewPowerState_t NewPowerState,
+  zbClock24_t DozeDuration
+);
+
+
+
+
+
+
+ 
+extern PWRLib_WakeupReason_t PWR_EnterLowPower
+(
+  void
+);
+
+
+
+
+
+
+ 
+extern void PWR_SetDeepSleepTimeInMs
+(
+  uint32_t deepSleepTimeTimeMs
+);
+
+
+
+
+
+
+ 
+extern void PWR_SetDeepSleepTimeInSymbols
+(
+  uint32_t deepSleepTimeTimeSym
+);
+
+
+
+
+
+
+ 
+extern PWRLib_LVD_VoltageLevel_t PWRLib_LVD_ReportLevel
+(
+  void
+);
+
+
+
+
+
+
+ 
+extern void PWRLib_Reset
+(
+  void
+);
+
+   
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+ 
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+ 
+
+
+
+
+ 
+typedef enum
+{
+  gPWRLib_LLWU_WakeupPin_PTE1_c = 0,
+  gPWRLib_LLWU_WakeupPin_PTE2_c,
+  gPWRLib_LLWU_WakeupPin_PTE4_c,
+  gPWRLib_LLWU_WakeupPin_PTA4_c,
+  gPWRLib_LLWU_WakeupPin_PTA13_c,
+  gPWRLib_LLWU_WakeupPin_PTB0_c,
+  gPWRLib_LLWU_WakeupPin_PTC1_c,
+  gPWRLib_LLWU_WakeupPin_PTC3_c,
+  gPWRLib_LLWU_WakeupPin_PTC4_c,
+  gPWRLib_LLWU_WakeupPin_PTC5_c,
+  gPWRLib_LLWU_WakeupPin_PTC6_c,
+  gPWRLib_LLWU_WakeupPin_PTC11_c,
+  gPWRLib_LLWU_WakeupPin_PTD0_c,
+  gPWRLib_LLWU_WakeupPin_PTD2_c,
+  gPWRLib_LLWU_WakeupPin_PTD4_c,
+  gPWRLib_LLWU_WakeupPin_PTD6_c,
+  gPWRLib_LLWU_InvalidWakeupPin_c
+} PWRLib_LLWU_WakeupPin_t;
+
+
+
+
+ 
+typedef enum
+{
+  gPWRLib_LLWU_WakeupPin_Disable = 0,
+  gPWRLib_LLWU_WakeupPin_RisingEdge_c,
+  gPWRLib_LLWU_WakeupPin_FallingEdge_c,
+  gPWRLib_LLWU_WakeupPin_AnyEdge_c,
+  gPWRLib_LLWU_WakeupPin_InvalidConfig_c,
+} PWRLib_LLWU_WakeupPinConfig_t;
+
+
+
+
+ 
+typedef enum
+{
+  gPWRLib_LLWU_WakeupModule_LPTMR_c = 0,
+  gPWRLib_LLWU_WakeupModule_CMP0_c,
+  gPWRLib_LLWU_WakeupModule_CMP1_c,
+  gPWRLib_LLWU_WakeupModule_CMP2_c,
+  gPWRLib_LLWU_WakeupModule_RTC_Alarm_c = 5,
+  gPWRLib_LLWU_WakeupModule_RTC_Second_c = 7,
+  gPWRLib_LLWU_InvalidWakeupModule_c
+} PWRLib_LLWU_WakeupModule_t;
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+ 
+extern PWRLib_StackPS_t PWRLib_StackPS;
+
+ 
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+ 
+ void PWRLib_MCU_Enter_WAIT
+(
+  void
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+void PWRLib_MCU_Enter_STOP
+(
+  void
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+void PWRLib_MCU_Enter_VLPS
+(
+  void
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+void PWRLib_MCU_Enter_LLS
+(
+  void
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+void PWRLib_MCU_Enter_VLLS3
+(
+  void
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+void PWRLib_MCU_Enter_VLLS2
+(
+  void
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+void PWRLib_MCU_Enter_VLLS1
+(
+  void
+);
+
+
+
+
+
+
+ 
+void PWRLib_Radio_Enter_Doze
+(
+  void
+);
+
+
+
+
+
+
+ 
+void PWRLib_Radio_Enter_AutoDoze
+(
+  void
+);
+
+
+
+
+
+
+ 
+void PWRLib_Radio_Enter_Idle
+(
+  void
+);
+
+
+
+
+
+
+ 
+void PWRLib_Radio_Enter_Hibernate
+(
+  void
+);
+
+
+
+
+
+
+ 
+void PWRLib_LLWU_WakeupPinEnable
+(
+  PWRLib_LLWU_WakeupPin_t       wakeupPin,
+  PWRLib_LLWU_WakeupPinConfig_t edgeDetection
+);
+
+
+
+
+
+
+ 
+void PWRLib_LLWU_WakeupModuleEnable
+(
+  PWRLib_LLWU_WakeupModule_t wakeupModule
+);
+
+
+
+
+
+
+ 
+void PWRLib_LLWU_WakeupPinDisable
+(
+  PWRLib_LLWU_WakeupPin_t wakeupPin
+);
+
+
+
+
+
+
+ 
+void PWRLib_LLWU_WakeupModuleDisable
+(
+  PWRLib_LLWU_WakeupModule_t wakeupModule
+);
+
+
+
+
+
+
+ 
+bool_t PWRLib_LLWU_IsLPTMRWakeUpSource
+(
+  void
+);
+
+
+
+
+
+
+ 
+bool_t PWRLib_LLWU_IsRTCWakeUpSource
+(
+  void
+);
+
+
+
+
+
+
+ 
+bool_t PWRLib_LLWU_IsTSIWakeUpSource
+(
+  void
+);
+
+
+
+
+
+
+ 
+bool_t PWRLib_LLWU_IsGPIOWakeUpSource
+(
+  uint8_t pinNumber
+);
+
+
+
+
+
+
+ 
+#pragma location = ".isr_handler"
+void PWRLib_LLWU_Isr
+(
+  void
+);
+
+
+
+
+
+
+ 
+void PWRLib_LPTMR_ClockStart
+(
+  uint8_t  ClkMode,
+  uint32_t Ticks
+);
+
+
+
+
+
+
+ 
+uint32_t PWRLib_LPTMR_ClockCheck
+(
+  void
+);
+
+
+
+
+
+
+ 
+void PWRLib_LPTMR_ResetTicks
+(
+  void
+);
+
+
+
+
+
+
+ 
+void PWRLib_LPTMR_ClockStop
+(
+  void
+);
+
+
+
+
+
+
+ 
+#pragma location = ".isr_handler"
+void PWRLib_LPTMR_Isr
+(
+  void
+);
+
+
+
+
+
+
+ 
+void PWRLib_RTC_Init
+(
+ void
+);
+
+
+
+
+
+
+ 
+void PWRLib_RTC_ClockStart
+(
+  uint32_t Ticks
+);
+
+
+
+
+
+
+ 
+uint32_t PWRLib_RTC_ClockCheck
+(
+  void
+);
+
+
+
+
+
+
+ 
+void PWRLib_RTC_ResetTicks
+(
+  void
+);
+
+
+
+
+
+
+ 
+void PWRLib_RTC_ClockStop
+(
+  void
+);
+
+
+
+
+
+
+ 
+#pragma location = ".isr_handler"
+void PWRLib_RTC_Isr
+(
+  void
+);
+
+
+
+
+
+
+ 
+bool_t PWRLib_RTC_IsOscStarted
+(
+ void
+);
+
+
+
+
+
+
+ 
+PWRLib_LVD_VoltageLevel_t PWRLib_LVD_CollectLevel
+(
+  void
+);
+
+
+
+
+
+
+
+
+
+ 
+uint8_t PWRLib_GetMacStateReq
+(
+  void
+);
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+ 
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+			 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
 
  
@@ -13475,11 +14752,26 @@ enum stateVariable
 
 
 
+ 
+
+ 
+
+ 
+
+ 
+
+
 void InitAccelControlls();
 void GetDeviceData();
 void INIT_PIT(uint32_t SampleSpeed);
 void PIT_ISR();
-
+void WUApp_LowPwrStateMachine (void);
+void AppLedTimerCallback (tmrTimerID_t timerId);
+void WUApp_InitWakupSource(void);
+void WUApp_InitLowPowerMode(void);
+void WUApp_PrepareToEnterLowPower(void);
+void WUApp_LPRestoreSettings(void);
+void WUApp_LowPowerWhile(void);
  
  
 
@@ -15525,6 +16817,11 @@ static bool_t OverrideIndirectRegisters(void);
 static bool_t ReadDirectRegisters(void);
 static bool_t ReadIndirectRegisters(void);
 
+tmrTimerID_t mLEDTimerID_1 = 0xFF;
+tmrTimerID_t mBufferTimerID = 0xFF;
+uint16_t mLEDInterval1_c = 1150;
+uint8_t mBufferInterval_c = 1;
+
 void MLMEScanConfirm(channels_t ClearestChann);
 void MLMEResetIndication(void);
 void MLMEWakeConfirm(void);
@@ -15569,6 +16866,37 @@ int8_t GetLinkQdBm();
 
 
  
+
+  wuConfigState_t gConfigState;
+  wuConfigState_t gLastConfigState;
+  wuLPConfigState_t gLPConfigState;
+  wuLPConfigState_t gLastLPConfigState;
+  bool_t  bGotoLowPwrFlag;
+  bool_t  bFirstNibbleFlag;
+  uint8_t u8ConfigHexValue;
+  uint8_t u8ConfigDecValue;
+  uint8_t u8SequencePointerCounter;
+  bool_t bReturnToMainMenuFlag;
+
+uint8_t *pu8MainLowPowerString;
+uint8_t * pu8MainWakeupSourceString;
+uint8_t * pu8GotoLowPowerString;
+uint8_t * pu8NowInLowPowerString;
+uint8_t * pu8WakeupSourceString;
+
+uint32_t u32PortAPCRBackup[8];
+uint32_t u32PortBPCRBackup[8];
+uint32_t u32PortCPCRBackup[8];
+uint32_t u32PortDPCRBackup[8];
+uint32_t u32PortEPCRBackup[8];
+uint32_t u32SCGCxBackup[5];
+uint32_t u32GPIOs_PDORBackup[8];
+uint32_t u32GPIOs_PDDRBackup[8];
+zbClock24_t LPTMR_Duration = 360; 
+zbClock24_t RTC_Duration = 10;
+bool_t  bGPIOWakeupFlag = 0;
+bool_t  bLPTMRWakeupFlag = 0;
+bool_t  bRTCWakeupFlag = 0;
 
 static uint8_t gau8RxDataBuffer[130]; 
 static uint8_t gau8TxDataBuffer[128]; 
@@ -15625,12 +16953,16 @@ OIRStates_t         oIRState;
 RDRStates_t         rDRState;
 RIRStates_t         rIRState;
 
+bool_t bTxOtaBusyFlag;
+
 int     PIT_ITTERATIONS;
 int     AXIS ;
 uint32_t  TempSumx ;
 uint32_t  TempSumy ;
 uint32_t  TempSumz ;
+bool_t bCommGetDataTimerFlag;
 
+bool_t LowPowerEntered = 0;
 
 uint8_t au8ScanResults[16];
 
@@ -15650,6 +16982,8 @@ void main(void)
   int XDiff;
   int YDiff;
   int ZDiff;
+  
+  int LoopItterations = 0;
   
   int threshHold = 120;
   sensorID=6543; 
@@ -15763,9 +17097,70 @@ void main(void)
         }
         
       }
+      LoopItterations =0;
+    }
+    
+    
+    
+    if(LoopItterations == 120)
+    {
+      
+      gSnd.xmax = 0;
+      gSnd.xmin = 0;
+      gSnd.ymax = 0;
+      gSnd.ymin = 0;
+      gSnd.zmax = 0;
+      gSnd.zmin = 0;
+      
+      
+      sentPackets++;
+      flashCount=0;
+      
+      
+      smacErrors_t status=SendBinaryPacket();
+      if(status==gErrorNoError_c){
+        ReceivePacket();
+      }
+      while(--flashCount);
+      
+      evDataFromCOMM=0;
+      
+      tOptions pOptions;
+      if(appState==RECEIVE_FINISHED && gIsAck) {
+        if(gAppRxPacket->u8DataLength>5){
+          if(gAppRxPacket->u8DataLength==24){
+            CopyOptionsFromRecvPacket(&pOptions);
+            
+            OptSwapEndianness(&pOptions);
+            if (!ValidateOptions(&pOptions)) continue;
+          }
+          else {
+            GetFactoryOptions(&pOptions);
+          }
+          
+        }
+        
+      }
+      LoopItterations =0;
+      
     }
      
+    LoopItterations = LoopItterations +1;
+    
     InitPacket(); 
+    
+    
+    
+    
+    
+    
+    while(!LowPowerEntered){
+        
+        
+        ((((GPIO_MemMapPtr)0x400FF0C0u))->PDDR) = 0x0u;
+        
+        WUApp_LowPwrStateMachine();
+      }
     
   } 
   
@@ -15835,6 +17230,70 @@ smacErrors_t SendCurrentOptions(){
     
   
     
+}
+
+
+
+
+
+
+
+
+ 
+void WUApp_LowPwrStateMachine (void) 
+{
+  switch (gLPConfigState)
+  {
+    case gWULPStateInit_c:
+           gLPConfigState = gWULPStateGotoLowPower_c;	 
+           WUApp_InitLowPowerMode();   
+           WUApp_InitWakupSource();   
+            
+    break;
+    
+    case gWULPStateWait4Options_c:
+            
+            evDataFromCOMM = 0;                  
+            bGotoLowPwrFlag = 1;
+            gLPConfigState = gLastLPConfigState;
+            
+    break;
+    
+    case gWULPStateGotoLowPower_c:
+            if (!bGotoLowPwrFlag){
+              PrintMenu((char * const *)pu8GotoLowPowerString, 1);
+              PrintMenu(cau8WUContinueAskString, 1);
+              gLastLPConfigState = gLPConfigState;
+              gLPConfigState = gWULPStateWait4Options_c;
+            }
+            else{
+              PrintMenu ((char * const *)pu8NowInLowPowerString, 1);
+              PrintMenu ((char * const *)pu8WakeupSourceString, 1);
+              WUApp_LowPowerWhile();  
+              
+               
+              LED_StartSerialFlash();
+              TMR_StartSingleShotTimer(mLEDTimerID_1, mLEDInterval1_c, AppLedTimerCallback);
+
+              bGotoLowPwrFlag = 0; 
+              gConfigState = gWUConfigStateMainMenu_c;
+            }        
+    break;    
+ 
+    case gWULPStateInvalid_c:
+            PrintMenu(cau8WUInvalidValueString, 1); 
+            if(gWULPStateWait4Options_c == gLastLPConfigState){
+                  PrintMenu(cau8WUWait4Option, 1);
+            }
+            gLPConfigState = gLastLPConfigState;
+    break;
+    
+    default:
+      gLPConfigState = gWULPStateGotoLowPower_c;
+      gConfigState = gWUConfigStateMainMenu_c;   	        
+    break;
+    
+  } 
 }
 
 
@@ -16041,20 +17500,6 @@ void PIT_ISR()
         
    
 
-
-  
-  
-
-
-
-
-
-
-
-
-
- 
-  
   
    
   ((((PIT_MemMapPtr)0x40037000u))->CHANNEL[0]. TFLG)  = (uint32_t)0x1;           
@@ -16473,13 +17918,63 @@ void GetFactoryOptions(tOptions* pOptions)
 
 
 
+ 
+void WUApp_LowPowerWhile(void) 
+{  
+     
+    WUApp_PrepareToEnterLowPower();
+
+     
+    PWRLib_MCU_Enter_VLLS1();
+      
+    WUApp_LPRestoreSettings();
+ 
+}
+
+
+
+
+
+
+ 
+
+void WUApp_InitWakupSource(void)
+{
+    pu8WakeupSourceString = (uint8_t *)cau8WULPTMRWakeupString;
+     
+    NVIC_EnableIRQ(58);
+     
+    PWRLib_LLWU_WakeupModuleEnable(gPWRLib_LLWU_WakeupModule_LPTMR_c);
+    NVIC_EnableIRQ(21);
+}
+
+
+
+
+
+
+ 
+void WUApp_InitLowPowerMode(void)
+{
+    pu8GotoLowPowerString = (uint8_t *)cau8WUGotoVLLS1String;
+    pu8NowInLowPowerString = (uint8_t *)cau8WUIsVLLS1ModeString;
+    ((((SMC_MemMapPtr)0x4007E000u))->PMPROT) |= 0x2u;         
+}
+
+
+
+
+
+
+
+
 
 
  
 void InitProject(void)
 {
     asm(" CPSID i");;
-   
+   gLPConfigState =gLPConfigState;
    gOpt.hdr.u8Prefix[0] = 'O';
    gOpt.hdr.u8Prefix[1] = 'P';
    gOpt.hdr.u8Prefix[2] = 'T';
@@ -16540,6 +18035,10 @@ void InitProject(void)
   Uart_ModuleInit();
   Uart1_SetBaud(115200UL);
   Uart1_SetRxCallBack(CommRxCallback);
+  
+  
+  mLEDTimerID_1 = TMR_AllocateTimer();
+  mBufferTimerID = TMR_AllocateTimer();
 
    
   KeyboardInit();
@@ -16562,7 +18061,16 @@ void InitProject(void)
  
  
    
-   
+    gConfigState = gWUConfigStateMainMenu_c;
+    gLPConfigState = gWULPStateInit_c;
+    u8SequencePointerCounter = 0;
+    bReturnToMainMenuFlag = 0; 
+    
+        pu8MainLowPowerString = (uint8_t *)cau8WUVLLS1String;
+        pu8MainWakeupSourceString = (uint8_t *)cau8WULPTMRString;
+                  
+      bTxOtaBusyFlag = 0;
+      bCommGetDataTimerFlag = 0;
    
    
 }
@@ -16682,6 +18190,198 @@ void SerialUIStateMachine(void)
   }
 }
 
+
+
+ 
+void WUApp_PrepareToEnterLowPower(void)
+{
+  bool_t bTimersOff;
+
+     
+    TMR_StopTimer(mLEDTimerID_1);
+    TMR_StopTimer(mBufferTimerID);
+    TMR_FreeTimer(mLEDTimerID_1);
+    TMR_FreeTimer(mBufferTimerID);
+    
+     
+    MCG_Pee2Fei();
+    
+     
+    MC1324xDrv_Set_CLK_OUT_Freq((8));
+     
+    PWRLib_Radio_Enter_Hibernate();
+    
+    
+    
+      
+    u32PortAPCRBackup[0] = ((((PORT_MemMapPtr)0x40049000u))->PCR[0]);  
+    u32PortAPCRBackup[1] = ((((PORT_MemMapPtr)0x40049000u))->PCR[1]);  
+    u32PortAPCRBackup[2] = ((((PORT_MemMapPtr)0x40049000u))->PCR[2]);  
+    u32PortAPCRBackup[3] = ((((PORT_MemMapPtr)0x40049000u))->PCR[3]);  
+    u32PortAPCRBackup[4] = ((((PORT_MemMapPtr)0x40049000u))->PCR[4]);  
+    
+    u32PortBPCRBackup[0] = ((((PORT_MemMapPtr)0x4004A000u))->PCR[10]);  
+    u32PortBPCRBackup[1] = ((((PORT_MemMapPtr)0x4004A000u))->PCR[11]);  
+    u32PortBPCRBackup[2] = ((((PORT_MemMapPtr)0x4004A000u))->PCR[16]);  
+    u32PortBPCRBackup[3] = ((((PORT_MemMapPtr)0x4004A000u))->PCR[17]);  
+    
+    u32PortCPCRBackup[0] = ((((PORT_MemMapPtr)0x4004B000u))->PCR[4]);  
+    u32PortCPCRBackup[1] = ((((PORT_MemMapPtr)0x4004B000u))->PCR[5]);  
+    u32PortCPCRBackup[2] = ((((PORT_MemMapPtr)0x4004B000u))->PCR[6]);  
+    u32PortCPCRBackup[3] = ((((PORT_MemMapPtr)0x4004B000u))->PCR[7]);  
+    
+    
+    u32PortEPCRBackup[0] = ((((PORT_MemMapPtr)0x4004D000u))->PCR[0]);  
+    u32PortEPCRBackup[1] = ((((PORT_MemMapPtr)0x4004D000u))->PCR[1]);  
+    
+    u32SCGCxBackup[0] = ((((SIM_MemMapPtr)0x40047000u))->SCGC4); 
+    u32SCGCxBackup[1] = ((((SIM_MemMapPtr)0x40047000u))->SCGC5); 
+    u32SCGCxBackup[2] = ((((SIM_MemMapPtr)0x40047000u))->SCGC6); 
+    u32SCGCxBackup[3] = ((((SIM_MemMapPtr)0x40047000u))->SCGC7); 
+    
+    u32GPIOs_PDORBackup[0] = ((((GPIO_MemMapPtr)0x400FF000u))->PDOR);
+    u32GPIOs_PDORBackup[1] = ((((GPIO_MemMapPtr)0x400FF040u))->PDOR);
+    u32GPIOs_PDORBackup[2] = ((((GPIO_MemMapPtr)0x400FF080u))->PDOR);
+    u32GPIOs_PDORBackup[3] = ((((GPIO_MemMapPtr)0x400FF0C0u))->PDOR);
+    u32GPIOs_PDORBackup[4] = ((((GPIO_MemMapPtr)0x400FF100u))->PDOR);
+    
+    u32GPIOs_PDDRBackup[0] = ((((GPIO_MemMapPtr)0x400FF000u))->PDDR);
+    u32GPIOs_PDDRBackup[1] = ((((GPIO_MemMapPtr)0x400FF040u))->PDDR);
+    u32GPIOs_PDDRBackup[2] = ((((GPIO_MemMapPtr)0x400FF080u))->PDDR);
+    u32GPIOs_PDDRBackup[3] = ((((GPIO_MemMapPtr)0x400FF0C0u))->PDDR);
+    u32GPIOs_PDDRBackup[4] = ((((GPIO_MemMapPtr)0x400FF100u))->PDDR);
+    
+     
+    ((((PORT_MemMapPtr)0x4004D000u))->PCR[0]) = (((uint32_t)(((uint32_t)(0x1))<<8))&0x700u) | 0x2u | 0x1u; 
+    ((((PORT_MemMapPtr)0x4004D000u))->PCR[1]) = (((uint32_t)(((uint32_t)(0x1))<<8))&0x700u) | 0x2u | 0x1u; 
+   
+    ((((PORT_MemMapPtr)0x4004B000u))->PCR[0]) = (((uint32_t)(((uint32_t)(0x1))<<8))&0x700u) |0x1u ;                    
+    ((((PORT_MemMapPtr)0x4004B000u))->PCR[1]) = (((uint32_t)(((uint32_t)(0x1))<<8))&0x700u) |0x1u ;                    
+    ((((PORT_MemMapPtr)0x4004B000u))->PCR[3]) = (((uint32_t)(((uint32_t)(0x1))<<8))&0x700u) |0x1u ;                    
+       
+      
+    
+    ((((PORT_MemMapPtr)0x4004C000u))->PCR[3]) = (((uint32_t)(((uint32_t)(0x1))<<8))&0x700u) | 0x2u | 0x1u;
+    ((((PORT_MemMapPtr)0x4004C000u))->PCR[4]) = (((uint32_t)(((uint32_t)(0x1))<<8))&0x700u) | 0x2u | 0x1u;
+    
+      
+    ((((PORT_MemMapPtr)0x40049000u))->PCR[2]) = 0x2u | 0x1u; 
+    
+    
+       
+    
+    ((((PORT_MemMapPtr)0x4004B000u))->PCR[5]) = (((uint32_t)(((uint32_t)(0x1))<<8))&0x700u);
+    ((((PORT_MemMapPtr)0x4004B000u))->PCR[6]) = (((uint32_t)(((uint32_t)(0x1))<<8))&0x700u);
+    ((((PORT_MemMapPtr)0x4004B000u))->PCR[7]) = (((uint32_t)(((uint32_t)(0x1))<<8))&0x700u);
+    
+    
+    ((((GPIO_MemMapPtr)0x400FF000u))->PDDR) |= (1<<2);
+    ((((GPIO_MemMapPtr)0x400FF0C0u))->PDDR) |= (1<<3);
+    ((((GPIO_MemMapPtr)0x400FF0C0u))->PDDR) |= (1<<4);
+    ((((GPIO_MemMapPtr)0x400FF080u))->PDDR) |= (1<<5);
+    ((((GPIO_MemMapPtr)0x400FF080u))->PDDR) |= (1<<6);
+    ((((GPIO_MemMapPtr)0x400FF080u))->PDDR) |= (1<<7);
+    
+    
+    ((((GPIO_MemMapPtr)0x400FF000u))->PCOR) |= (1<<2);
+    ((((GPIO_MemMapPtr)0x400FF080u))->PCOR) |= (1<<5);
+    ((((GPIO_MemMapPtr)0x400FF080u))->PCOR) |= (1<<6);
+    ((((GPIO_MemMapPtr)0x400FF080u))->PCOR) |= (1<<7);
+
+     
+       
+    ((((PMC_MemMapPtr)0x4007D000u))->LVDSC1) = 0x00;
+    
+    
+     
+
+    ((((SIM_MemMapPtr)0x40047000u))->SCGC4) = 0xF0100030; 
+    ((((SIM_MemMapPtr)0x40047000u))->SCGC5) = 0x00040182; 
+       
+    ((((SIM_MemMapPtr)0x40047000u))->SCGC6) = 0x40000001; 
+    ((((SIM_MemMapPtr)0x40047000u))->SCGC7) = 0x00000002; 
+    
+     
+    PWRLib_LPTMR_ClockStart((9<<3), gOptions.u16SleepAfterAck);
+    bLPTMRWakeupFlag = 1;
+   return;
+}
+ 
+
+void WUApp_LPRestoreSettings(void)
+{
+
+  PWRLib_LPTMR_ClockStop();
+  bLPTMRWakeupFlag = 0;
+  
+  
+  ((((SIM_MemMapPtr)0x40047000u))->SCGC4) = u32SCGCxBackup[0]; 
+  ((((SIM_MemMapPtr)0x40047000u))->SCGC5) = u32SCGCxBackup[1]; 
+  ((((SIM_MemMapPtr)0x40047000u))->SCGC6) = u32SCGCxBackup[2]; 
+  ((((SIM_MemMapPtr)0x40047000u))->SCGC7) = u32SCGCxBackup[3]; 
+  
+   
+  ((((PMC_MemMapPtr)0x4007D000u))->LVDSC1) = 0x10;
+  
+   
+  ((((PORT_MemMapPtr)0x40049000u))->PCR[0]) = u32PortAPCRBackup[0]; 
+  ((((PORT_MemMapPtr)0x40049000u))->PCR[1]) = u32PortAPCRBackup[1]; 
+  ((((PORT_MemMapPtr)0x40049000u))->PCR[2]) = u32PortAPCRBackup[2]; 
+  ((((PORT_MemMapPtr)0x40049000u))->PCR[3]) = u32PortAPCRBackup[3]; 
+  ((((PORT_MemMapPtr)0x40049000u))->PCR[3]) = u32PortAPCRBackup[4]; 
+  
+   
+  ((((GPIO_MemMapPtr)0x400FF000u))->PDOR) = u32GPIOs_PDORBackup[0];
+  ((((GPIO_MemMapPtr)0x400FF040u))->PDOR) = u32GPIOs_PDORBackup[1];
+  ((((GPIO_MemMapPtr)0x400FF080u))->PDOR) = u32GPIOs_PDORBackup[2];
+  ((((GPIO_MemMapPtr)0x400FF0C0u))->PDOR) = u32GPIOs_PDORBackup[3];
+  ((((GPIO_MemMapPtr)0x400FF100u))->PDOR) = u32GPIOs_PDORBackup[4];
+  
+  ((((GPIO_MemMapPtr)0x400FF000u))->PDDR) = u32GPIOs_PDDRBackup[0];
+  ((((GPIO_MemMapPtr)0x400FF040u))->PDDR) = u32GPIOs_PDDRBackup[1];
+  ((((GPIO_MemMapPtr)0x400FF080u))->PDDR) = u32GPIOs_PDDRBackup[2];
+  ((((GPIO_MemMapPtr)0x400FF0C0u))->PDDR) = u32GPIOs_PDDRBackup[3];
+  ((((GPIO_MemMapPtr)0x400FF100u))->PDDR) = u32GPIOs_PDDRBackup[4];
+    
+    
+  ((((PORT_MemMapPtr)0x4004A000u))->PCR[10]) = u32PortBPCRBackup[0];
+  ((((PORT_MemMapPtr)0x4004A000u))->PCR[11]) = u32PortBPCRBackup[1];
+  ((((PORT_MemMapPtr)0x4004A000u))->PCR[16]) = u32PortBPCRBackup[2];
+  ((((PORT_MemMapPtr)0x4004A000u))->PCR[17]) = u32PortBPCRBackup[3];
+      
+    
+  ((((PORT_MemMapPtr)0x4004B000u))->PCR[4]) = u32PortCPCRBackup[0];
+  ((((PORT_MemMapPtr)0x4004B000u))->PCR[5]) = u32PortCPCRBackup[1];
+  ((((PORT_MemMapPtr)0x4004B000u))->PCR[6]) = u32PortCPCRBackup[2];
+  ((((PORT_MemMapPtr)0x4004B000u))->PCR[7]) = u32PortCPCRBackup[3];
+  
+    
+  
+
+
+
+
+ 
+    
+  ((((PORT_MemMapPtr)0x4004D000u))->PCR[0]) = u32PortEPCRBackup[0];
+  ((((PORT_MemMapPtr)0x4004D000u))->PCR[1]) = u32PortEPCRBackup[1];
+
+   
+  PWRLib_Radio_Enter_AutoDoze();
+
+  
+   
+  MC1324xDrv_Set_CLK_OUT_Freq((3));
+    
+   
+  gMCG_coreClkMHz = MCG_PLLInit();
+  
+   
+  mLEDTimerID_1 = TMR_AllocateTimer();
+  mBufferTimerID = TMR_AllocateTimer(); 
+  LowPowerEntered = 1;
+  return;
+}
 
  
 bool_t SerialContinuousTxRxTest(void)
@@ -17849,6 +19549,20 @@ void ShortCutsParser(uint8_t u8CommData)
       evTestParameters = 0;
     break;
   }
+}
+
+
+
+
+
+
+ 
+
+void AppLedTimerCallback (tmrTimerID_t timerId)
+{
+  (void)timerId;   
+    LED_StopFlashingAllLeds();
+    
 }
 
 

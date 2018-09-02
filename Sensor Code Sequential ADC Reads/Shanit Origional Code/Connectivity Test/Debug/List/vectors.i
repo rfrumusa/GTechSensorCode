@@ -9421,6 +9421,51 @@ extern char * const cu8TxTestTags[];
 extern char * const cu8RxTestTags[];
 
 
+extern char const u8SequenceBytes[];
+extern char * const cau8WUMainMenuHeader[];
+extern char * const cau8WUMainMenuAddID[];
+extern char * const cau8WUMainMenuPANID[];
+extern char * const cau8WUMainMenuDestAddID[];
+extern char * const cau8WUMainMenuChannel[];
+extern char * const cau8WUMainMenuOptions[];
+extern char * const cau8WUMainMenuLowPower[];
+extern char * const cau8WUMainMenuWakeupSource[];
+extern char * const cau8WUWait4Option[];
+extern char * const cau8WUChangeAddIDString[];
+extern char * const cau8WUChangePanIDString[];
+extern char * const cau8WUChangeDestAddIDString[];
+extern char * const cau8WUChangeChannelString[];
+extern char * const cau8WUGotoLLSString[];
+extern char * const cau8WUGotoVLPSString[];
+extern char * const cau8WUGotoVLLS2String[];
+extern char * const cau8WUGotoVLLS1String[];
+extern char * const cau8WUGotoVLLS0String[];
+extern char * const cau8WUContinueAskString[];
+extern char * const cau8WULLSString[];
+extern char * const cau8WUVLPSString[];
+extern char * const cau8WUVLLS2String[];
+extern char * const cau8WUVLLS1String[];
+extern char * const cau8WUVLLS0String[];
+extern char * const cau8WUGPIOString[];
+extern char * const cau8WULPTMRString[];
+extern char * const cau8WURTCString[];
+extern char * const cau8WUIsLLSModeString[];
+extern char * const cau8WUIsVLPSModeString[];
+extern char * const cau8WUIsVLLS2ModeString[];
+extern char * const cau8WUIsVLLS1ModeString[];
+extern char * const cau8WUIsVLLS0ModeString[];
+extern char * const cau8WUGPIOWakeupString[];
+extern char * const cau8WULPTMRWakeupString[];
+extern char * const cau8WURTCWakeupString[];  
+extern char * const cau8WUInvalidValueString[];
+extern char * const cau8WUClearScreen[];
+extern char * const cau8WUSequeceToMainMenuString[];
+extern char * const cau8WUTypingMessageScreen1[];
+extern char * const cau8WUTypingMessageScreen2[];
+extern char * const cau8WUTypingMessageScreen3[];
+extern char * const cau8WUTypingMessageScreen4[];
+
+
 
 
  
@@ -9525,6 +9570,32 @@ typedef enum EditRegsStates_tag
   gERStateMaxState_c
 }EditRegsStates_t;
 
+
+typedef enum wuConfigState_tag
+{
+  gWUConfigStateMainMenu_c,
+  gWUConfigStateWait4Options_c,
+  gWUConfigStateChangeMyAddId_c,
+  gWUConfigStateChangePanId_c,
+  gWUConfigStateChangeDestAddId_c,
+  gWUConfigStateChangeChannel_c,
+  gWUConfigStateLowPowerMode_c,
+  gWUConfigStateInvalidValue_c,
+  gWUConfigStateGetHexValue_c,
+  gWUConfigStateGetDecValue_c,
+  gWUConfigStateTypingMessage_c,
+  gWUConfigStateMax_c  
+}wuConfigState_t;
+
+typedef enum wuLPStates_tag
+{
+  gWULPStateInit_c,
+  gWULPStateWait4Options_c,
+  gWULPStateGotoLowPower_c,
+  gWULPStateInvalid_c
+}wuLPConfigState_t;
+
+
 typedef enum ODRStates_tag 
 {
   gODRStateInit_c = 0,
@@ -9597,6 +9668,9 @@ typedef enum{
   gManualContinuousEnergyDetect_c,
   gMaxRxTest_c
 }RxTests_t;
+
+
+
 
 
 
@@ -10804,7 +10878,13 @@ void InitAccelControlls();
 void GetDeviceData();
 void INIT_PIT(uint32_t SampleSpeed);
 void PIT_ISR();
-
+void WUApp_LowPwrStateMachine (void);
+void AppLedTimerCallback (tmrTimerID_t timerId);
+void WUApp_InitWakupSource(void);
+void WUApp_InitLowPowerMode(void);
+void WUApp_PrepareToEnterLowPower(void);
+void WUApp_LPRestoreSettings(void);
+void WUApp_LowPowerWhile(void);
 
 
 
@@ -13466,6 +13546,1203 @@ void *MM_Alloc
   );
 
 
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+ 
+
+   
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+ 
+
+   
+ 
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+ 
+typedef enum 
+{
+  PWR_Run = 77,
+  PWR_Sleep,
+  PWR_DeepSleep,
+  PWR_Reset,
+  PWR_OFF
+} PWR_CheckForAndEnterNewPowerState_t;
+
+
+
+
+ 
+typedef  union {
+  uint8_t AllBits;
+  struct {
+    uint8_t   FromReset        :1;                
+    uint8_t   FromUART         :1;                
+    uint8_t   FromKeyBoard     :1;                
+    uint8_t   FromLPTMR        :1;                
+    uint8_t   FromRTC          :1;                
+    uint8_t   FromTimer        :1;                
+    uint8_t   DeepSleepTimeout :1;                
+    uint8_t   SleepTimeout     :1;                
+  } Bits;
+} PWRLib_WakeupReason_t;
+
+
+
+
+ 
+typedef enum{
+  StackPS_Running=122,
+  StackPS_Sleep,
+  StackPS_DeepSleep
+} PWRLib_StackPS_t;
+
+
+
+
+ 
+typedef enum{
+  PWR_ABOVE_LEVEL_3_0V,    
+  PWR_BELOW_LEVEL_3_0V,
+  PWR_BELOW_LEVEL_2_9V,
+  PWR_BELOW_LEVEL_2_8V,
+  PWR_BELOW_LEVEL_2_7V,
+  PWR_BELOW_LEVEL_2_56V,
+  PWR_BELOW_LEVEL_2_1V,
+  PWR_BELOW_LEVEL_2_0V,
+  PWR_BELOW_LEVEL_1_9V,
+  PWR_BELOW_LEVEL_1_8V,
+  PWR_LEVEL_CRITICAL 
+} PWRLib_LVD_VoltageLevel_t;
+
+
+
+
+
+
+
+ 
+
+extern PWRLib_StackPS_t PWRLib_StackPS;
+extern volatile PWRLib_WakeupReason_t PWRLib_MCU_WakeupReason;
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+ 
+extern void PWRLib_Init
+(
+  void
+);
+
+
+
+
+
+
+ 
+extern uint16_t PWRLib_GetSystemResetStatus
+(
+  void
+);
+
+
+
+
+
+
+
+
+ 
+extern void PWR_AllowDeviceToSleep
+(
+  void
+);
+
+
+
+
+
+
+
+
+ 
+extern void PWR_DisallowDeviceToSleep
+(
+  void
+);
+
+
+
+
+
+
+
+ 
+extern bool_t PWR_CheckIfDeviceCanGoToSleep
+(
+  void
+);
+
+
+
+
+
+
+ 
+extern PWRLib_WakeupReason_t PWR_HandleDeepSleep
+(
+  zbClock24_t DozeDuration
+);
+
+
+
+
+
+
+ 
+extern PWRLib_WakeupReason_t PWR_HandleSleep
+(
+  zbClock24_t DozeDuration
+);
+
+
+
+
+
+
+ 
+extern PWRLib_WakeupReason_t PWR_CheckForAndEnterNewPowerState
+(
+  PWR_CheckForAndEnterNewPowerState_t NewPowerState,
+  zbClock24_t DozeDuration
+);
+
+
+
+
+
+
+ 
+extern PWRLib_WakeupReason_t PWR_EnterLowPower
+(
+  void
+);
+
+
+
+
+
+
+ 
+extern void PWR_SetDeepSleepTimeInMs
+(
+  uint32_t deepSleepTimeTimeMs
+);
+
+
+
+
+
+
+ 
+extern void PWR_SetDeepSleepTimeInSymbols
+(
+  uint32_t deepSleepTimeTimeSym
+);
+
+
+
+
+
+
+ 
+extern PWRLib_LVD_VoltageLevel_t PWRLib_LVD_ReportLevel
+(
+  void
+);
+
+
+
+
+
+
+ 
+extern void PWRLib_Reset
+(
+  void
+);
+
+   
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+ 
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+ 
+
+
+
+
+ 
+typedef enum
+{
+  gPWRLib_LLWU_WakeupPin_PTE1_c = 0,
+  gPWRLib_LLWU_WakeupPin_PTE2_c,
+  gPWRLib_LLWU_WakeupPin_PTE4_c,
+  gPWRLib_LLWU_WakeupPin_PTA4_c,
+  gPWRLib_LLWU_WakeupPin_PTA13_c,
+  gPWRLib_LLWU_WakeupPin_PTB0_c,
+  gPWRLib_LLWU_WakeupPin_PTC1_c,
+  gPWRLib_LLWU_WakeupPin_PTC3_c,
+  gPWRLib_LLWU_WakeupPin_PTC4_c,
+  gPWRLib_LLWU_WakeupPin_PTC5_c,
+  gPWRLib_LLWU_WakeupPin_PTC6_c,
+  gPWRLib_LLWU_WakeupPin_PTC11_c,
+  gPWRLib_LLWU_WakeupPin_PTD0_c,
+  gPWRLib_LLWU_WakeupPin_PTD2_c,
+  gPWRLib_LLWU_WakeupPin_PTD4_c,
+  gPWRLib_LLWU_WakeupPin_PTD6_c,
+  gPWRLib_LLWU_InvalidWakeupPin_c
+} PWRLib_LLWU_WakeupPin_t;
+
+
+
+
+ 
+typedef enum
+{
+  gPWRLib_LLWU_WakeupPin_Disable = 0,
+  gPWRLib_LLWU_WakeupPin_RisingEdge_c,
+  gPWRLib_LLWU_WakeupPin_FallingEdge_c,
+  gPWRLib_LLWU_WakeupPin_AnyEdge_c,
+  gPWRLib_LLWU_WakeupPin_InvalidConfig_c,
+} PWRLib_LLWU_WakeupPinConfig_t;
+
+
+
+
+ 
+typedef enum
+{
+  gPWRLib_LLWU_WakeupModule_LPTMR_c = 0,
+  gPWRLib_LLWU_WakeupModule_CMP0_c,
+  gPWRLib_LLWU_WakeupModule_CMP1_c,
+  gPWRLib_LLWU_WakeupModule_CMP2_c,
+  gPWRLib_LLWU_WakeupModule_RTC_Alarm_c = 5,
+  gPWRLib_LLWU_WakeupModule_RTC_Second_c = 7,
+  gPWRLib_LLWU_InvalidWakeupModule_c
+} PWRLib_LLWU_WakeupModule_t;
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+ 
+extern PWRLib_StackPS_t PWRLib_StackPS;
+
+ 
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+ 
+ void PWRLib_MCU_Enter_WAIT
+(
+  void
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+void PWRLib_MCU_Enter_STOP
+(
+  void
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+void PWRLib_MCU_Enter_VLPS
+(
+  void
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+void PWRLib_MCU_Enter_LLS
+(
+  void
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+void PWRLib_MCU_Enter_VLLS3
+(
+  void
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+void PWRLib_MCU_Enter_VLLS2
+(
+  void
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+void PWRLib_MCU_Enter_VLLS1
+(
+  void
+);
+
+
+
+
+
+
+ 
+void PWRLib_Radio_Enter_Doze
+(
+  void
+);
+
+
+
+
+
+
+ 
+void PWRLib_Radio_Enter_AutoDoze
+(
+  void
+);
+
+
+
+
+
+
+ 
+void PWRLib_Radio_Enter_Idle
+(
+  void
+);
+
+
+
+
+
+
+ 
+void PWRLib_Radio_Enter_Hibernate
+(
+  void
+);
+
+
+
+
+
+
+ 
+void PWRLib_LLWU_WakeupPinEnable
+(
+  PWRLib_LLWU_WakeupPin_t       wakeupPin,
+  PWRLib_LLWU_WakeupPinConfig_t edgeDetection
+);
+
+
+
+
+
+
+ 
+void PWRLib_LLWU_WakeupModuleEnable
+(
+  PWRLib_LLWU_WakeupModule_t wakeupModule
+);
+
+
+
+
+
+
+ 
+void PWRLib_LLWU_WakeupPinDisable
+(
+  PWRLib_LLWU_WakeupPin_t wakeupPin
+);
+
+
+
+
+
+
+ 
+void PWRLib_LLWU_WakeupModuleDisable
+(
+  PWRLib_LLWU_WakeupModule_t wakeupModule
+);
+
+
+
+
+
+
+ 
+bool_t PWRLib_LLWU_IsLPTMRWakeUpSource
+(
+  void
+);
+
+
+
+
+
+
+ 
+bool_t PWRLib_LLWU_IsRTCWakeUpSource
+(
+  void
+);
+
+
+
+
+
+
+ 
+bool_t PWRLib_LLWU_IsTSIWakeUpSource
+(
+  void
+);
+
+
+
+
+
+
+ 
+bool_t PWRLib_LLWU_IsGPIOWakeUpSource
+(
+  uint8_t pinNumber
+);
+
+
+
+
+
+
+ 
+#pragma location = ".isr_handler"
+void PWRLib_LLWU_Isr
+(
+  void
+);
+
+
+
+
+
+
+ 
+void PWRLib_LPTMR_ClockStart
+(
+  uint8_t  ClkMode,
+  uint32_t Ticks
+);
+
+
+
+
+
+
+ 
+uint32_t PWRLib_LPTMR_ClockCheck
+(
+  void
+);
+
+
+
+
+
+
+ 
+void PWRLib_LPTMR_ResetTicks
+(
+  void
+);
+
+
+
+
+
+
+ 
+void PWRLib_LPTMR_ClockStop
+(
+  void
+);
+
+
+
+
+
+
+ 
+#pragma location = ".isr_handler"
+void PWRLib_LPTMR_Isr
+(
+  void
+);
+
+
+
+
+
+
+ 
+void PWRLib_RTC_Init
+(
+ void
+);
+
+
+
+
+
+
+ 
+void PWRLib_RTC_ClockStart
+(
+  uint32_t Ticks
+);
+
+
+
+
+
+
+ 
+uint32_t PWRLib_RTC_ClockCheck
+(
+  void
+);
+
+
+
+
+
+
+ 
+void PWRLib_RTC_ResetTicks
+(
+  void
+);
+
+
+
+
+
+
+ 
+void PWRLib_RTC_ClockStop
+(
+  void
+);
+
+
+
+
+
+
+ 
+#pragma location = ".isr_handler"
+void PWRLib_RTC_Isr
+(
+  void
+);
+
+
+
+
+
+
+ 
+bool_t PWRLib_RTC_IsOscStarted
+(
+ void
+);
+
+
+
+
+
+
+ 
+PWRLib_LVD_VoltageLevel_t PWRLib_LVD_CollectLevel
+(
+  void
+);
+
+
+
+
+
+
+
+
+
+ 
+uint8_t PWRLib_GetMacStateReq
+(
+  void
+);
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+ 
+
+ 
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+			 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
 
  
@@ -13573,11 +14850,26 @@ enum stateVariable
 
 
 
+ 
+
+ 
+
+ 
+
+ 
+
+
 void InitAccelControlls();
 void GetDeviceData();
 void INIT_PIT(uint32_t SampleSpeed);
 void PIT_ISR();
-
+void WUApp_LowPwrStateMachine (void);
+void AppLedTimerCallback (tmrTimerID_t timerId);
+void WUApp_InitWakupSource(void);
+void WUApp_InitLowPowerMode(void);
+void WUApp_PrepareToEnterLowPower(void);
+void WUApp_LPRestoreSettings(void);
+void WUApp_LowPowerWhile(void);
 
 
 

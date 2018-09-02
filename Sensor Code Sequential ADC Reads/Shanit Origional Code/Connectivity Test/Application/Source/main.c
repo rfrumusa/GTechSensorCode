@@ -53,6 +53,11 @@ static bool_t OverrideIndirectRegisters(void);
 static bool_t ReadDirectRegisters(void);
 static bool_t ReadIndirectRegisters(void);
 
+tmrTimerID_t mLEDTimerID_1 = gTmrInvalidTimerID_c;
+tmrTimerID_t mBufferTimerID = gTmrInvalidTimerID_c;
+uint16_t mLEDInterval1_c = 1150;
+uint8_t mBufferInterval_c = 1;
+
 void MLMEScanConfirm(channels_t ClearestChann);
 void MLMEResetIndication(void);
 void MLMEWakeConfirm(void);
@@ -101,6 +106,41 @@ int8_t GetLinkQdBm();
 * Public memory declarations
 *************************************************************************************
 ************************************************************************************/
+
+#if (TRUE == gEnableConfigMenus_d)
+  wuConfigState_t gConfigState;
+  wuConfigState_t gLastConfigState;
+  wuLPConfigState_t gLPConfigState;
+  wuLPConfigState_t gLastLPConfigState;
+  bool_t  bGotoLowPwrFlag;
+  bool_t  bFirstNibbleFlag;
+  uint8_t u8ConfigHexValue;
+  uint8_t u8ConfigDecValue;
+  uint8_t u8SequencePointerCounter;
+  bool_t bReturnToMainMenuFlag;
+#endif
+
+#if (gEnableLowPower_d == TRUE)    
+uint8_t *pu8MainLowPowerString;
+uint8_t * pu8MainWakeupSourceString;
+uint8_t * pu8GotoLowPowerString;
+uint8_t * pu8NowInLowPowerString;
+uint8_t * pu8WakeupSourceString;
+
+uint32_t u32PortAPCRBackup[8];
+uint32_t u32PortBPCRBackup[8];
+uint32_t u32PortCPCRBackup[8];
+uint32_t u32PortDPCRBackup[8];
+uint32_t u32PortEPCRBackup[8];
+uint32_t u32SCGCxBackup[5];
+uint32_t u32GPIOs_PDORBackup[8];
+uint32_t u32GPIOs_PDDRBackup[8];
+zbClock24_t LPTMR_Duration = 360; //LowPowerTimer
+zbClock24_t RTC_Duration = 10;
+bool_t  bGPIOWakeupFlag = FALSE;
+bool_t  bLPTMRWakeupFlag = FALSE;
+bool_t  bRTCWakeupFlag = FALSE;
+#endif
 
 static uint8_t gau8RxDataBuffer[130]; 
 static uint8_t gau8TxDataBuffer[128]; 
@@ -157,12 +197,16 @@ OIRStates_t         oIRState;
 RDRStates_t         rDRState;
 RIRStates_t         rIRState;
 
+bool_t bTxOtaBusyFlag;
+
 int     PIT_ITTERATIONS;
 int     AXIS ;
 uint32_t  TempSumx ;
 uint32_t  TempSumy ;
 uint32_t  TempSumz ;
+bool_t bCommGetDataTimerFlag;
 
+bool_t LowPowerEntered = FALSE;
 
 uint8_t au8ScanResults[16];
 
@@ -312,12 +356,12 @@ void main(void)
         }
         
       }
-      LoopLoopItterations =0;
+      LoopItterations =0;
     }
     
     
     
-    if(LoopLoopItterations == 120)
+    if(LoopItterations == 120)
     {
       //need to send a heartbeat message
       gSnd.xmax = 0;
@@ -356,13 +400,26 @@ void main(void)
         }
         
       }
-      LoopLoopItterations =0;
+      LoopItterations =0;
       
     }
     /*this needs to be here to reset the packet ID every time*/
-    LoopLoopItterations = LoopLoopItterations +1;
+    LoopItterations = LoopItterations +1;
     
     InitPacket(); 
+    
+    
+    //------------------------------------------------------------------------------------
+    //Temporary Code to just push the controller into low power mode on every itteration through the code.
+    //this was just set to make sure we could go into low power mode.
+    
+    while(!LowPowerEntered){
+        //this loop will put the controller into sleep mode
+        //the sleeo mode will then cause a reset when it wakes back up.
+        gLED_PortDataDirReg_c = 0x0u;
+        
+        WUApp_LowPwrStateMachine();
+      }
     
   }/* For(;;)*/
   
@@ -433,6 +490,74 @@ smacErrors_t SendCurrentOptions(){
   
     
 }//SendCurrentOptions
+
+
+
+
+#if (gEnableLowPower_d == TRUE)
+/************************************************************************************
+*
+* WUApp_LowPwrStateMachine
+*
+************************************************************************************/
+#if (TRUE == gEnableConfigMenus_d)
+void WUApp_LowPwrStateMachine (void) 
+{
+  switch (gLPConfigState)
+  {
+    case gWULPStateInit_c:
+           gLPConfigState = gWULPStateGotoLowPower_c;	 
+           WUApp_InitLowPowerMode(); /*Select low power mode to using in the state machine*/ 
+           WUApp_InitWakupSource();  /*Select the way MCU wakeup from low power*/
+           /*this is the part that i can change how and when to wake up the processor i think this is important fo waking the proccessor!!!!!!!!!!!!!!!#*/
+    break;
+    
+    case gWULPStateWait4Options_c:
+            
+            evDataFromCOMM = FALSE;                  
+            bGotoLowPwrFlag = TRUE;
+            gLPConfigState = gLastLPConfigState;
+            
+    break;
+    
+    case gWULPStateGotoLowPower_c:
+            if (!bGotoLowPwrFlag){
+              PrintMenu((char * const *)pu8GotoLowPowerString, gDefaultCommPort_c);
+              PrintMenu(cau8WUContinueAskString, gDefaultCommPort_c);
+              gLastLPConfigState = gLPConfigState;
+              gLPConfigState = gWULPStateWait4Options_c;
+            }
+            else{
+              PrintMenu ((char * const *)pu8NowInLowPowerString, gDefaultCommPort_c);
+              PrintMenu ((char * const *)pu8WakeupSourceString, gDefaultCommPort_c);
+              WUApp_LowPowerWhile(); /*Go to Low Power and remain until wake up*/
+              
+              /*If didn't wakeup from reset, continue here.*/
+              LED_StartSerialFlash();
+              TMR_StartSingleShotTimer(mLEDTimerID_1, mLEDInterval1_c, AppLedTimerCallback);
+
+              bGotoLowPwrFlag = FALSE; 
+              gConfigState = gWUConfigStateMainMenu_c;
+            }        
+    break;    
+ 
+    case gWULPStateInvalid_c:
+            PrintMenu(cau8WUInvalidValueString, gDefaultCommPort_c); 
+            if(gWULPStateWait4Options_c == gLastLPConfigState){
+                  PrintMenu(cau8WUWait4Option, gDefaultCommPort_c);
+            }
+            gLPConfigState = gLastLPConfigState;
+    break;
+    
+    default:
+      gLPConfigState = gWULPStateGotoLowPower_c;
+      gConfigState = gWUConfigStateMainMenu_c;  /* Exit valve in case of Error */	        
+    break;
+    
+  } 
+}
+#endif
+#endif
 
 
 
@@ -638,20 +763,6 @@ void PIT_ISR()
         
    
 
-
-  
-  /* THIS MIGHT BE AN ISSUE
-      
-      !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-      !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-      !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-      !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-      !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-      !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-      !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-      !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-     */
-  
   
   /*the changing of axis will be handled in the main code. this needs to be done there since I need to calculate other tings there using the filter as well. */
   PIT_TFLG0  = (uint32_t)0x1;           //clears the interupt flag and will start a new 
@@ -1072,6 +1183,101 @@ void GetFactoryOptions(tOptions* pOptions)
 }
 
 
+/************************************************************************************
+*
+* WUApp_LowPowerWhile
+*
+************************************************************************************/
+void WUApp_LowPowerWhile(void) 
+{  
+    /* Backup Current configuration and set Low power configuration*/
+    WUApp_PrepareToEnterLowPower();
+
+#if(gDefaultLowPowerMode_c == gWUAppLLSMode_c) 
+    /* configure MCU in LLS low power mode */
+    PWRLib_MCU_Enter_LLS();
+#elif (gDefaultLowPowerMode_c == gWUAppVLPSMode_c)
+    /* configure MCU in VLPS low power mode */
+    PWRLib_MCU_Enter_VLPS();
+#elif (gDefaultLowPowerMode_c == gWUAppVLLS2Mode_c)
+    /* configure MCU in VLLS2 low power mode */
+    PWRLib_MCU_Enter_VLLS2();
+#elif (gDefaultLowPowerMode_c == gWUAppVLLS1Mode_c)
+    /* configure MCU in VLLS1 low power mode */
+    PWRLib_MCU_Enter_VLLS1();
+#elif (gDefaultLowPowerMode_c == gWUAppVLLS0Mode_c)
+    /* configure MCU in VLLS0 low power mode */
+    PWRLib_MCU_Enter_VLLS0();
+    
+#endif
+    /* Restore backup configuration*/ 
+    WUApp_LPRestoreSettings();
+ 
+}
+
+
+/************************************************************************************
+*
+* WUApp_InitWakupSource
+*                                       
+************************************************************************************/
+
+void WUApp_InitWakupSource(void)
+{
+#if (gDefaultWakeupSource_c == gWUAppGPIO_c) 
+    pu8WakeupSourceString = (uint8_t *)cau8WUGPIOWakeupString;
+    PWRLib_LLWU_WakeupPinEnable( (PWRLib_LLWU_WakeupPin_t) gLLWU_WakeUp_PIN_Number_c, gPWRLib_LLWU_WakeupPin_AnyEdge_c);
+#elif (gDefaultWakeupSource_c == gWUAppLPTMR_c)
+    pu8WakeupSourceString = (uint8_t *)cau8WULPTMRWakeupString;
+    /* configure NVIC for LPTMR Isr */
+    NVIC_EnableIRQ(gLPTMR_IRQ_Number_c);
+    /* enable LPTMR as wakeup source for LLWU module */
+    PWRLib_LLWU_WakeupModuleEnable(gPWRLib_LLWU_WakeupModule_LPTMR_c);
+#elif (gDefaultWakeupSource_c == gWUAppRTC_c)
+    pu8WakeupSourceString = (uint8_t *)cau8WURTCWakeupString;
+    PWRLib_RTC_Init();
+    /* configure NVIC for RTC alarm Isr */
+    NVIC_EnableIRQ(gRTC_IRQ_Number_c);
+    /* enable RTC as wakeup source for LLWU module */
+    PWRLib_LLWU_WakeupModuleEnable(gPWRLib_LLWU_WakeupModule_RTC_Alarm_c);
+#endif
+    NVIC_EnableIRQ(gLLWU_IRQ_Number_c);
+}
+
+
+/************************************************************************************
+*
+* WUApp_InitLowPowerMode
+*                                       
+************************************************************************************/
+void WUApp_InitLowPowerMode(void)
+{
+#if (gDefaultLowPowerMode_c == gWUAppLLSMode_c)
+    pu8GotoLowPowerString = (uint8_t *)cau8WUGotoLLSString;
+    pu8NowInLowPowerString = (uint8_t *)cau8WUIsLLSModeString;
+    SMC_PMPROT |= SMC_PMPROT_ALLS_MASK;         /*Enable the low-power mode "Register can be written only once after any system reset"*/
+#elif (gDefaultLowPowerMode_c == gWUAppVLPSMode_c)
+    pu8GotoLowPowerString = (uint8_t *)cau8WUGotoVLPSString;
+    pu8NowInLowPowerString = (uint8_t *)cau8WUIsVLPSModeString;
+    SMC_PMPROT |= SMC_PMPROT_AVLP_MASK;         /*Enable the low-power mode "Register can be written only once after any system reset"*/
+#elif (gDefaultLowPowerMode_c == gWUAppVLLS2Mode_c)
+    pu8GotoLowPowerString = (uint8_t *)cau8WUGotoVLLS2String;
+    pu8NowInLowPowerString = (uint8_t *)cau8WUIsVLLS2ModeString;
+    SMC_PMPROT |= SMC_PMPROT_AVLLS_MASK;        /*Enable the low-power mode "Register can be written only once after any system reset"*/
+#elif (gDefaultLowPowerMode_c == gWUAppVLLS1Mode_c)
+    pu8GotoLowPowerString = (uint8_t *)cau8WUGotoVLLS1String;
+    pu8NowInLowPowerString = (uint8_t *)cau8WUIsVLLS1ModeString;
+    SMC_PMPROT |= SMC_PMPROT_AVLLS_MASK;        /*Enable the low-power mode "Register can be written only once after any system reset"*/
+#elif (gDefaultLowPowerMode_c == gWUAppVLLS0Mode_c)
+    pu8GotoLowPowerString = (uint8_t *)cau8WUGotoVLLS0String;
+    pu8NowInLowPowerString = (uint8_t *)cau8WUIsVLLS0ModeString;
+    SMC_PMPROT |= SMC_PMPROT_AVLLS_MASK;        /*Enable the low-power mode "Register can be written only once after any system reset"*/
+#endif
+}
+
+
+
+
 
 /************************************************************************************
 * InitProject
@@ -1082,7 +1288,7 @@ void GetFactoryOptions(tOptions* pOptions)
 void InitProject(void)
 {
     DisableInterrupts();
-   
+   gLPConfigState =gLPConfigState;
    gOpt.hdr.u8Prefix[0] = 'O';
    gOpt.hdr.u8Prefix[1] = 'P';
    gOpt.hdr.u8Prefix[2] = 'T';
@@ -1148,6 +1354,10 @@ void InitProject(void)
 #endif
   Comm_SetBaud(Comm_DefaultBaud);
   Comm_SetRxCallBack(CommRxCallback);
+  
+  
+  mLEDTimerID_1 = TMR_AllocateTimer();
+  mBufferTimerID = TMR_AllocateTimer();
 
   /* Keyboard Initialization */
   KeyboardInit();
@@ -1170,7 +1380,43 @@ void InitProject(void)
  //  // NOTE: we can't write to FLASH memory yet ("AppInit" not called yet, clock, etc),
  //  // so we don't call "FlashSaveOptions" yet.
    
-   
+   #if (TRUE == gEnableConfigMenus_d)
+    gConfigState = gWUConfigStateMainMenu_c;
+    gLPConfigState = gWULPStateInit_c;
+    u8SequencePointerCounter = 0;
+    bReturnToMainMenuFlag = FALSE; 
+  #else
+    gAppMode = gWUModeApplication_c;
+  #endif
+    
+  #if (gEnableLowPower_d == TRUE)        
+  #if (gDefaultLowPowerMode_c == gWUAppLLSMode_c)  
+        pu8MainLowPowerString = (uint8_t *)cau8WULLSString;
+  #elif (gDefaultLowPowerMode_c == gWUAppVLPSMode_c)
+        pu8MainLowPowerString = (uint8_t *)cau8WUVLPSString;
+  #elif (gDefaultLowPowerMode_c == gWUAppVLLS2Mode_c)
+        pu8MainLowPowerString = (uint8_t *)cau8WUVLLS2String;
+  #elif (gDefaultLowPowerMode_c == gWUAppVLLS1Mode_c)
+        pu8MainLowPowerString = (uint8_t *)cau8WUVLLS1String;
+  #elif (gDefaultLowPowerMode_c == gWUAppVLLS0Mode_c)
+        pu8MainLowPowerString = (uint8_t *)cau8WUVLLS0String;
+  #endif            
+  #if (gDefaultWakeupSource_c == gWUAppGPIO_c) 
+        pu8MainWakeupSourceString = (uint8_t *)cau8WUGPIOString;
+  #elif (gDefaultWakeupSource_c == gWUAppLPTMR_c)
+        pu8MainWakeupSourceString = (uint8_t *)cau8WULPTMRString;
+  #elif (gDefaultWakeupSource_c == gWUAppRTC_c)
+        pu8MainWakeupSourceString = (uint8_t *)cau8WURTCString;
+  #endif
+  #endif
+                  
+      bTxOtaBusyFlag = FALSE;
+      bCommGetDataTimerFlag = FALSE;
+   #if(TRUE == gEnableAckOta_d)
+      gDataRetries = gDefaultNumberRetries_c;
+      gRetryTxSize = 0;
+      bWait4AckFlag = FALSE;
+  #endif 
    
    
 }
@@ -1290,6 +1536,222 @@ void SerialUIStateMachine(void)
   }
 }
 
+
+
+/*this is used to set the mode into the lower power mode*/
+void WUApp_PrepareToEnterLowPower(void)
+{
+  bool_t bTimersOff;
+
+    /*Stop timers*/
+    TMR_StopTimer(mLEDTimerID_1);
+    TMR_StopTimer(mBufferTimerID);
+    TMR_FreeTimer(mLEDTimerID_1);
+    TMR_FreeTimer(mBufferTimerID);
+    
+    /* configure MCG in FLL Engaged Internal (FEI) mode */
+    MCG_Pee2Fei();
+    
+    /* disable transceiver CLK_OUT. */
+    MC1324xDrv_Set_CLK_OUT_Freq(gCLK_OUT_FREQ_DISABLE);
+    /* configure Radio in hibernate mode */
+    PWRLib_Radio_Enter_Hibernate();
+    
+    //PowerOffAccel();
+    //DisableADC();
+      
+    u32PortAPCRBackup[0] = PORTA_PCR0;  //PTA0 JTAG CLK
+    u32PortAPCRBackup[1] = PORTA_PCR1;  //PTA1 JTAG TDI
+    u32PortAPCRBackup[2] = PORTA_PCR2;  //PTA2 JTAG TDO
+    u32PortAPCRBackup[3] = PORTA_PCR3;  //PTA3 JTAG TMS
+    u32PortAPCRBackup[4] = PORTA_PCR4;  //PTA4 JTAG NMI
+    
+    u32PortBPCRBackup[0] = PORTB_PCR10;  //PTB10 to Radio's SPI SS
+    u32PortBPCRBackup[1] = PORTB_PCR11;  //PTB11 to Radio's SPI CLK
+    u32PortBPCRBackup[2] = PORTB_PCR16;  //PTB16 to Radio's SPI MOSI
+    u32PortBPCRBackup[3] = PORTB_PCR17;  //PTB17 to Radio's SPI MISO
+    
+    u32PortCPCRBackup[0] = PORTC_PCR4;  //PTC4 //Set->Lower EEPROM's voltage
+    u32PortCPCRBackup[1] = PORTC_PCR5;  //PTC5 
+    u32PortCPCRBackup[2] = PORTC_PCR6;  //PTC6 
+    u32PortCPCRBackup[3] = PORTC_PCR7;  //PTC7 
+    
+    
+    u32PortEPCRBackup[0] = PORTE_PCR0;  //PTE0 UART1_TX
+    u32PortEPCRBackup[1] = PORTE_PCR1;  //PTE1 UART1_RX
+    
+    u32SCGCxBackup[0] = SIM_SCGC4; //SCGC4
+    u32SCGCxBackup[1] = SIM_SCGC5; //SCGC5
+    u32SCGCxBackup[2] = SIM_SCGC6; //SCGC6
+    u32SCGCxBackup[3] = SIM_SCGC7; //SCGC7
+    
+    u32GPIOs_PDORBackup[0] = GPIOA_PDOR;
+    u32GPIOs_PDORBackup[1] = GPIOB_PDOR;
+    u32GPIOs_PDORBackup[2] = GPIOC_PDOR;
+    u32GPIOs_PDORBackup[3] = GPIOD_PDOR;
+    u32GPIOs_PDORBackup[4] = GPIOE_PDOR;
+    
+    u32GPIOs_PDDRBackup[0] = GPIOA_PDDR;
+    u32GPIOs_PDDRBackup[1] = GPIOB_PDDR;
+    u32GPIOs_PDDRBackup[2] = GPIOC_PDDR;
+    u32GPIOs_PDDRBackup[3] = GPIOD_PDDR;
+    u32GPIOs_PDDRBackup[4] = GPIOE_PDDR;
+    
+    /*UART pins*/
+    PORTE_PCR0 = PORT_PCR_MUX(0x1) | PORT_PCR_PE_MASK | PORT_PCR_PS_MASK; //PullUp/PullSelect enable (Connected to OpenSDA)
+    PORTE_PCR1 = PORT_PCR_MUX(0x1) | PORT_PCR_PE_MASK | PORT_PCR_PS_MASK; //PullUp/PullSelect enable (Connected to OpenSDA)
+   
+    PORTC_PCR0 = PORT_PCR_MUX(0x1) |PORT_PCR_PS_MASK ;                    //set PTC0 to be driven low
+    PORTC_PCR1 = PORT_PCR_MUX(0x1) |PORT_PCR_PS_MASK ;                    //set PTC1 to be driven low
+    PORTC_PCR3 = PORT_PCR_MUX(0x1) |PORT_PCR_PS_MASK ;                    //set PTC3 to be driven low
+       
+    /*LED pins*/ //PTD3, PTD4
+    //Set PTDs as GPIO
+    PORTD_PCR3 = PORT_PCR_MUX(0x1) | PORT_PCR_PE_MASK | PORT_PCR_PS_MASK;
+    PORTD_PCR4 = PORT_PCR_MUX(0x1) | PORT_PCR_PE_MASK | PORT_PCR_PS_MASK;
+    
+    /*JTAG TDO pin*/ 
+    PORTA_PCR2 = PORT_PCR_PE_MASK | PORT_PCR_PS_MASK; //JTAG_TDO PullUp/PullSelect enable
+    
+    
+    /*EEPROM pins*/  //PTC5, PTC6, PTC7
+    //Set PTCs as GPIO
+    PORTC_PCR5 = PORT_PCR_MUX(0x1);
+    PORTC_PCR6 = PORT_PCR_MUX(0x1);
+    PORTC_PCR7 = PORT_PCR_MUX(0x1);
+    
+    //Set GPIOCs as outputs
+    GPIOA_PDDR |= (1<<2);
+    GPIOD_PDDR |= (1<<3);
+    GPIOD_PDDR |= (1<<4);
+    GPIOC_PDDR |= (1<<5);
+    GPIOC_PDDR |= (1<<6);
+    GPIOC_PDDR |= (1<<7);
+    
+    //Clear GPIOCs
+    GPIOA_PCOR |= (1<<2);
+    GPIOC_PCOR |= (1<<5);
+    GPIOC_PCOR |= (1<<6);
+    GPIOC_PCOR |= (1<<7);
+
+    /*Disable Low Voltage Detection*/
+       
+    PMC_LVDSC1 = 0x00;
+    
+    
+    /*CLOCKS to default*/
+
+    SIM_SCGC4 = 0xF0100030; //Default
+#if (gDefaultWakeupSource_c == gWUAppGPIO_c)
+    SIM_SCGC5 = 0x00040182 | SIM_SCGC5_PORTC_MASK; //Default + PTC Clock
+#else
+    SIM_SCGC5 = 0x00040182; //Default
+#endif
+       
+#if (gDefaultWakeupSource_c == gWUAppRTC_c)
+    SIM_SCGC6 = 0x40000001 | SIM_SCGC6_RTC_MASK; //Default + RTC Clock
+#else
+    SIM_SCGC6 = 0x40000001; //Default
+#endif
+    SIM_SCGC7 = 0x00000002; //Default
+    
+#if (gDefaultWakeupSource_c == gWUAppGPIO_c)
+    bGPIOWakeupFlag = TRUE;
+    SIM_SCGC5 |= SIM_SCGC5_PORTC_MASK;
+#elif (gDefaultWakeupSource_c == gWUAppLPTMR_c)
+    /*PWRLib_LPTMR_ClockStart(cPWR_LPTMRTickTime, SLEEP_AFTER_ACK);*/
+    PWRLib_LPTMR_ClockStart(cPWR_LPTMRTickTime, gOptions.u16SleepAfterAck);
+    bLPTMRWakeupFlag = TRUE;
+#elif (gDefaultWakeupSource_c == gWUAppRTC_c)
+    /* start RTC */
+    PWRLib_RTC_ClockStart(RTC_Duration);
+    bRTCWakeupFlag = TRUE;
+#endif
+   return;
+}
+ 
+//thisds will restore the presets from the low power mode
+void WUApp_LPRestoreSettings(void)
+{
+
+#if (gDefaultWakeupSource_c == gWUAppGPIO_c)
+  bGPIOWakeupFlag = FALSE;	
+#elif (gDefaultWakeupSource_c == gWUAppLPTMR_c)
+  PWRLib_LPTMR_ClockStop();
+  bLPTMRWakeupFlag = FALSE;
+#elif (gDefaultWakeupSource_c == gWUAppRTC_c)
+  PWRLib_RTC_ClockStop();
+  bRTCWakeupFlag = FALSE;  
+#endif
+  
+  
+  SIM_SCGC4 = u32SCGCxBackup[0]; //SCGC4
+  SIM_SCGC5 = u32SCGCxBackup[1]; //SCGC5
+  SIM_SCGC6 = u32SCGCxBackup[2]; //SCGC6
+  SIM_SCGC7 = u32SCGCxBackup[3]; //SCGC7
+  
+  /*Enable Low Voltage Detection*/
+  PMC_LVDSC1 = 0x10;
+  
+  /*Restore PORTA PCR*/
+  PORTA_PCR0 = u32PortAPCRBackup[0]; //PTA0 JTAG CLK
+  PORTA_PCR1 = u32PortAPCRBackup[1]; //PTA1 JTAG TDI
+  PORTA_PCR2 = u32PortAPCRBackup[2]; //PTA2 JTAG TDO
+  PORTA_PCR3 = u32PortAPCRBackup[3]; //PTA3 JTAG TMS
+  PORTA_PCR3 = u32PortAPCRBackup[4]; //PTA4 JTAG NMI
+  
+  /*Restore GPIOs*/
+  GPIOA_PDOR = u32GPIOs_PDORBackup[0];
+  GPIOB_PDOR = u32GPIOs_PDORBackup[1];
+  GPIOC_PDOR = u32GPIOs_PDORBackup[2];
+  GPIOD_PDOR = u32GPIOs_PDORBackup[3];
+  GPIOE_PDOR = u32GPIOs_PDORBackup[4];
+  
+  GPIOA_PDDR = u32GPIOs_PDDRBackup[0];
+  GPIOB_PDDR = u32GPIOs_PDDRBackup[1];
+  GPIOC_PDDR = u32GPIOs_PDDRBackup[2];
+  GPIOD_PDDR = u32GPIOs_PDDRBackup[3];
+  GPIOE_PDDR = u32GPIOs_PDDRBackup[4];
+    
+  /*Restore PORTB PCR*/ //SPI to Radio
+  PORTB_PCR10 = u32PortBPCRBackup[0];
+  PORTB_PCR11 = u32PortBPCRBackup[1];
+  PORTB_PCR16 = u32PortBPCRBackup[2];
+  PORTB_PCR17 = u32PortBPCRBackup[3];
+      
+  /*Restore PORTC PCR*/ //EEPROM
+  PORTC_PCR4 = u32PortCPCRBackup[0];
+  PORTC_PCR5 = u32PortCPCRBackup[1];
+  PORTC_PCR6 = u32PortCPCRBackup[2];
+  PORTC_PCR7 = u32PortCPCRBackup[3];
+  
+  /*Restore PORTD PCR*/ //LEDs
+  /*
+  PORTD_PCR4 = u32PortDPCRBackup[0];
+  PORTD_PCR5 = u32PortDPCRBackup[1];
+  PORTD_PCR6 = u32PortDPCRBackup[2];
+  PORTD_PCR7 = u32PortDPCRBackup[3];
+*/
+  /*Restore PORTE PCR*/ //UART
+  PORTE_PCR0 = u32PortEPCRBackup[0];
+  PORTE_PCR1 = u32PortEPCRBackup[1];
+
+  /* configure Radio in autodoze mode */
+  PWRLib_Radio_Enter_AutoDoze();
+//  PWRLib_Radio_Enter_Idle();
+  
+  /* Restore Radio's clock for input*/
+  MC1324xDrv_Set_CLK_OUT_Freq(gCLK_OUT_FREQ_4_MHz);
+    
+  /* PEE @ 48MHz */
+  gMCG_coreClkMHz = MCG_PLLInit();
+  
+  /*Restore Timers*/
+  mLEDTimerID_1 = TMR_AllocateTimer();
+  mBufferTimerID = TMR_AllocateTimer(); 
+  LowPowerEntered = TRUE;
+  return;
+}
 
 /**************************************************************************************/
 bool_t SerialContinuousTxRxTest(void)
@@ -2457,6 +2919,20 @@ void ShortCutsParser(uint8_t u8CommData)
       evTestParameters = FALSE;
     break;
   }
+}
+
+
+/************************************************************************************
+*
+* AppTimerCallback
+*
+************************************************************************************/
+
+void AppLedTimerCallback (tmrTimerID_t timerId)
+{
+  (void)timerId;  /* prevent compiler warning */
+    LED_StopFlashingAllLeds();
+    //LED_TurnOffAllLeds();
 }
 
 

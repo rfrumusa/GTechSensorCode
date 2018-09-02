@@ -1,85 +1,87 @@
 ///////////////////////////////////////////////////////////////////////////////
 //
-// IAR ANSI C/C++ Compiler V7.20.5.7591/W32 for ARM       20/Mar/2018  09:41:46
+// IAR ANSI C/C++ Compiler V7.20.5.7591/W32 for ARM       02/Sep/2018  13:33:15
 // Copyright 1999-2014 IAR Systems AB.
 //
 //    Cpu mode     =  thumb
 //    Endian       =  little
 //    Source file  =  
-//        C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
-//        Code\Shanit Origional Code\Connectivity Test\PLM\Source\ADC\AD1.c
+//        F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC
+//        Reads\Shanit Origional Code\Connectivity Test\PLM\Source\ADC\AD1.c
 //    Command line =  
-//        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
-//        Code\Shanit Origional Code\Connectivity Test\PLM\Source\ADC\AD1.c" -D
-//        IAR --preprocess "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior
-//        Design\Sensor Code\Shanit Origional Code\Connectivity
-//        Test\Debug\List\" -lC "C:\Users\rfrum\OneDrive\2018 Spring
-//        Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity
-//        Test\Debug\List\" -lB "C:\Users\rfrum\OneDrive\2018 Spring
-//        Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity
+//        "F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC
+//        Reads\Shanit Origional Code\Connectivity Test\PLM\Source\ADC\AD1.c"
+//        -D IAR --preprocess "F:\Guardrail Work\Sensor Code\Git Repo\Sensor
+//        Code Sequential ADC Reads\Shanit Origional Code\Connectivity
+//        Test\Debug\List\" -lC "F:\Guardrail Work\Sensor Code\Git Repo\Sensor
+//        Code Sequential ADC Reads\Shanit Origional Code\Connectivity
+//        Test\Debug\List\" -lB "F:\Guardrail Work\Sensor Code\Git Repo\Sensor
+//        Code Sequential ADC Reads\Shanit Origional Code\Connectivity
 //        Test\Debug\List\" --diag_suppress
-//        Pe014,Pe001,Pe991,Pa039,Pe520,Pe550,Pe177,Pa082 -o
-//        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
-//        Code\Shanit Origional Code\Connectivity Test\Debug\Obj\" --no_cse
-//        --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering
+//        Pe014,Pe001,Pe991,Pa039,Pe520,Pe550,Pe177,Pa082 -o "F:\Guardrail
+//        Work\Sensor Code\Git Repo\Sensor Code Sequential ADC Reads\Shanit
+//        Origional Code\Connectivity Test\Debug\Obj\" --no_cse --no_unroll
+//        --no_inline --no_code_motion --no_tbaa --no_clustering
 //        --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=None
 //        --dlib_config "C:\Program Files (x86)\IAR Systems\Embedded Workbench
-//        7.0\arm\INC\c\DLib_Config_Normal.h" -I "C:\Users\rfrum\OneDrive\2018
-//        Spring Semester\Senior Design\Sensor Code\Shanit Origional
-//        Code\Connectivity Test\PLM\Configure\" -I
-//        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
-//        Code\Shanit Origional Code\Connectivity Test\PLM\Environment\" -I
-//        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
-//        Code\Shanit Origional Code\Connectivity Test\PLM\Interface\" -I
-//        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
-//        Code\Shanit Origional Code\Connectivity Test\Generic
-//        Services\Interface\" -I "C:\Users\rfrum\OneDrive\2018 Spring
-//        Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity
-//        Test\PLM\Source\Uart\" -I "C:\Users\rfrum\OneDrive\2018 Spring
-//        Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity
-//        Test\PLM\Source\USB\" -I "C:\Users\rfrum\OneDrive\2018 Spring
-//        Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity
-//        Test\PLM\Source\USB\APP\" -I "C:\Users\rfrum\OneDrive\2018 Spring
-//        Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity
-//        Test\PLM\Source\USB\APP\CDC\" -I "C:\Users\rfrum\OneDrive\2018 Spring
-//        Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity
-//        Test\PLM\Source\USB\APP\Descriptor\" -I "C:\Users\rfrum\OneDrive\2018
-//        Spring Semester\Senior Design\Sensor Code\Shanit Origional
-//        Code\Connectivity Test\PLM\Source\USB\Class\" -I
-//        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
-//        Code\Shanit Origional Code\Connectivity Test\PLM\Source\USB\Common\"
-//        -I "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
-//        Code\Shanit Origional Code\Connectivity Test\PLM\Source\USB\Driver\"
-//        -I "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
-//        Code\Shanit Origional Code\Connectivity Test\PLM\Source\TMR\" -I
-//        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
-//        Code\Shanit Origional Code\Connectivity
-//        Test\PLM\Source\Radio\MC1324x\PHY\" -I "C:\Users\rfrum\OneDrive\2018
-//        Spring Semester\Senior Design\Sensor Code\Shanit Origional
+//        7.0\arm\INC\c\DLib_Config_Normal.h" -I "F:\Guardrail Work\Sensor
+//        Code\Git Repo\Sensor Code Sequential ADC Reads\Shanit Origional
+//        Code\Connectivity Test\PLM\Configure\" -I "F:\Guardrail Work\Sensor
+//        Code\Git Repo\Sensor Code Sequential ADC Reads\Shanit Origional
+//        Code\Connectivity Test\PLM\Environment\" -I "F:\Guardrail Work\Sensor
+//        Code\Git Repo\Sensor Code Sequential ADC Reads\Shanit Origional
+//        Code\Connectivity Test\PLM\Interface\" -I "F:\Guardrail Work\Sensor
+//        Code\Git Repo\Sensor Code Sequential ADC Reads\Shanit Origional
+//        Code\Connectivity Test\Generic Services\Interface\" -I "F:\Guardrail
+//        Work\Sensor Code\Git Repo\Sensor Code Sequential ADC Reads\Shanit
+//        Origional Code\Connectivity Test\PLM\Source\Uart\" -I "F:\Guardrail
+//        Work\Sensor Code\Git Repo\Sensor Code Sequential ADC Reads\Shanit
+//        Origional Code\Connectivity Test\PLM\Source\USB\" -I "F:\Guardrail
+//        Work\Sensor Code\Git Repo\Sensor Code Sequential ADC Reads\Shanit
+//        Origional Code\Connectivity Test\PLM\Source\USB\APP\" -I
+//        "F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC
+//        Reads\Shanit Origional Code\Connectivity
+//        Test\PLM\Source\USB\APP\CDC\" -I "F:\Guardrail Work\Sensor Code\Git
+//        Repo\Sensor Code Sequential ADC Reads\Shanit Origional
+//        Code\Connectivity Test\PLM\Source\USB\APP\Descriptor\" -I
+//        "F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC
+//        Reads\Shanit Origional Code\Connectivity Test\PLM\Source\USB\Class\"
+//        -I "F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC
+//        Reads\Shanit Origional Code\Connectivity Test\PLM\Source\USB\Common\"
+//        -I "F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC
+//        Reads\Shanit Origional Code\Connectivity Test\PLM\Source\USB\Driver\"
+//        -I "F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC
+//        Reads\Shanit Origional Code\Connectivity Test\PLM\Source\TMR\" -I
+//        "F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC
+//        Reads\Shanit Origional Code\Connectivity
+//        Test\PLM\Source\Radio\MC1324x\PHY\" -I "F:\Guardrail Work\Sensor
+//        Code\Git Repo\Sensor Code Sequential ADC Reads\Shanit Origional
 //        Code\Connectivity Test\PLM\Source\Radio\MC1324x\DRV\" -I
-//        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
-//        Code\Shanit Origional Code\Connectivity Test\PLM\Source\Sys Common\"
-//        -I "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
-//        Code\Shanit Origional Code\Connectivity Test\SMAC\Source\" -I
-//        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
-//        Code\Shanit Origional Code\Connectivity Test\SMAC\Interface\" -I
-//        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
-//        Code\Shanit Origional Code\Connectivity Test\SMAC\Configure\" -I
-//        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
-//        Code\Shanit Origional Code\Connectivity Test\Application\Source\" -I
-//        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
-//        Code\Shanit Origional Code\Connectivity Test\Application\Configure\"
-//        -I "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
-//        Code\Shanit Origional Code\Connectivity Test\PLM\Source\NVM\" -I
+//        "F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC
+//        Reads\Shanit Origional Code\Connectivity Test\PLM\Source\Sys Common\"
+//        -I "F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC
+//        Reads\Shanit Origional Code\Connectivity Test\SMAC\Source\" -I
+//        "F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC
+//        Reads\Shanit Origional Code\Connectivity Test\SMAC\Interface\" -I
+//        "F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC
+//        Reads\Shanit Origional Code\Connectivity Test\SMAC\Configure\" -I
+//        "F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC
+//        Reads\Shanit Origional Code\Connectivity Test\Application\Source\" -I
+//        "F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC
+//        Reads\Shanit Origional Code\Connectivity Test\Application\Configure\"
+//        -I "F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC
+//        Reads\Shanit Origional Code\Connectivity Test\PLM\Source\NVM\" -I
 //        "C:\Users\Robert\SkyDrive\2018 Spring Semester\Senior Design\Sensor
 //        Code\Shanit Origional Code\Connectivity Test\PLM\Source\NVM\" -I
 //        "C:\Users\Robert\SkyDrive\2018 Spring Semester\Senior Design\Sensor
 //        Code\Shanit Origional Code\Connectivity Test\PLM\Source\ADC\" -I
 //        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
-//        Code\Shanit Origional Code\Connectivity Test\PLM\Source\ADC\" -On
+//        Code\Shanit Origional Code\Connectivity Test\PLM\Source\ADC\" -I
+//        "F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC
+//        Reads\Shanit Origional Code\Connectivity Test\PLM\Source\LPM\" -On
 //    List file    =  
-//        C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
-//        Code\Shanit Origional Code\Connectivity Test\Debug\List\AD1.s
+//        F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC
+//        Reads\Shanit Origional Code\Connectivity Test\Debug\List\AD1.s
 //
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -103,7 +105,7 @@
         PUBLIC startOutputChanel2Timmer
         PUBLIC startOutputChanel3Timmer
 
-// C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity Test\PLM\Source\ADC\AD1.c
+// F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC Reads\Shanit Origional Code\Connectivity Test\PLM\Source\ADC\AD1.c
 //    1    
 //    2 
 //    3 /* MODULE AD1. */
@@ -439,9 +441,9 @@ ConversionBComplete:
 //  138 {
 //  139   /* Old way to try and start the conversion in channel B
 //  140   //need to connect to the B chanel
-//  141   ADC0_CFG2 = (uint32_New)0x10;
+//  141   ADC0_CFG2 = (uint32_t)0x10;
 //  142   //set the conversionchanel in the B channel
-//  143   ADC0_SC1B = (uint32_New)0x5;
+//  143   ADC0_SC1B = (uint32_t)0x5;
 //  144   */
 //  145   
 //  146   //need to connect to the A chanel
@@ -472,9 +474,9 @@ StartBattConversion:
 //  160 {
 //  161   /* Old way to try and start the conversion in channel B
 //  162   //need to connect to the B chanel
-//  163   ADC0_CFG2 = (uint32_New)0x10;
+//  163   ADC0_CFG2 = (uint32_t)0x10;
 //  164   //set the conversionchanel in the B channel
-//  165   ADC0_SC1B = (uint32_New)0x5;
+//  165   ADC0_SC1B = (uint32_t)0x5;
 //  166   */
 //  167   
 //  168   //need to connect to the A chanel
@@ -506,10 +508,10 @@ StartXConversion:
 //  183 {
 //  184   
 //  185   /*Code that was used for old conversion techquine when Was connected to the B channel
-//  186   ADC0_CFG2 = (uint32_New)0x10;
+//  186   ADC0_CFG2 = (uint32_t)0x10;
 //  187   //dissable differential mode set the first 5 bits equal to the correct location 
 //  188   //this shoud start the conversion
-//  189   ADC0_SC1B = (uint32_New)0x6;
+//  189   ADC0_SC1B = (uint32_t)0x6;
 //  190   */
 //  191   
 //  192   //need to connect to the A chanel
@@ -537,14 +539,14 @@ StartYConversion:
 //  203 */
 //  204 {
 //  205   /*  this is old code for when it was connected to channel 
-//  206   ADC0_SC2 = (uint32_New)0x40;
+//  206   ADC0_SC2 = (uint32_t)0x40;
 //  207   
-//  208   ADC0_SC3 = (uint32_New)0xc;
+//  208   ADC0_SC3 = (uint32_t)0xc;
 //  209   //need to connect to the B chanel
-//  210   ADC0_CFG2 = (uint32_New)0x10;
+//  210   ADC0_CFG2 = (uint32_t)0x10;
 //  211   //dissable differential mode
 //  212   //this shoud start the conversion
-//  213   ADC0_SC1B = (uint32_New)0x7;
+//  213   ADC0_SC1B = (uint32_t)0x7;
 //  214   */
 //  215   
 //  216   //need to connect to the A chanel
@@ -736,9 +738,9 @@ startOutputChanel1Timmer:
 //  319 void startOutputChanel1Timmer()
 //  320 {
 //  321   //enable PBEN and LDOK and set chanel 0 trigger
-//  322   PDB0_SC = (uint32_New)0x821;
+//  322   PDB0_SC = (uint32_t)0x821;
 //  323   //enable the output for the first ADC channel
-//  324   PDB0_CH0C1 = (uint32_New)0x3;
+//  324   PDB0_CH0C1 = (uint32_t)0x3;
 //  325   //this may want to be a different channel, channel 0 should be for ADC0 A and channel 2 should be for ADC0 B
 //  326   
 //  327 }

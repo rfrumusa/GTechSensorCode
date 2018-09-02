@@ -138,9 +138,9 @@ selects the correct chanel to start the conversion and starts the conversion
 {
   /* Old way to try and start the conversion in channel B
   //need to connect to the B chanel
-  ADC0_CFG2 = (uint32_New)0x10;
+  ADC0_CFG2 = (uint32_t)0x10;
   //set the conversionchanel in the B channel
-  ADC0_SC1B = (uint32_New)0x5;
+  ADC0_SC1B = (uint32_t)0x5;
   */
   
   //need to connect to the A chanel
@@ -160,9 +160,9 @@ selects the correct chanel to start the conversion and starts the conversion
 {
   /* Old way to try and start the conversion in channel B
   //need to connect to the B chanel
-  ADC0_CFG2 = (uint32_New)0x10;
+  ADC0_CFG2 = (uint32_t)0x10;
   //set the conversionchanel in the B channel
-  ADC0_SC1B = (uint32_New)0x5;
+  ADC0_SC1B = (uint32_t)0x5;
   */
   
   //need to connect to the A chanel
@@ -183,10 +183,10 @@ selects the correct chanel to start the conversion and starts the conversion
 {
   
   /*Code that was used for old conversion techquine when Was connected to the B channel
-  ADC0_CFG2 = (uint32_New)0x10;
+  ADC0_CFG2 = (uint32_t)0x10;
   //dissable differential mode set the first 5 bits equal to the correct location 
   //this shoud start the conversion
-  ADC0_SC1B = (uint32_New)0x6;
+  ADC0_SC1B = (uint32_t)0x6;
   */
   
   //need to connect to the A chanel
@@ -203,14 +203,14 @@ selects the correct chanel to start the conversion and starts the conversion
 */
 {
   /*  this is old code for when it was connected to channel 
-  ADC0_SC2 = (uint32_New)0x40;
+  ADC0_SC2 = (uint32_t)0x40;
   
-  ADC0_SC3 = (uint32_New)0xc;
+  ADC0_SC3 = (uint32_t)0xc;
   //need to connect to the B chanel
-  ADC0_CFG2 = (uint32_New)0x10;
+  ADC0_CFG2 = (uint32_t)0x10;
   //dissable differential mode
   //this shoud start the conversion
-  ADC0_SC1B = (uint32_New)0x7;
+  ADC0_SC1B = (uint32_t)0x7;
   */
   
   //need to connect to the A chanel
@@ -319,9 +319,9 @@ void startOutputChanel1Timmer()
 void startOutputChanel1Timmer()
 {
   //enable PBEN and LDOK and set chanel 0 trigger
-  PDB0_SC = (uint32_New)0x821;
+  PDB0_SC = (uint32_t)0x821;
   //enable the output for the first ADC channel
-  PDB0_CH0C1 = (uint32_New)0x3;
+  PDB0_CH0C1 = (uint32_t)0x3;
   //this may want to be a different channel, channel 0 should be for ADC0 A and channel 2 should be for ADC0 B
   
 }

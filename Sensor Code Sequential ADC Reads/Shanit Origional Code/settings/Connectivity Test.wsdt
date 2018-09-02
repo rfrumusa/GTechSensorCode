@@ -16,14 +16,14 @@
           
           
           
-        <Column0>191</Column0><Column1>27</Column1><Column2>27</Column2><Column3>27</Column3></ColumnWidths>
+        <Column0>472</Column0><Column1>27</Column1><Column2>27</Column2><Column3>27</Column3></ColumnWidths>
       </Workspace>
       <Find-in-Files>
         
         
         
         
-      <ColumnWidth0>569</ColumnWidth0><ColumnWidth1>94</ColumnWidth1><ColumnWidth2>854</ColumnWidth2><ColumnWidth3>379</ColumnWidth3></Find-in-Files>
+      <PreferedWindows><Position>3</Position><ScreenPosX>0</ScreenPosX><ScreenPosY>0</ScreenPosY><Windows/></PreferedWindows><ColumnWidth0>994</ColumnWidth0><ColumnWidth1>94</ColumnWidth1><ColumnWidth2>854</ColumnWidth2><ColumnWidth3>379</ColumnWidth3></Find-in-Files>
       <Build>
         
         
@@ -42,11 +42,11 @@
             <Factory>Workspace</Factory>
             <Session>
               
-            <NodeDict><ExpandedNode>Connectivity Test</ExpandedNode><ExpandedNode>Connectivity Test/Application</ExpandedNode><ExpandedNode>Connectivity Test/Application/Source</ExpandedNode></NodeDict></Session>
+            <NodeDict><ExpandedNode>Connectivity Test</ExpandedNode><ExpandedNode>Connectivity Test/Application</ExpandedNode><ExpandedNode>Connectivity Test/Application/Configure</ExpandedNode><ExpandedNode>Connectivity Test/Application/Source</ExpandedNode><ExpandedNode>Connectivity Test/PLM</ExpandedNode><ExpandedNode>Connectivity Test/PLM/Interface</ExpandedNode><ExpandedNode>Connectivity Test/PLM/Source</ExpandedNode><ExpandedNode>Connectivity Test/PLM/Source/LPM</ExpandedNode><ExpandedNode>Connectivity Test/PLM/Source/MCG</ExpandedNode></NodeDict></Session>
           </Tab>
         </Tabs>
         
-      <SelectedTab>0</SelectedTab></Wnd0><Wnd1>
+      <SelectedTab>0</SelectedTab></Wnd0><Wnd2>
         <Tabs>
           <Tab>
             <Identity>TabID-19171-8925</Identity>
@@ -54,12 +54,7 @@
             <Factory>Debug-Log</Factory>
             <Session/>
           </Tab>
-          <Tab>
-            <Identity>TabID-11852-9062</Identity>
-            <TabName>Find in Files</TabName>
-            <Factory>Find-in-Files</Factory>
-            <Session/>
-          </Tab>
+          
           <Tab>
             <Identity>TabID-30275-9536</Identity>
             <TabName>Build</TabName>
@@ -68,20 +63,20 @@
           </Tab>
         </Tabs>
         
-      <SelectedTab>0</SelectedTab></Wnd1></Windows>
+      <SelectedTab>1</SelectedTab></Wnd2><Wnd1><Tabs><Tab><Identity>TabID-29301-287</Identity><TabName>Find in Files</TabName><Factory>Find-in-Files</Factory><Session/></Tab></Tabs><SelectedTab>0</SelectedTab></Wnd1></Windows>
     <Editor>
       
       
       
       
-    <Pane><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\Connectivity Test\Application\Source\main.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>279</YPos2><SelStart2>10537</SelStart2><SelEnd2>10537</SelEnd2></Tab><ActiveTab>0</ActiveTab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\Connectivity Test\Application\Configure\ApplicationConf.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>134</YPos2><SelStart2>4346</SelStart2><SelEnd2>4346</SelEnd2></Tab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
+    <Pane><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\Connectivity Test\Application\Source\main.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>1204</YPos2><SelStart2>48202</SelStart2><SelEnd2>48202</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\Connectivity Test\Application\Configure\ApplicationConf.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>167</YPos2><SelStart2>5352</SelStart2><SelEnd2>5352</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\Connectivity Test\Application\Source\ConnectivityMenus.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>12</YPos2><SelStart2>1920</SelStart2><SelEnd2>1920</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\Connectivity Test\Application\Source\ConnectivityMenus.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>323</YPos2><SelStart2>10005</SelStart2><SelEnd2>10005</SelEnd2></Tab><ActiveTab>3</ActiveTab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\Connectivity Test\PLM\Source\LPM\PWRLib.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>540</YPos2><SelStart2>23467</SelStart2><SelEnd2>23467</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\Connectivity Test\PLM\Interface\PWR_Interface.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>313</YPos2><SelStart2>12963</SelStart2><SelEnd2>12963</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\Connectivity Test\PLM\Source\LPM\PWRLib.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>583</YPos2><SelStart2>22956</SelStart2><SelEnd2>22956</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\Connectivity Test\PLM\Source\ADC\AD1.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>187</YPos2><SelStart2>5136</SelStart2><SelEnd2>5136</SelEnd2></Tab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
     <Positions>
       
       
       
       
       
-    <Top><Row0><Sizes><Toolbar-076C8638><key>iaridepm.enu1</key></Toolbar-076C8638></Sizes></Row0></Top><Left><Row0><Sizes><Wnd0><Rect><Top>-2</Top><Left>-2</Left><Bottom>754</Bottom><Right>265</Right><x>-2</x><y>-2</y><xscreen>267</xscreen><yscreen>200</yscreen><sizeHorzCX>104297</sizeHorzCX><sizeHorzCY>200602</sizeHorzCY><sizeVertCX>104297</sizeVertCX><sizeVertCY>758275</sizeVertCY></Rect></Wnd0></Sizes></Row0></Left><Right><Row0><Sizes/></Row0></Right><Bottom><Row0><Sizes><Wnd1><Rect><Top>-2</Top><Left>-2</Left><Bottom>198</Bottom><Right>2562</Right><x>-2</x><y>-2</y><xscreen>2564</xscreen><yscreen>200</yscreen><sizeHorzCX>1001562</sizeHorzCX><sizeHorzCY>200602</sizeHorzCY><sizeVertCX>104297</sizeVertCX><sizeVertCY>200602</sizeVertCY></Rect></Wnd1></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
+    <Top><Row0><Sizes><Toolbar-048969A0><key>iaridepm.enu1</key></Toolbar-048969A0></Sizes></Row0></Top><Left><Row0><Sizes><Wnd0><Rect><Top>-2</Top><Left>-2</Left><Bottom>530</Bottom><Right>563</Right><x>-2</x><y>-2</y><xscreen>198</xscreen><yscreen>85</yscreen><sizeHorzCX>77344</sizeHorzCX><sizeHorzCY>85256</sizeHorzCY><sizeVertCX>220703</sizeVertCX><sizeVertCY>533601</sizeVertCY></Rect></Wnd0></Sizes></Row0></Left><Right><Row0><Sizes/></Row0></Right><Bottom><Row0><Sizes><Wnd2><Rect><Top>-2</Top><Left>-2</Left><Bottom>224</Bottom><Right>1280</Right><x>-2</x><y>-2</y><xscreen>2564</xscreen><yscreen>226</yscreen><sizeHorzCX>1001562</sizeHorzCX><sizeHorzCY>226680</sizeHorzCY><sizeVertCX>77344</sizeVertCX><sizeVertCY>85256</sizeVertCY></Rect></Wnd2></Sizes></Row0><Row1><Sizes><Wnd1><Rect><Top>222</Top><Left>-2</Left><Bottom>422</Bottom><Right>2562</Right><x>-2</x><y>222</y><xscreen>2564</xscreen><yscreen>200</yscreen><sizeHorzCX>1001562</sizeHorzCX><sizeHorzCY>200602</sizeHorzCY><sizeVertCX>78125</sizeVertCX><sizeVertCY>200602</sizeVertCY></Rect></Wnd1></Sizes></Row1></Bottom><Float><Sizes/></Float></Positions>
   </Desktop>
 </Workspace>
 

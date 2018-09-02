@@ -161,8 +161,9 @@ LogFile=_ "C:\Users\lsw0lga\Desktop\temp\TermIO.log"
 [Disassemble mode]
 mode=0
 [Breakpoints2]
-Bp0=_ 1 "EMUL_CODE" "{$PROJ_DIR$\Application\Source\main.c}.465.7" 0 0 1 "" 0 "" 0
-Count=1
+Bp0=_ 1 "EMUL_CODE" "{$PROJ_DIR$\Application\Source\main.c}.550.7" 0 0 1 "" 0 "" 0
+Bp1=_ 1 "EMUL_CODE" "{$PROJ_DIR$\Application\Source\main.c}.389.1" 0 0 1 "" 0 "" 0
+Count=2
 [Aliases]
 A0=_ "C:\Users\Robert\SkyDrive\2018 Spring Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity Test\Application\Source\main.c" ""
 Count=1

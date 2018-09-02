@@ -1,95 +1,97 @@
 ###############################################################################
 #
-# IAR ANSI C/C++ Compiler V7.20.5.7591/W32 for ARM        20/Mar/2018  09:41:46
+# IAR ANSI C/C++ Compiler V7.20.5.7591/W32 for ARM        02/Sep/2018  13:33:15
 # Copyright 1999-2014 IAR Systems AB.
 #
 #    Cpu mode     =  thumb
 #    Endian       =  little
 #    Source file  =  
-#        C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
-#        Code\Shanit Origional Code\Connectivity
+#        F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC
+#        Reads\Shanit Origional Code\Connectivity
 #        Test\Application\Source\ConnectivityMenus.c
 #    Command line =  
-#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
-#        Code\Shanit Origional Code\Connectivity
+#        "F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC
+#        Reads\Shanit Origional Code\Connectivity
 #        Test\Application\Source\ConnectivityMenus.c" -D IAR --preprocess
-#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
-#        Code\Shanit Origional Code\Connectivity Test\Debug\List\" -lC
-#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
-#        Code\Shanit Origional Code\Connectivity Test\Debug\List\" -lB
-#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
-#        Code\Shanit Origional Code\Connectivity Test\Debug\List\"
+#        "F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC
+#        Reads\Shanit Origional Code\Connectivity Test\Debug\List\" -lC
+#        "F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC
+#        Reads\Shanit Origional Code\Connectivity Test\Debug\List\" -lB
+#        "F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC
+#        Reads\Shanit Origional Code\Connectivity Test\Debug\List\"
 #        --diag_suppress Pe014,Pe001,Pe991,Pa039,Pe520,Pe550,Pe177,Pa082 -o
-#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
-#        Code\Shanit Origional Code\Connectivity Test\Debug\Obj\" --no_cse
+#        "F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC
+#        Reads\Shanit Origional Code\Connectivity Test\Debug\Obj\" --no_cse
 #        --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering
 #        --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=None
 #        --dlib_config "C:\Program Files (x86)\IAR Systems\Embedded Workbench
-#        7.0\arm\INC\c\DLib_Config_Normal.h" -I "C:\Users\rfrum\OneDrive\2018
-#        Spring Semester\Senior Design\Sensor Code\Shanit Origional
-#        Code\Connectivity Test\PLM\Configure\" -I
-#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
-#        Code\Shanit Origional Code\Connectivity Test\PLM\Environment\" -I
-#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
-#        Code\Shanit Origional Code\Connectivity Test\PLM\Interface\" -I
-#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
-#        Code\Shanit Origional Code\Connectivity Test\Generic
-#        Services\Interface\" -I "C:\Users\rfrum\OneDrive\2018 Spring
-#        Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity
-#        Test\PLM\Source\Uart\" -I "C:\Users\rfrum\OneDrive\2018 Spring
-#        Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity
-#        Test\PLM\Source\USB\" -I "C:\Users\rfrum\OneDrive\2018 Spring
-#        Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity
-#        Test\PLM\Source\USB\APP\" -I "C:\Users\rfrum\OneDrive\2018 Spring
-#        Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity
-#        Test\PLM\Source\USB\APP\CDC\" -I "C:\Users\rfrum\OneDrive\2018 Spring
-#        Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity
-#        Test\PLM\Source\USB\APP\Descriptor\" -I "C:\Users\rfrum\OneDrive\2018
-#        Spring Semester\Senior Design\Sensor Code\Shanit Origional
-#        Code\Connectivity Test\PLM\Source\USB\Class\" -I
-#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
-#        Code\Shanit Origional Code\Connectivity Test\PLM\Source\USB\Common\"
-#        -I "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
-#        Code\Shanit Origional Code\Connectivity Test\PLM\Source\USB\Driver\"
-#        -I "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
-#        Code\Shanit Origional Code\Connectivity Test\PLM\Source\TMR\" -I
-#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
-#        Code\Shanit Origional Code\Connectivity
-#        Test\PLM\Source\Radio\MC1324x\PHY\" -I "C:\Users\rfrum\OneDrive\2018
-#        Spring Semester\Senior Design\Sensor Code\Shanit Origional
-#        Code\Connectivity Test\PLM\Source\Radio\MC1324x\DRV\" -I
-#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
-#        Code\Shanit Origional Code\Connectivity Test\PLM\Source\Sys Common\"
-#        -I "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
-#        Code\Shanit Origional Code\Connectivity Test\SMAC\Source\" -I
-#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
-#        Code\Shanit Origional Code\Connectivity Test\SMAC\Interface\" -I
-#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
-#        Code\Shanit Origional Code\Connectivity Test\SMAC\Configure\" -I
-#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
-#        Code\Shanit Origional Code\Connectivity Test\Application\Source\" -I
-#        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
-#        Code\Shanit Origional Code\Connectivity Test\Application\Configure\"
-#        -I "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
-#        Code\Shanit Origional Code\Connectivity Test\PLM\Source\NVM\" -I
+#        7.0\arm\INC\c\DLib_Config_Normal.h" -I "F:\Guardrail Work\Sensor
+#        Code\Git Repo\Sensor Code Sequential ADC Reads\Shanit Origional
+#        Code\Connectivity Test\PLM\Configure\" -I "F:\Guardrail Work\Sensor
+#        Code\Git Repo\Sensor Code Sequential ADC Reads\Shanit Origional
+#        Code\Connectivity Test\PLM\Environment\" -I "F:\Guardrail Work\Sensor
+#        Code\Git Repo\Sensor Code Sequential ADC Reads\Shanit Origional
+#        Code\Connectivity Test\PLM\Interface\" -I "F:\Guardrail Work\Sensor
+#        Code\Git Repo\Sensor Code Sequential ADC Reads\Shanit Origional
+#        Code\Connectivity Test\Generic Services\Interface\" -I "F:\Guardrail
+#        Work\Sensor Code\Git Repo\Sensor Code Sequential ADC Reads\Shanit
+#        Origional Code\Connectivity Test\PLM\Source\Uart\" -I "F:\Guardrail
+#        Work\Sensor Code\Git Repo\Sensor Code Sequential ADC Reads\Shanit
+#        Origional Code\Connectivity Test\PLM\Source\USB\" -I "F:\Guardrail
+#        Work\Sensor Code\Git Repo\Sensor Code Sequential ADC Reads\Shanit
+#        Origional Code\Connectivity Test\PLM\Source\USB\APP\" -I "F:\Guardrail
+#        Work\Sensor Code\Git Repo\Sensor Code Sequential ADC Reads\Shanit
+#        Origional Code\Connectivity Test\PLM\Source\USB\APP\CDC\" -I
+#        "F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC
+#        Reads\Shanit Origional Code\Connectivity
+#        Test\PLM\Source\USB\APP\Descriptor\" -I "F:\Guardrail Work\Sensor
+#        Code\Git Repo\Sensor Code Sequential ADC Reads\Shanit Origional
+#        Code\Connectivity Test\PLM\Source\USB\Class\" -I "F:\Guardrail
+#        Work\Sensor Code\Git Repo\Sensor Code Sequential ADC Reads\Shanit
+#        Origional Code\Connectivity Test\PLM\Source\USB\Common\" -I
+#        "F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC
+#        Reads\Shanit Origional Code\Connectivity Test\PLM\Source\USB\Driver\"
+#        -I "F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC
+#        Reads\Shanit Origional Code\Connectivity Test\PLM\Source\TMR\" -I
+#        "F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC
+#        Reads\Shanit Origional Code\Connectivity
+#        Test\PLM\Source\Radio\MC1324x\PHY\" -I "F:\Guardrail Work\Sensor
+#        Code\Git Repo\Sensor Code Sequential ADC Reads\Shanit Origional
+#        Code\Connectivity Test\PLM\Source\Radio\MC1324x\DRV\" -I "F:\Guardrail
+#        Work\Sensor Code\Git Repo\Sensor Code Sequential ADC Reads\Shanit
+#        Origional Code\Connectivity Test\PLM\Source\Sys Common\" -I
+#        "F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC
+#        Reads\Shanit Origional Code\Connectivity Test\SMAC\Source\" -I
+#        "F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC
+#        Reads\Shanit Origional Code\Connectivity Test\SMAC\Interface\" -I
+#        "F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC
+#        Reads\Shanit Origional Code\Connectivity Test\SMAC\Configure\" -I
+#        "F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC
+#        Reads\Shanit Origional Code\Connectivity Test\Application\Source\" -I
+#        "F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC
+#        Reads\Shanit Origional Code\Connectivity Test\Application\Configure\"
+#        -I "F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC
+#        Reads\Shanit Origional Code\Connectivity Test\PLM\Source\NVM\" -I
 #        "C:\Users\Robert\SkyDrive\2018 Spring Semester\Senior Design\Sensor
 #        Code\Shanit Origional Code\Connectivity Test\PLM\Source\NVM\" -I
 #        "C:\Users\Robert\SkyDrive\2018 Spring Semester\Senior Design\Sensor
 #        Code\Shanit Origional Code\Connectivity Test\PLM\Source\ADC\" -I
 #        "C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
-#        Code\Shanit Origional Code\Connectivity Test\PLM\Source\ADC\" -On
+#        Code\Shanit Origional Code\Connectivity Test\PLM\Source\ADC\" -I
+#        "F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC
+#        Reads\Shanit Origional Code\Connectivity Test\PLM\Source\LPM\" -On
 #    List file    =  
-#        C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
-#        Code\Shanit Origional Code\Connectivity
+#        F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC
+#        Reads\Shanit Origional Code\Connectivity
 #        Test\Debug\List\ConnectivityMenus.lst
 #    Object file  =  
-#        C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor
-#        Code\Shanit Origional Code\Connectivity
+#        F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC
+#        Reads\Shanit Origional Code\Connectivity
 #        Test\Debug\Obj\ConnectivityMenus.o
 #
 ###############################################################################
 
-C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity Test\Application\Source\ConnectivityMenus.c
+F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC Reads\Shanit Origional Code\Connectivity Test\Application\Source\ConnectivityMenus.c
       1          /*****************************************************************************
       2          * Connectivity test demo Menus implementation.
       3          * 
@@ -501,6 +503,207 @@ C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor Code\Shanit Or
     223          }
    \                     ??PrintMenu_1: (+1)
    \   00000022   0xBD70             POP      {R4-R6,PC}       ;; return
+    224          
+    225          /************************************************************************************
+    226          *************************************************************************************
+    227          * private functions
+    228          *************************************************************************************
+    229          ************************************************************************************/
+    230          
+    231          /* Low Power Mode Vartiables 8*/
+    232          
+    233          #if (gEnableLowPower_d == TRUE)
+    234          char * const cau8WUGPIOString[]={ 
+    235            "GPIO",
+    236            NULL
+    237          };
+    238          
+    239          char * const cau8WULPTMRString[]={ 
+    240            "LPTMR",
+    241            NULL
+    242          };
+    243          
+    244          char * const cau8WURTCString[]={ 
+    245            "RTC",
+    246            NULL
+    247          };
+    248          
+    249          char * const cau8WULLSString[]={ 
+    250            "LLS",
+    251            NULL
+    252          };
+    253          
+    254          char * const cau8WUVLPSString[]={ 
+    255            "VLPS",
+    256            NULL
+    257          };
+    258          
+    259          char * const cau8WUVLLS2String[]={ 
+    260            "VLLS2",
+    261            NULL
+    262          };
+    263          
+    264          char * const cau8WUVLLS1String[]={ 
+    265            "VLLS1",
+    266            NULL
+    267          };
+    268          char * const cau8WUVLLS0String[]={ 
+    269            "VLLS0",
+    270            NULL
+    271          };
+    272          
+    273          char * const cau8WUGotoLLSString[]={
+    274            "\r\n", 
+    275            "The device is about to enter in LLS mode\r\n",
+    276            NULL
+    277          };
+    278          char * const cau8WUGotoVLPSString[]={
+    279            "\r\n",
+    280            "The device is about to enter in VLPS mode\r\n",
+    281            NULL
+    282          };
+    283          char * const cau8WUGotoVLLS2String[]={ 
+    284            "\r\n",
+    285            "The device is about to enter in VLLS2 mode\r\n",
+    286            NULL
+    287          };
+    288          
+    289          char * const cau8WUGotoVLLS0String[]={ 
+    290            "\r\n",
+    291            "The device is about to enter in VLLS0 mode\r\n",
+    292            NULL
+    293          };
+    294          char * const cau8WUContinueAskString[]={  
+    295            "Do you want to continue? [Y/N]. ",
+    296            NULL
+    297          };
+    298          
+    299          char * const cau8WUIsLLSModeString[]={  
+    300            "\f\r\n", 
+    301            "Now in LLS mode\r\n",
+    302            NULL
+    303          };
+    304          
+    305          char * const cau8WUIsVLPSModeString[]={  
+    306            "\f\r\n", 
+    307            "Now in VLPS mode\r\n", 
+    308            NULL
+    309          };
+    310          
+    311          char * const cau8WUIsVLLS2ModeString[]={  
+    312            "\f\r\n", 
+    313            "Now in VLLS2 mode\r\n", 
+    314            NULL
+    315          };
+    316          
+    317          
+    318          char * const cau8WUIsVLLS0ModeString[]={  
+    319            "\f\r\n", 
+    320            "Now in VLLS0 mode\r\n", 
+    321            NULL
+    322          };
+    323          
+    324          char * const cau8WUGPIOWakeupString[]={  
+    325            "Press SW1 to wake up and back to main menu\r\n",
+    326            NULL
+    327          };
+    328          
+    329          
+    330          
+    331          char * const cau8WURTCWakeupString[]={  
+    332            "Wait 10 sec to wake up and back to main menu\r\n",
+    333            NULL
+    334          };
+    335          
+    336          #endif
+    337          
+
+   \                                 In section .rodata, align 4
+    338          char * const cau8WULPTMRWakeupString[]={  
+   \                     cau8WULPTMRWakeupString:
+   \   00000000   0x........         DC32 ?_112, 0H
+   \              0x00000000   
+    339            "Wait 10 sec to wake up and back to main menu\r\n",
+    340            NULL
+    341          };
+    342          
+
+   \                                 In section .rodata, align 4
+    343          char * const cau8WUIsVLLS1ModeString[]={  
+   \                     cau8WUIsVLLS1ModeString:
+   \   00000000   0x........         DC32 ?_0, ?_113, 0H
+   \              0x........   
+   \              0x00000000   
+    344            "\f\r\n", 
+    345            "Now in VLLS1 mode\r\n", 
+    346            NULL
+    347          };
+
+   \                                 In section .rodata, align 4
+    348          char * const cau8WUGotoVLLS1String[]={ 
+   \                     cau8WUGotoVLLS1String:
+   \   00000000   0x........         DC32 ?_114, ?_115, 0H
+   \              0x........   
+   \              0x00000000   
+    349            "\r\n",
+    350            "The device is about to enter in VLLS1 mode\r\n",
+    351            NULL
+    352          };
+    353          
+    354          
+
+   \                                 In section .rodata, align 4
+    355          char * const cau8WUWait4Option[]={ 
+   \                     cau8WUWait4Option:
+   \   00000000   0x........         DC32 ?_114, ?_116, 0H
+   \              0x........   
+   \              0x00000000   
+    356            "\r\n", 
+    357            "\r>",
+    358            NULL
+    359          };
+    360          
+
+   \                                 In section .rodata, align 4
+    361          char * const cau8WUInvalidValueString[]={ 
+   \                     cau8WUInvalidValueString:
+   \   00000000   0x........         DC32 ?_114, ?_117, 0H
+   \              0x........   
+   \              0x00000000   
+    362            "\r\n", 
+    363            "Invalid value, please try again.",
+    364            NULL
+    365          };
+    366          
+    367          
+    368          
+
+   \                                 In section .rodata, align 4
+    369          char * const cau8WUContinueAskString[]={  
+   \                     cau8WUContinueAskString:
+   \   00000000   0x........         DC32 ?_118, 0H
+   \              0x00000000   
+    370            "Do you want to continue? [Y/N]. ",
+    371            NULL
+    372          };
+    373          
+
+   \                                 In section .rodata, align 4
+    374          char * const cau8WULPTMRString[]={ 
+   \                     cau8WULPTMRString:
+   \   00000000   0x........         DC32 ?_119, 0H
+   \              0x00000000   
+    375            "LPTMR",
+    376            NULL
+    377          };
+    378          
+    379          
+
+   \                                 In section .rodata, align 4
+    380          char * const cau8WUVLLS1String[]={ 
+   \                     cau8WUVLLS1String:
+   \   00000000   0x........         DC32 ?_120, 0H
+   \              0x00000000   
 
    \                                 In section .rodata, align 4
    \                     ?_0:
@@ -2653,15 +2856,148 @@ C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor Code\Shanit Or
    \              0x00         
    \   00000011   0x00 0x00          DC8 0, 0, 0
    \              0x00         
-    224          
-    225          /************************************************************************************
-    226          *************************************************************************************
-    227          * private functions
-    228          *************************************************************************************
-    229          ************************************************************************************/
-    230          
-    231          
-    232          
+
+   \                                 In section .rodata, align 4
+   \                     ?_112:
+   \   00000000   0x57 0x61          DC8 "Wait 10 sec to wake up and back to main menu\015\012"
+   \              0x69 0x74    
+   \              0x20 0x31    
+   \              0x30 0x20    
+   \              0x73 0x65    
+   \              0x63 0x20    
+   \              0x74 0x6F    
+   \              0x20 0x77    
+   \              0x61 0x6B    
+   \              0x65 0x20    
+   \              0x75 0x70    
+   \              0x20 0x61    
+   \              0x6E 0x64    
+   \              0x20 0x62    
+   \              0x61 0x63    
+   \              0x6B 0x20    
+   \              0x74 0x6F    
+   \              0x20 0x6D    
+   \              0x61 0x69    
+   \              0x6E 0x20    
+   \              0x6D 0x65    
+   \              0x6E 0x75    
+   \              0x0D 0x0A    
+   \              0x00         
+   \   0000002F   0x00               DC8 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_113:
+   \   00000000   0x4E 0x6F          DC8 "Now in VLLS1 mode\015\012"
+   \              0x77 0x20    
+   \              0x69 0x6E    
+   \              0x20 0x56    
+   \              0x4C 0x4C    
+   \              0x53 0x31    
+   \              0x20 0x6D    
+   \              0x6F 0x64    
+   \              0x65 0x0D    
+   \              0x0A 0x00    
+
+   \                                 In section .rodata, align 4
+   \                     ?_114:
+   \   00000000   0x0D 0x0A          DC8 "\015\012"
+   \              0x00         
+   \   00000003   0x00               DC8 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_115:
+   \   00000000   0x54 0x68          DC8 "The device is about to enter in VLLS1 mode\015\012"
+   \              0x65 0x20    
+   \              0x64 0x65    
+   \              0x76 0x69    
+   \              0x63 0x65    
+   \              0x20 0x69    
+   \              0x73 0x20    
+   \              0x61 0x62    
+   \              0x6F 0x75    
+   \              0x74 0x20    
+   \              0x74 0x6F    
+   \              0x20 0x65    
+   \              0x6E 0x74    
+   \              0x65 0x72    
+   \              0x20 0x69    
+   \              0x6E 0x20    
+   \              0x56 0x4C    
+   \              0x4C 0x53    
+   \              0x31 0x20    
+   \              0x6D 0x6F    
+   \              0x64 0x65    
+   \              0x0D 0x0A    
+   \              0x00         
+   \   0000002D   0x00 0x00          DC8 0, 0, 0
+   \              0x00         
+
+   \                                 In section .rodata, align 4
+   \                     ?_116:
+   \   00000000   0x0D 0x3E          DC8 "\015>"
+   \              0x00         
+   \   00000003   0x00               DC8 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_117:
+   \   00000000   0x49 0x6E          DC8 "Invalid value, please try again."
+   \              0x76 0x61    
+   \              0x6C 0x69    
+   \              0x64 0x20    
+   \              0x76 0x61    
+   \              0x6C 0x75    
+   \              0x65 0x2C    
+   \              0x20 0x70    
+   \              0x6C 0x65    
+   \              0x61 0x73    
+   \              0x65 0x20    
+   \              0x74 0x72    
+   \              0x79 0x20    
+   \              0x61 0x67    
+   \              0x61 0x69    
+   \              0x6E 0x2E    
+   \              0x00         
+   \   00000021   0x00 0x00          DC8 0, 0, 0
+   \              0x00         
+
+   \                                 In section .rodata, align 4
+   \                     ?_118:
+   \   00000000   0x44 0x6F          DC8 "Do you want to continue? [Y/N]. "
+   \              0x20 0x79    
+   \              0x6F 0x75    
+   \              0x20 0x77    
+   \              0x61 0x6E    
+   \              0x74 0x20    
+   \              0x74 0x6F    
+   \              0x20 0x63    
+   \              0x6F 0x6E    
+   \              0x74 0x69    
+   \              0x6E 0x75    
+   \              0x65 0x3F    
+   \              0x20 0x5B    
+   \              0x59 0x2F    
+   \              0x4E 0x5D    
+   \              0x2E 0x20    
+   \              0x00         
+   \   00000021   0x00 0x00          DC8 0, 0, 0
+   \              0x00         
+
+   \                                 In section .rodata, align 4
+   \                     ?_119:
+   \   00000000   0x4C 0x50          DC8 "LPTMR"
+   \              0x54 0x4D    
+   \              0x52 0x00    
+   \   00000006   0x00 0x00          DC8 0, 0
+
+   \                                 In section .rodata, align 4
+   \                     ?_120:
+   \   00000000   0x56 0x4C          DC8 "VLLS1"
+   \              0x4C 0x53    
+   \              0x31 0x00    
+   \   00000006   0x00 0x00          DC8 0, 0
+    381            "VLLS1",
+    382            NULL
+    383          }; 
 
    Maximum stack usage in bytes:
 
@@ -2691,7 +3027,16 @@ C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor Code\Shanit Or
       16  ?_11
       28  ?_110
       20  ?_111
+      48  ?_112
+      20  ?_113
+       4  ?_114
+      48  ?_115
+       4  ?_116
+      36  ?_117
+      36  ?_118
+       8  ?_119
       16  ?_12
+       8  ?_120
       40  ?_13
       12  ?_14
       48  ?_15
@@ -2788,6 +3133,14 @@ C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor Code\Shanit Or
       20  ?_98
       20  ?_99
       36  PrintMenu
+       8  cau8WUContinueAskString
+      12  cau8WUGotoVLLS1String
+      12  cau8WUInvalidValueString
+      12  cau8WUIsVLLS1ModeString
+       8  cau8WULPTMRString
+       8  cau8WULPTMRWakeupString
+       8  cau8WUVLLS1String
+      12  cau8WUWait4Option
       56  cu8ContinuousTestMenu
       16  cu8ContinuousTestTags
       88  cu8FreescaleLogo
@@ -2803,11 +3156,11 @@ C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor Code\Shanit Or
       24  cu8TxTestTags
 
  
- 4 020 bytes in section .rodata
+ 4 312 bytes in section .rodata
     36 bytes in section .text
  
     36 bytes of CODE  memory
- 4 020 bytes of CONST memory
+ 4 312 bytes of CONST memory
 
 Errors: none
 Warnings: none

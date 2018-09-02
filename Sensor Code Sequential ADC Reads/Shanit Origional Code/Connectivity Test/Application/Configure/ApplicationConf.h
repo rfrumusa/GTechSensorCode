@@ -38,6 +38,8 @@
 #endif
 
 #include "MsgSystem.h"
+#include "PWRLib.h" 
+#include "PWR_Configuration.h"
 
 /* BEGIN BeeKit Configuration Parameters Definition */ 
 
@@ -169,12 +171,39 @@ enum stateVariable
 #define ACK_OPT_SIZE        24   
 /////////
 
+//---------------------------------------------------------------------------------------------------------------------------------
+//Low Power Mode Variables
+#define gEnableLowPower_d         TRUE
+#define gEnableConfigMenus_d      TRUE
 
+/*Available LPMs to select: */
+#define gWUAppVLPSMode_c        0    
+#define gWUAppLLSMode_c         1
+#define gWUAppVLLS2Mode_c       2
+#define gWUAppVLLS1Mode_c       3
+#define gWUAppVLLS0Mode_c       4
+
+/*Low Power Mode:*/
+#define gDefaultLowPowerMode_c  gWUAppVLLS1Mode_c
+
+/*Available Wakeup sources to select: */
+#define gWUAppGPIO_c            0
+#define gWUAppLPTMR_c           1
+#define gWUAppRTC_c             2
+
+/*Wake up source:*/
+#define gDefaultWakeupSource_c  gWUAppLPTMR_c
 #endif /* __SMAC_APP_CONFIG_H__ */
 
-
+//------------------------------------------------------------------------------------------------------------------------------------
 void InitAccelControlls();
 void GetDeviceData();
 void INIT_PIT(uint32_t SampleSpeed);
 void PIT_ISR();
-
+void WUApp_LowPwrStateMachine (void);
+void AppLedTimerCallback (tmrTimerID_t timerId);
+void WUApp_InitWakupSource(void);
+void WUApp_InitLowPowerMode(void);
+void WUApp_PrepareToEnterLowPower(void);
+void WUApp_LPRestoreSettings(void);
+void WUApp_LowPowerWhile(void);

@@ -7813,6 +7813,51 @@ extern char * const cu8TxTestTags[];
 extern char * const cu8RxTestTags[];
 
 
+extern char const u8SequenceBytes[];
+extern char * const cau8WUMainMenuHeader[];
+extern char * const cau8WUMainMenuAddID[];
+extern char * const cau8WUMainMenuPANID[];
+extern char * const cau8WUMainMenuDestAddID[];
+extern char * const cau8WUMainMenuChannel[];
+extern char * const cau8WUMainMenuOptions[];
+extern char * const cau8WUMainMenuLowPower[];
+extern char * const cau8WUMainMenuWakeupSource[];
+extern char * const cau8WUWait4Option[];
+extern char * const cau8WUChangeAddIDString[];
+extern char * const cau8WUChangePanIDString[];
+extern char * const cau8WUChangeDestAddIDString[];
+extern char * const cau8WUChangeChannelString[];
+extern char * const cau8WUGotoLLSString[];
+extern char * const cau8WUGotoVLPSString[];
+extern char * const cau8WUGotoVLLS2String[];
+extern char * const cau8WUGotoVLLS1String[];
+extern char * const cau8WUGotoVLLS0String[];
+extern char * const cau8WUContinueAskString[];
+extern char * const cau8WULLSString[];
+extern char * const cau8WUVLPSString[];
+extern char * const cau8WUVLLS2String[];
+extern char * const cau8WUVLLS1String[];
+extern char * const cau8WUVLLS0String[];
+extern char * const cau8WUGPIOString[];
+extern char * const cau8WULPTMRString[];
+extern char * const cau8WURTCString[];
+extern char * const cau8WUIsLLSModeString[];
+extern char * const cau8WUIsVLPSModeString[];
+extern char * const cau8WUIsVLLS2ModeString[];
+extern char * const cau8WUIsVLLS1ModeString[];
+extern char * const cau8WUIsVLLS0ModeString[];
+extern char * const cau8WUGPIOWakeupString[];
+extern char * const cau8WULPTMRWakeupString[];
+extern char * const cau8WURTCWakeupString[];  
+extern char * const cau8WUInvalidValueString[];
+extern char * const cau8WUClearScreen[];
+extern char * const cau8WUSequeceToMainMenuString[];
+extern char * const cau8WUTypingMessageScreen1[];
+extern char * const cau8WUTypingMessageScreen2[];
+extern char * const cau8WUTypingMessageScreen3[];
+extern char * const cau8WUTypingMessageScreen4[];
+
+
 
 
  
@@ -7917,6 +7962,32 @@ typedef enum EditRegsStates_tag
   gERStateMaxState_c
 }EditRegsStates_t;
 
+
+typedef enum wuConfigState_tag
+{
+  gWUConfigStateMainMenu_c,
+  gWUConfigStateWait4Options_c,
+  gWUConfigStateChangeMyAddId_c,
+  gWUConfigStateChangePanId_c,
+  gWUConfigStateChangeDestAddId_c,
+  gWUConfigStateChangeChannel_c,
+  gWUConfigStateLowPowerMode_c,
+  gWUConfigStateInvalidValue_c,
+  gWUConfigStateGetHexValue_c,
+  gWUConfigStateGetDecValue_c,
+  gWUConfigStateTypingMessage_c,
+  gWUConfigStateMax_c  
+}wuConfigState_t;
+
+typedef enum wuLPStates_tag
+{
+  gWULPStateInit_c,
+  gWULPStateWait4Options_c,
+  gWULPStateGotoLowPower_c,
+  gWULPStateInvalid_c
+}wuLPConfigState_t;
+
+
 typedef enum ODRStates_tag 
 {
   gODRStateInit_c = 0,
@@ -7989,6 +8060,9 @@ typedef enum{
   gManualContinuousEnergyDetect_c,
   gMaxRxTest_c
 }RxTests_t;
+
+
+
 
 
 
@@ -8214,5 +8288,52 @@ void PrintMenu(char * const pu8Menu[], uint8_t port)
 
  
 
+ 
 
 
+char * const cau8WULPTMRWakeupString[]={  
+  "Wait 10 sec to wake up and back to main menu\r\n",
+  (( void * )( 0 ))
+};
+
+char * const cau8WUIsVLLS1ModeString[]={  
+  "\f\r\n", 
+  "Now in VLLS1 mode\r\n", 
+  (( void * )( 0 ))
+};
+char * const cau8WUGotoVLLS1String[]={ 
+  "\r\n",
+  "The device is about to enter in VLLS1 mode\r\n",
+  (( void * )( 0 ))
+};
+
+
+char * const cau8WUWait4Option[]={ 
+  "\r\n", 
+  "\r>",
+  (( void * )( 0 ))
+};
+
+char * const cau8WUInvalidValueString[]={ 
+  "\r\n", 
+  "Invalid value, please try again.",
+  (( void * )( 0 ))
+};
+
+
+
+char * const cau8WUContinueAskString[]={  
+  "Do you want to continue? [Y/N]. ",
+  (( void * )( 0 ))
+};
+
+char * const cau8WULPTMRString[]={ 
+  "LPTMR",
+  (( void * )( 0 ))
+};
+
+
+char * const cau8WUVLLS1String[]={ 
+  "VLLS1",
+  (( void * )( 0 ))
+}; 

@@ -322,6 +322,7 @@
           <state>C:\Users\Robert\SkyDrive\2018 Spring Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity Test\PLM\Source\NVM</state>
           <state>C:\Users\Robert\SkyDrive\2018 Spring Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity Test\PLM\Source\ADC</state>
           <state>C:\Users\rfrum\OneDrive\2018 Spring Semester\Senior Design\Sensor Code\Shanit Origional Code\Connectivity Test\PLM\Source\ADC</state>
+          <state>F:\Guardrail Work\Sensor Code\Git Repo\Sensor Code Sequential ADC Reads\Shanit Origional Code\Connectivity Test\PLM\Source\LPM</state>
         </option>
         <option>
           <name>CCStdIncCheck</name>
@@ -2042,6 +2043,12 @@
         <name>$PROJ_DIR$\..\..\..\otaDemo\OTA Programming Demo Client\PLM\Interface\NVM_Interface.h</name>
       </file>
       <file>
+        <name>$PROJ_DIR$\PLM\Interface\PWR_Configuration.h</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\PLM\Interface\PWR_Interface.h</name>
+      </file>
+      <file>
         <name>$PROJ_DIR$\PLM\Interface\TMR_Interface.h</name>
       </file>
       <file>
@@ -2075,6 +2082,15 @@
         <name>LED</name>
         <file>
           <name>$PROJ_DIR$\PLM\Source\LED\LED.c</name>
+        </file>
+      </group>
+      <group>
+        <name>LPM</name>
+        <file>
+          <name>$PROJ_DIR$\PLM\Source\LPM\PWRLib.c</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$\PLM\Source\LPM\PWRLib.h</name>
         </file>
       </group>
       <group>
